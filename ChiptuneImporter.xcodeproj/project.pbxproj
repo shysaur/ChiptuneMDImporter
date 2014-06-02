@@ -1,0 +1,326 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		017EDAE2193D326300FE2B2B /* schema.xml in Resources */ = {isa = PBXBuildFile; fileRef = 017EDAE1193D326300FE2B2B /* schema.xml */; };
+		017EDAE5193D337C00FE2B2B /* schema.strings in Resources */ = {isa = PBXBuildFile; fileRef = 017EDAE3193D337C00FE2B2B /* schema.strings */; };
+		01FB7F34193D0E5C003707D7 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FB7F33193D0E5C003707D7 /* CoreServices.framework */; };
+		01FB7F36193D0E5C003707D7 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FB7F35193D0E5C003707D7 /* CoreFoundation.framework */; };
+		01FB7F38193D0E5C003707D7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FB7F37193D0E5C003707D7 /* CoreData.framework */; };
+		01FB7F3A193D0E5C003707D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FB7F39193D0E5C003707D7 /* Foundation.framework */; };
+		01FB7F40193D0E5C003707D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01FB7F3E193D0E5C003707D7 /* InfoPlist.strings */; };
+		01FB7F42193D0E5C003707D7 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 01FB7F41193D0E5C003707D7 /* main.c */; };
+		01FB7F44193D0E5C003707D7 /* GetMetadataForFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB7F43193D0E5C003707D7 /* GetMetadataForFile.m */; };
+		01FB7F47193D0E5C003707D7 /* ChiptuneMDImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB7F46193D0E5C003707D7 /* ChiptuneMDImporter.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		017EDAE1193D326300FE2B2B /* schema.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = schema.xml; sourceTree = "<group>"; };
+		017EDAE4193D337C00FE2B2B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/schema.strings; sourceTree = "<group>"; };
+		01FB7F30193D0E5C003707D7 /* ChiptuneImporter.mdimporter */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChiptuneImporter.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
+		01FB7F33193D0E5C003707D7 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		01FB7F35193D0E5C003707D7 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		01FB7F37193D0E5C003707D7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		01FB7F39193D0E5C003707D7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		01FB7F3D193D0E5C003707D7 /* ChiptuneImporter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChiptuneImporter-Info.plist"; sourceTree = "<group>"; };
+		01FB7F3F193D0E5C003707D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		01FB7F41193D0E5C003707D7 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		01FB7F43193D0E5C003707D7 /* GetMetadataForFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetMetadataForFile.m; sourceTree = "<group>"; };
+		01FB7F45193D0E5C003707D7 /* ChiptuneMDImporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChiptuneMDImporter.h; sourceTree = "<group>"; };
+		01FB7F46193D0E5C003707D7 /* ChiptuneMDImporter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChiptuneMDImporter.m; sourceTree = "<group>"; };
+		01FB7F48193D0E5C003707D7 /* Importer Read Me.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Importer Read Me.txt"; sourceTree = "<group>"; };
+		01FB7F49193D0E5C003707D7 /* ChiptuneImporter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChiptuneImporter-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		01FB7F2D193D0E5C003707D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01FB7F36193D0E5C003707D7 /* CoreFoundation.framework in Frameworks */,
+				01FB7F38193D0E5C003707D7 /* CoreData.framework in Frameworks */,
+				01FB7F34193D0E5C003707D7 /* CoreServices.framework in Frameworks */,
+				01FB7F3A193D0E5C003707D7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01FB7F27193D0E5C003707D7 = {
+			isa = PBXGroup;
+			children = (
+				01FB7F3B193D0E5C003707D7 /* ChiptuneImporter */,
+				01FB7F32193D0E5C003707D7 /* Frameworks */,
+				01FB7F31193D0E5C003707D7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		01FB7F31193D0E5C003707D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				01FB7F30193D0E5C003707D7 /* ChiptuneImporter.mdimporter */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		01FB7F32193D0E5C003707D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01FB7F33193D0E5C003707D7 /* CoreServices.framework */,
+				01FB7F35193D0E5C003707D7 /* CoreFoundation.framework */,
+				01FB7F37193D0E5C003707D7 /* CoreData.framework */,
+				01FB7F39193D0E5C003707D7 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		01FB7F3B193D0E5C003707D7 /* ChiptuneImporter */ = {
+			isa = PBXGroup;
+			children = (
+				01FB7F43193D0E5C003707D7 /* GetMetadataForFile.m */,
+				01FB7F45193D0E5C003707D7 /* ChiptuneMDImporter.h */,
+				01FB7F46193D0E5C003707D7 /* ChiptuneMDImporter.m */,
+				01FB7F48193D0E5C003707D7 /* Importer Read Me.txt */,
+				01FB7F3C193D0E5C003707D7 /* Supporting Files */,
+			);
+			path = ChiptuneImporter;
+			sourceTree = "<group>";
+		};
+		01FB7F3C193D0E5C003707D7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				01FB7F3D193D0E5C003707D7 /* ChiptuneImporter-Info.plist */,
+				01FB7F3E193D0E5C003707D7 /* InfoPlist.strings */,
+				01FB7F41193D0E5C003707D7 /* main.c */,
+				01FB7F49193D0E5C003707D7 /* ChiptuneImporter-Prefix.pch */,
+				017EDAE1193D326300FE2B2B /* schema.xml */,
+				017EDAE3193D337C00FE2B2B /* schema.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		01FB7F2F193D0E5C003707D7 /* ChiptuneImporter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01FB7F4C193D0E5C003707D7 /* Build configuration list for PBXNativeTarget "ChiptuneImporter" */;
+			buildPhases = (
+				01FB7F2C193D0E5C003707D7 /* Sources */,
+				01FB7F2D193D0E5C003707D7 /* Frameworks */,
+				01FB7F2E193D0E5C003707D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChiptuneImporter;
+			productName = ChiptuneImporter;
+			productReference = 01FB7F30193D0E5C003707D7 /* ChiptuneImporter.mdimporter */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		01FB7F28193D0E5C003707D7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Daniele Cattaneo";
+			};
+			buildConfigurationList = 01FB7F2B193D0E5C003707D7 /* Build configuration list for PBXProject "ChiptuneImporter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 01FB7F27193D0E5C003707D7;
+			productRefGroup = 01FB7F31193D0E5C003707D7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				01FB7F2F193D0E5C003707D7 /* ChiptuneImporter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		01FB7F2E193D0E5C003707D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				017EDAE2193D326300FE2B2B /* schema.xml in Resources */,
+				017EDAE5193D337C00FE2B2B /* schema.strings in Resources */,
+				01FB7F40193D0E5C003707D7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		01FB7F2C193D0E5C003707D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01FB7F47193D0E5C003707D7 /* ChiptuneMDImporter.m in Sources */,
+				01FB7F42193D0E5C003707D7 /* main.c in Sources */,
+				01FB7F44193D0E5C003707D7 /* GetMetadataForFile.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		017EDAE3193D337C00FE2B2B /* schema.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				017EDAE4193D337C00FE2B2B /* en */,
+			);
+			name = schema.strings;
+			sourceTree = "<group>";
+		};
+		01FB7F3E193D0E5C003707D7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01FB7F3F193D0E5C003707D7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		01FB7F4A193D0E5C003707D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		01FB7F4B193D0E5C003707D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		01FB7F4D193D0E5C003707D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChiptuneImporter/ChiptuneImporter-Prefix.pch";
+				INFOPLIST_FILE = "ChiptuneImporter/ChiptuneImporter-Info.plist";
+				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
+				LIBRARY_STYLE = BUNDLE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = mdimporter;
+			};
+			name = Debug;
+		};
+		01FB7F4E193D0E5C003707D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChiptuneImporter/ChiptuneImporter-Prefix.pch";
+				INFOPLIST_FILE = "ChiptuneImporter/ChiptuneImporter-Info.plist";
+				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
+				LIBRARY_STYLE = BUNDLE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = mdimporter;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		01FB7F2B193D0E5C003707D7 /* Build configuration list for PBXProject "ChiptuneImporter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01FB7F4A193D0E5C003707D7 /* Debug */,
+				01FB7F4B193D0E5C003707D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		01FB7F4C193D0E5C003707D7 /* Build configuration list for PBXNativeTarget "ChiptuneImporter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01FB7F4D193D0E5C003707D7 /* Debug */,
+				01FB7F4E193D0E5C003707D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 01FB7F28193D0E5C003707D7 /* Project object */;
+}

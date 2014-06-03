@@ -4,11 +4,6 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.apple.com/metadata
   file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.framework/Resources/MetadataSchema.xsd">
-  <note>
-    Custom attributes that this metadata importer supports.  Below
-    is an example of a multivalued string attribute.  Other types
-    are CFNumber, CFDate, CFBoolean and CFData.
-  </note>
   <attributes>
     <attribute name="kMDItemTitle" type="CFString"/>
     <attribute name="kMDItemAuthors" type="CFArray"/>
@@ -17,9 +12,18 @@
   
   <types>
     <type name="org.kevtris.nsf">
-      <note>
-        The keys that this metadata importer handles.
-      </note>
+      <allattrs>
+        kMDItemTitle
+        kMDItemAuthors
+        kMDItemCopyright
+      </allattrs>
+      <displayattrs>
+        kMDItemTitle
+        kMDItemAuthors
+        kMDItemCopyright
+      </displayattrs>
+    </type>
+    <type name="org.scottworley.gbs">
       <allattrs>
         kMDItemTitle
         kMDItemAuthors

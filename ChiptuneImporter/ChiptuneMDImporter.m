@@ -13,6 +13,7 @@
 
 typedef enum {
   kNSF,
+  kGBS,
   kUnsupported,
   kUnreadable
 } tFileType;
@@ -25,9 +26,11 @@ typedef struct {
 
 
 const uint8_t nsf_magic[] = {'N','E','S','M', 0x1A};
+const uint8_t gbs_magic[] = {'G','B','S', 0x01};
 
 const tMagic magics[] = {
   {kNSF, 5, nsf_magic},
+  {kGBS, 4, gbs_magic},
   {kUnsupported, 0, NULL}
 };
 
@@ -70,6 +73,9 @@ tFileType DetectFileType(FILE *fp) {
     case kNSF:
       result = [self importNSF:fp attributes:spotlightData];
       break;
+    case kGBS:
+      result = [self importGBS:fp attributes:spotlightData];
+      break;
     default:
       result = NO;
   }
@@ -79,7 +85,7 @@ tFileType DetectFileType(FILE *fp) {
 }
 
 
--(BOOL)importNSF:(FILE *)fp attributes:(NSMutableDictionary *)sd
+- (BOOL)importNSF:(FILE *)fp attributes:(NSMutableDictionary *)sd
 {
   char buf[32+1];
   
@@ -94,6 +100,28 @@ tFileType DetectFileType(FILE *fp) {
   [sd setObject:[NSArray arrayWithObject:[NSString stringWithCString:buf encoding:NSWindowsCP1252StringEncoding]] forKey:(NSString*)kMDItemAuthors];
   
   if (fseek(fp, 0x4E, SEEK_SET) < 0) return NO;
+  if (fread(buf, sizeof(char), 32, fp) < 32) return NO;
+  [sd setObject:[NSString stringWithCString:buf encoding:NSWindowsCP1252StringEncoding] forKey:(NSString*)kMDItemCopyright];
+  
+  return YES;
+}
+
+
+- (BOOL)importGBS:(FILE *)fp attributes:(NSMutableDictionary *)sd
+{
+  char buf[32+1];
+  
+  buf[32] = '\0';
+  
+  if (fseek(fp, 0x10, SEEK_SET) < 0) return NO;
+  if (fread(buf, sizeof(char), 32, fp) < 32) return NO;
+  [sd setObject:[NSString stringWithCString:buf encoding:NSWindowsCP1252StringEncoding] forKey:(NSString*)kMDItemTitle];
+  
+  if (fseek(fp, 0x30, SEEK_SET) < 0) return NO;
+  if (fread(buf, sizeof(char), 32, fp) < 32) return NO;
+  [sd setObject:[NSArray arrayWithObject:[NSString stringWithCString:buf encoding:NSWindowsCP1252StringEncoding]] forKey:(NSString*)kMDItemAuthors];
+  
+  if (fseek(fp, 0x50, SEEK_SET) < 0) return NO;
   if (fread(buf, sizeof(char), 32, fp) < 32) return NO;
   [sd setObject:[NSString stringWithCString:buf encoding:NSWindowsCP1252StringEncoding] forKey:(NSString*)kMDItemCopyright];
   

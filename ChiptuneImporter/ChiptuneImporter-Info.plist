@@ -14,15 +14,30 @@
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
+			<string>Game Boy Sound Format</string>
+			<key>UTTypeIdentifier</key>
+			<string>org.scottworley.gbs</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>gbs</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.audio</string>
+				<string>public.data</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
 			<string>Nintendo Sound Format</string>
 			<key>UTTypeIdentifier</key>
 			<string>org.kevtris.nsf</string>
-			<key>UTTypeReferenceURL</key>
-			<string>http://kevtris.org/nes/nsfspec.txt</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
-				<key>com.apple.ostype</key>
-				<string>NSF </string>
 				<key>public.filename-extension</key>
 				<array>
 					<string>nsf</string>

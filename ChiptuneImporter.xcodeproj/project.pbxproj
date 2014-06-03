@@ -33,7 +33,6 @@
 		01FB7F43193D0E5C003707D7 /* GetMetadataForFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetMetadataForFile.m; sourceTree = "<group>"; };
 		01FB7F45193D0E5C003707D7 /* ChiptuneMDImporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChiptuneMDImporter.h; sourceTree = "<group>"; };
 		01FB7F46193D0E5C003707D7 /* ChiptuneMDImporter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChiptuneMDImporter.m; sourceTree = "<group>"; };
-		01FB7F48193D0E5C003707D7 /* Importer Read Me.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Importer Read Me.txt"; sourceTree = "<group>"; };
 		01FB7F49193D0E5C003707D7 /* ChiptuneImporter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChiptuneImporter-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,7 +85,6 @@
 				01FB7F43193D0E5C003707D7 /* GetMetadataForFile.m */,
 				01FB7F45193D0E5C003707D7 /* ChiptuneMDImporter.h */,
 				01FB7F46193D0E5C003707D7 /* ChiptuneMDImporter.m */,
-				01FB7F48193D0E5C003707D7 /* Importer Read Me.txt */,
 				01FB7F3C193D0E5C003707D7 /* Supporting Files */,
 			);
 			path = ChiptuneImporter;

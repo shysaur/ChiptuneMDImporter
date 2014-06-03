@@ -24,20 +24,11 @@ Boolean GetMetadataForFile(void *thisInterface, CFMutableDictionaryRef attribute
 
 Boolean GetMetadataForFile(void *thisInterface, CFMutableDictionaryRef attributes, CFStringRef contentTypeUTI, CFStringRef pathToFile)
 {
-  // Pull any available metadata from the file at the specified path
-  // Return the attribute keys and attribute values in the dict
-  // Return TRUE if successful, FALSE if there was no data provided
-	// The path could point to either a Core Data store file in which
-	// case we import the store's metadata, or it could point to a Core
-	// Data external record file for a specific record instances
-  
   Boolean ok = FALSE;
   @autoreleasepool {
-    NSError *error = nil;
-    
     ChiptuneMDImporter *importer = [[ChiptuneMDImporter alloc] init];
       
-    ok = [importer importFileAtPath:(__bridge NSString *)pathToFile attributes:(__bridge NSMutableDictionary *)attributes error:&error];
+    ok = [importer importFileAtPath:(__bridge NSString *)pathToFile attributes:(__bridge NSMutableDictionary *)attributes];
   }
   
 	// Return the status

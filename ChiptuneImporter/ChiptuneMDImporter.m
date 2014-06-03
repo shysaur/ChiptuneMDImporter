@@ -11,39 +11,91 @@
 #include <stdint.h>
 
 
+typedef enum {
+  kNSF,
+  kUnsupported,
+  kUnreadable
+} tFileType;
+
+typedef struct {
+  tFileType ft;
+  size_t size;
+  const uint8_t *data;
+} tMagic;
+
+
+const uint8_t nsf_magic[] = {'N','E','S','M', 0x1A};
+
+const tMagic magics[] = {
+  {kNSF, 5, nsf_magic},
+  {kUnsupported, 0, NULL}
+};
+
+
+tFileType DetectFileType(FILE *fp) {
+  int i;
+  uint8_t buf[16];
+  tFileType ft;
+  
+  errno = 0;
+  rewind(fp);
+  if (errno) return kUnreadable;
+  
+  if (fread(buf, sizeof(uint8_t), 16, fp) < 16)
+    return kUnreadable;
+  
+  for (i=0; magics[i].ft != kUnsupported; i++)
+    if (memcmp(buf, magics[i].data, magics[i].size) == 0)
+      break;
+  return ft = magics[i].ft;
+}
+
+
 @implementation ChiptuneMDImporter
 
 
-//const uint8_t nsf_header[5] = {'N','E','S','M',0x1A};
-
-
-- (BOOL)importFileAtPath:(NSString *)filePath attributes:(NSMutableDictionary *)spotlightData error:(NSError **)error
+- (BOOL)importFileAtPath:(NSString *)filePath attributes:(NSMutableDictionary *)spotlightData
 {
-  char buf[32+1];
+  BOOL result;
+  tFileType ft;
   const char *fn;
   FILE *fp;
   
   fn = [filePath cStringUsingEncoding:NSUTF8StringEncoding];
-  if (!(fp = fopen(fn, "rb"))) {
-    *error = [NSError errorWithDomain:NSPOSIXErrorDomain code:errno userInfo:nil];
-    return NO;
+  if (!(fp = fopen(fn, "rb"))) return NO;
+  
+  ft = DetectFileType(fp);
+  
+  switch (ft) {
+    case kNSF:
+      result = [self importNSF:fp attributes:spotlightData];
+      break;
+    default:
+      result = NO;
   }
+
+  fclose(fp);
+  return result;
+}
+
+
+-(BOOL)importNSF:(FILE *)fp attributes:(NSMutableDictionary *)sd
+{
+  char buf[32+1];
   
   buf[32] = '\0';
   
-  fseek(fp, 0x0E, SEEK_SET);
-  fread(buf, sizeof(char), 32, fp);
-  [spotlightData setObject:[NSString stringWithCString:buf encoding:NSWindowsCP1252StringEncoding] forKey:(NSString*)kMDItemTitle];
+  if (fseek(fp, 0x0E, SEEK_SET) < 0) return NO;
+  if (fread(buf, sizeof(char), 32, fp) < 32) return NO;
+  [sd setObject:[NSString stringWithCString:buf encoding:NSWindowsCP1252StringEncoding] forKey:(NSString*)kMDItemTitle];
   
-  fseek(fp, 0x2E, SEEK_SET);
-  fread(buf, sizeof(char), 32, fp);
-  [spotlightData setObject:[NSArray arrayWithObject:[NSString stringWithCString:buf encoding:NSWindowsCP1252StringEncoding]] forKey:(NSString*)kMDItemAuthors];
-
-  fseek(fp, 0x4E, SEEK_SET);
-  fread(buf, sizeof(char), 32, fp);
-  [spotlightData setObject:[NSString stringWithCString:buf encoding:NSWindowsCP1252StringEncoding] forKey:(NSString*)kMDItemCopyright];
-
-  fclose(fp);
+  if (fseek(fp, 0x2E, SEEK_SET) < 0) return NO;
+  if (fread(buf, sizeof(char), 32, fp) < 32) return NO;
+  [sd setObject:[NSArray arrayWithObject:[NSString stringWithCString:buf encoding:NSWindowsCP1252StringEncoding]] forKey:(NSString*)kMDItemAuthors];
+  
+  if (fseek(fp, 0x4E, SEEK_SET) < 0) return NO;
+  if (fread(buf, sizeof(char), 32, fp) < 32) return NO;
+  [sd setObject:[NSString stringWithCString:buf encoding:NSWindowsCP1252StringEncoding] forKey:(NSString*)kMDItemCopyright];
   
   return YES;
 }

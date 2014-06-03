@@ -10,6 +10,6 @@
 
 @interface ChiptuneMDImporter : NSObject
 
-- (BOOL)importFileAtPath:(NSString *)filePath attributes:(NSMutableDictionary *)attributes error:(NSError **)error;
+- (BOOL)importFileAtPath:(NSString *)filePath attributes:(NSMutableDictionary *)attributes;
 
 @end

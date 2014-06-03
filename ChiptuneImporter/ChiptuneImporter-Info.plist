@@ -4,7 +4,92 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
-	<key>UTImportedTypeDeclarations</key>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleOSTypes</key>
+			<array>
+				<string>NSF </string>
+			</array>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>nsf</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Audio Overload NSF Soundtrack</string>
+			<key>CFBundleTypeRole</key>
+			<string>MDImporter</string>
+		</dict>
+		<dict>
+			<key>CFBundleOSTypes</key>
+			<array>
+				<string>GBS </string>
+			</array>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>gbs</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Audio Overload GBS Soundtrack</string>
+			<key>CFBundleTypeRole</key>
+			<string>MDImporter</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Game Boy Sound File</string>
+			<key>CFBundleTypeRole</key>
+			<string>MDImporter</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>org.scottworley.gbs</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Nintendo Sound File</string>
+			<key>CFBundleTypeRole</key>
+			<string>MDImporter</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>org.kevtris.nsf</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIconFile</key>
+	<string></string>
+	<key>CFBundleIdentifier</key>
+	<string>com.danielecattaneo.chiptunemdimporter</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>CFPlugInDynamicRegisterFunction</key>
+	<string></string>
+	<key>CFPlugInDynamicRegistration</key>
+	<string>NO</string>
+	<key>CFPlugInFactories</key>
+	<dict>
+		<key>9181D7C4-093D-4883-9E18-E23A5D6710A9</key>
+		<string>MetadataImporterPluginFactory</string>
+	</dict>
+	<key>CFPlugInTypes</key>
+	<dict>
+		<key>8B08C4BF-415B-11D8-B3F9-0003936726FC</key>
+		<array>
+			<string>9181D7C4-093D-4883-9E18-E23A5D6710A9</string>
+		</array>
+	</dict>
+	<key>CFPlugInUnloadFunction</key>
+	<string></string>
+	<key>LSMinimumSystemVersion</key>
+	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2014 Daniele Cattaneo. All rights reserved.</string>
+	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>
 			<key>UTTypeConformsTo</key>
@@ -45,39 +130,5 @@
 			</dict>
 		</dict>
 	</array>
-	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIconFile</key>
-	<string></string>
-	<key>CFBundleIdentifier</key>
-	<string>com.danielecattaneo.${PRODUCT_NAME:rfc1034identifier}</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundleName</key>
-	<string>${PRODUCT_NAME}</string>
-	<key>CFBundleVersion</key>
-	<string>1.0</string>
-	<key>CFPlugInDynamicRegisterFunction</key>
-	<string></string>
-	<key>CFPlugInDynamicRegistration</key>
-	<string>NO</string>
-	<key>CFPlugInFactories</key>
-	<dict>
-		<key>9181D7C4-093D-4883-9E18-E23A5D6710A9</key>
-		<string>MetadataImporterPluginFactory</string>
-	</dict>
-	<key>CFPlugInTypes</key>
-	<dict>
-		<key>8B08C4BF-415B-11D8-B3F9-0003936726FC</key>
-		<array>
-			<string>9181D7C4-093D-4883-9E18-E23A5D6710A9</string>
-		</array>
-	</dict>
-	<key>CFPlugInUnloadFunction</key>
-	<string></string>
-	<key>LSMinimumSystemVersion</key>
-	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
-	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2014 Daniele Cattaneo. All rights reserved.</string>
 </dict>
 </plist>

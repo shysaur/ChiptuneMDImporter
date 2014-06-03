@@ -5,9 +5,6 @@
   xsi:schemaLocation="http://www.apple.com/metadata
   file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.framework/Resources/MetadataSchema.xsd">
   <attributes>
-    <attribute name="kMDItemTitle" type="CFString"/>
-    <attribute name="kMDItemAuthors" type="CFArray"/>
-    <attribute name="kMDItemCopyright" type="CFString"/>
   </attributes>
   
   <types>

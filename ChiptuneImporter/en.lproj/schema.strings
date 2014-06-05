@@ -5,3 +5,9 @@
   Created by Daniele Cattaneo on 03/06/14.
   Copyright (c) 2014 Daniele Cattaneo. All rights reserved.
 */
+
+"kMDItemChiptuneOST" = "Original Soundtrack";
+"kMDItemChiptuneDumper" = "Dumper";
+
+"kMDItemChiptuneOST.Description" = "Title of the original soundtrack album disc.";
+"kMDItemChiptuneDumper.Description" = "Author of the sound code dump.";

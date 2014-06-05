@@ -1,0 +1,158 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033
+
+@{\footnote
+*** Configuration Dialog Context Sensitive Help - SNESAmp v3.10 ***
+}
+
+{\fonttbl
+{\f0\fnil\fcharset0 MS Sans Serif;}
+}
+
+{\page #{\footnote # Help}}
+{\keepn
+{\fs24\cf1\b SNESAmp v3.1\par}
+{SNES® APU emulator plug-in for Winamp\par}}
+{\li360\fs20\par
+This file contains context sensitive help for the SNESAmp input plug-in for Winamp.\par\par
+
+Open SNESAmp.hlp for more information.\par\par
+
+Copyright ©2001-2004 Alpha-II Productions
+}
+
+\fs16
+
+{\page}{#{\footnote # Cfg_Preset}}
+{{\ul High quality}  The best sound for most users
+\par{\ul Like the SNES}  Simulates the muddy sound of the original hardware
+\par{\ul Custom}  Adjust the settings to your liking}
+
+{\page}{#{\footnote # Cfg_Rate}}
+{Output sample rate.  Using a value higher than your sound card is capable of may cause an error.}
+
+{\page}{#{\footnote # Cfg_Bits}}
+{Output sample bit depth.  24- and 32-bit samples only sound better if you have a 24-bit soundcard.}
+
+{\page}{#{\footnote # Cfg_Chn}}
+{Set to monaural only if you're using one speaker on your computer.
+\par Stereo(HQ) enables high precision floating-point mixing.}
+
+{\page}{#{\footnote # Cfg_Inter}}
+{The method of interpolation to use on samples before mixing.  Gaussian is the type used by the SNES,
+ but cubic often sounds the best.}
+
+{\page}{#{\footnote # Cfg_ADPCM}}
+{Enabling this uses the traditional sample decompression method used by early emulators}
+
+{\page}{#{\footnote # Cfg_Analog}}
+{Enabling this simulates the analog SNES hardware by emulating the DSP at 32kHz, adding noise, and
+ then upsampling and filtering the final output}
+
+{\page}{#{\footnote # Cfg_Wide}}
+{Enabling this inverts the right channel to create a pseudo surround sound effect}
+
+{\page}{#{\footnote # Cfg_Reverse}}
+{Reverses the left and right channels}
+
+{\page}{#{\footnote # Cfg_NoEcho}}
+{Disables the echo effect on songs that use it}
+
+{\page}{#{\footnote # Cfg_Stereo}}
+{Adjusts the stereo separation of each voice
+\par 0 is no separation (center)
+\par 50 is the default SNES settings
+\par 100 is full separation (left or right)}
+
+{\page}{#{\footnote # Cfg_EFBCT}}
+{Controls how much of the echo gets mixed together.
+\par 0% is no crosstalk (SNES)
+\par 100% is complete crosstalk (echo is centered)
+\par -0% is reverse crosstalk (echo pans)}
+
+
+{\page}{#{\footnote # Cfg_Length}}
+{When an .SPC is missing the song/fade length in the ID666 tag, these values will be used instead of
+ playing the song forever.}
+
+{\page}{#{\footnote # Cfg_Silence}}
+{After a song is through playing, the emulator will play silence for the given number of
+ seconds.  This adds a bit of a pause before playing the next song.}
+
+{\page}{#{\footnote # Cfg_End}}
+{Ends the song automatically after this many seconds of silence.\par
+Entering no text will disable this feature.}
+
+{\page}{#{\footnote # Cfg_LoopX}}
+{Songs that have a loop length will repeat this number times before ending.\par
+Entering no text will use the loop count in the tag.}
+
+{\page}{#{\footnote # Cfg_Bin}}
+{Enabling this will cause the ID666 reader to use the binary format when it can't autodetect}
+
+{\page}{#{\footnote # Cfg_Timer}}
+{Disabling this causes songs to play endlessly.
+ Seeking is disabled in this mode.}
+
+{\page}{#{\footnote # Cfg_Fast}}
+{Enabling this uses a faster method for seeking, but breaks some songs.}
+
+
+{\page}{#{\footnote # Cfg_AAR}}
+{Automatic Amplification Reduction:
+\par{\ul Off}  Level remains unchanged, regardless of output volume
+\par{\ul On}  Level is reduced if output gets too loud
+\par{\ul Increase}  Level is gradually increased until the output gets too loud
+\par\par
+When creating .WAV files, it's recommended you turn off AAR and set the amplification level manually.}
+
+{\page}{#{\footnote # Cfg_Amp}}
+{Initial amplification level.  The level controls how loud samples are mixed together.
+\par Most songs sound good in the 6.0 to 9.0 range.  0.0 is the same amplitude as the SNES.}
+
+{\page}{#{\footnote # Cfg_Thresh}}
+{Minimum output amplitude necessary for AAR to take effect.  Higher values allow
+ for louder music, but also greater distortion.\par
+If you use the equalizer or a DSP plug-in you should set this to 0.0 or less.}
+
+{\page}{#{\footnote # Cfg_TagAmp}}
+{Use the amplification level saved in the song's tag, if it exists, instead of AAR}
+
+{\page}{#{\footnote # Cfg_RstAmp}}
+{Resets the amplification level at the beginning of each song}
+
+{\page}{#{\footnote # Cfg_WAVol}}
+{This lets you use Winamp's volume control to adjust the amplification level.\par
+You should use this only if you disable the volume control in the output plug-in.}
+
+{\page}{#{\footnote # Cfg_Min}}
+{The minimum amplification level AAR will reduce to}
+
+{\page}{#{\footnote # Cfg_Max}}
+{The maximum amplification level to increase to}
+
+
+{\page}{#{\footnote # Cfg_Title}}
+{The text entered here lets you customize how the song title/info will appear in the playlist
+ window.  If no information is available (i.e. a blank ID666 tag) the file name will be used for
+ the title.}
+
+
+{\page}{#{\footnote # Cfg_Lang}}
+{This is where you choose the language module to use in SNESAmp.  If you choose (default), you may
+ need to restart WinAmp.}
+
+{\page}{#{\footnote # Cfg_FileExt}}
+{Enter the file extensions you want the open dialog to display.  Separate extensions with a
+ semi-colon.}
+
+{\page}{#{\footnote # Cfg_Ctrl}}
+{Enabling this displays a control dialog during playback that lets you adjust emulation settings.}
+
+{\page}{#{\footnote # Cfg_Tricks}}
+{Enables extra features like window snapping.  If you're not using SNESAmp with Winamp, enabling
+ tricks may cause the application to crash.}
+
+{\page}{#{\footnote # Cfg_Reset}}
+{Resets the configuration to the default settings}
+
+}

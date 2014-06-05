@@ -10,6 +10,11 @@
 #include <stdio.h>
 #include <stdint.h>
 
+#import "ID666.h"
+
+
+const CFStringRef kMDItemChiptuneOST = (CFStringRef)@"kMDItemChiptuneOST";
+const CFStringRef kMDItemChiptuneDumper = (CFStringRef)@"kMDItemChiptuneDumper";
 
 typedef enum {
   kNSF,
@@ -54,6 +59,23 @@ tFileType DetectFileType(FILE *fp) {
 }
 
 
+void AddAttribute(NSMutableDictionary *sd, char *s, CFStringRef name) {
+  if (*s != '\0')
+    [sd setObject:[NSString stringWithCString:s encoding:NSWindowsCP1252StringEncoding] forKey:(__bridge NSString*)name];
+}
+
+
+void AddAttributeArray(NSMutableDictionary *sd, char *s, CFStringRef name) {
+  if (*s != '\0')
+    [sd setObject:[NSArray arrayWithObject:[NSString stringWithCString:s encoding:NSWindowsCP1252StringEncoding]] forKey:(__bridge NSString*)name];
+}
+
+
+void AddAttributeNumber(NSMutableDictionary *sd, double n, CFStringRef name) {
+  [sd setObject:[NSNumber numberWithDouble:n] forKey:(__bridge NSString*)name];
+}
+
+
 @implementation ChiptuneMDImporter
 
 
@@ -66,6 +88,9 @@ tFileType DetectFileType(FILE *fp) {
   
   fn = [filePath cStringUsingEncoding:NSUTF8StringEncoding];
   if (!(fp = fopen(fn, "rb"))) return NO;
+  
+  if ([self attemptToImportSPC:fn attributes:spotlightData])
+    return YES;
   
   ft = DetectFileType(fp);
   
@@ -124,6 +149,35 @@ tFileType DetectFileType(FILE *fp) {
   if (fseek(fp, 0x50, SEEK_SET) < 0) return NO;
   if (fread(buf, sizeof(char), 32, fp) < 32) return NO;
   [sd setObject:[NSString stringWithCString:buf encoding:NSWindowsCP1252StringEncoding] forKey:(NSString*)kMDItemCopyright];
+  
+  return YES;
+}
+
+
+- (BOOL)attemptToImportSPC:(const char *)fn attributes:(NSMutableDictionary *)sd
+{
+  char buf[80];
+  int songlen;
+  ID666 spctag;
+  ID6Type res;
+  
+  res = spctag.LoadTag(fn, 0);
+  if (res == ID6_UNK || res == ID6_ERR)
+    return NO;
+  
+  AddAttribute(sd, spctag.song, kMDItemTitle);
+  AddAttribute(sd, spctag.game, kMDItemAlbum);
+  AddAttribute(sd, spctag.ost, kMDItemChiptuneOST);
+  AddAttributeArray(sd, spctag.artist, kMDItemAuthors);
+  AddAttribute(sd, spctag.comment, kMDItemInformation);
+  AddAttributeArray(sd, spctag.pub, kMDItemPublishers);
+  if (spctag.copy) {
+    sprintf(buf, "%d", spctag.copy);
+    AddAttribute(sd, buf, kMDItemCopyright);
+  }
+  songlen = spctag.GetSong();
+  if (songlen != spctag.defSong) AddAttributeNumber(sd, songlen/64000.0, kMDItemDurationSeconds);
+  AddAttribute(sd, spctag.dumper, kMDItemChiptuneDumper);
   
   return YES;
 }

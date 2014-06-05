@@ -1,0 +1,282 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033
+
+@{\footnote
+*** Configuration Dialog Help - SNESAmp v3.10 ***
+}
+
+{\fonttbl
+{\f0\fnil\fcharset0 MS Sans Serif;}
+{\f1\fswiss\fcharset0\fprq2 Helv;}
+}
+
+{\colortbl;\red0\green0\blue255;}
+
+\fs20
+
+{\page #{\footnote # Cfg_Help}}
+{\keepn
+{\fs24\cf1 Configuration Dialog\par}}
+{\par The Configuration Dialog lets you customize the plug-in.  Some options directly effect the
+ sound, while others only change the way Winamp provides information to you.\par\par
+There are five tabs in the dialog.  Each one groups related options together:\par\par
+{\uldb
+{DSP}{\v Cfg_DSP}\par
+{Mixing}{\v Cfg_Mixing}\par
+{Time}{\v Cfg_Time}\par
+{Title}{\v Cfg_Title}\par
+{Other}{\v Cfg_Other}\par
+}
+}
+
+{\page #{\footnote # Cfg_DSP}}
+{\keepn
+{\fs24\cf1 Configuration Dialog\par}}
+
+The DSP tab is where you configure the DSP emulator.  Some of these options should be familiar
+ to you.\par\par
+
+{\b Configuration Presets\par}
+The presets affect the options under the DSP and Mixing tabs.  Regardless of your preset choice, you
+ will still have control of the sample rate and bit depth.\par\par
+"High Quality" will select the settings for the clearest sound.\par\par
+"Like the SNES" will select the settings that most closely emulate the SNES (see Analog simulation).
+  Select this option if you're an emulation purist. \par\par
+"Custom" will allow you to make changes to any of the settings.\par\par
+
+{\b Sample Rate\par}
+If sound was an image, the sample rate would be its resolution.  Higher sample rates sound better,
+ but using a sample rate higher than your sound card can accept won't improve the sound.\par\par
+
+{\b Sample Size\par}
+Comparing sound to an image again, the sample size is like the color depth.  Larger sample sizes
+ sound better because you have more bits to listen to.  SNESAmp can create eight, sixteen,
+ twenty-four, and thirty-two bit samples.\par\par
+When using normal stereo without analog simulation enabled, 24- and 32-bit samples are left
+ justified 16 bits, and don't provide any better quality.  When using high-quality or when analog
+ simulation is enabled the full 24 or 32 bits are used.\par\par
+Eight-bit sample support is provided for historical reasons only.\par\par
+
+{\b Channels\par}
+The SNES produced stereo sound, and you should use the stereo setting.\par\par
+The monaural setting exists for users with one speaker.  This setting uses additional processing
+ to ensure sounds don't get lost during the stereo to mono mixdown.  However, this setting also
+ uses older mixing code that may not sound as good as the stereo.\par\par
+The normal stereo routine uses integers and produces 16-bit output identical to the SNES.\par\par
+The high-quality stereo routine uses floating-point numbers and includes extra features such as
+ micro volume ramping.  Eight-bit samples are not available with this setting.\par\par
+
+{\b Interpolation\par}
+Interpolation is a process applied to samples after they are decompressed to make a sound wave sound
+ less harsh and more natural.  A good example of interpolation is how it's used in the video of
+ ZSNES.  When the graphics of the SNES are displayed on your computer screen they look blocky,
+ pixelated.  By applying interpolation the graphics are smoothed out.\par\par
+In SNESAmp there are three forms of interpolation:  linear, cubic, and gaussian.\par\par
+Linear is the simplest form of interpolation, but it rarely produces an accurate reproduction.\par\par
+Cubic is based on the Hermite cubic polynomial.  It's probably the best sounding of the three.\par\par
+Gaussian is based on the Gaussian curve, and is the method used by the SNES.  Some people don't like
+ this form of interpolation because it makes low sampled sounds sound soft and undetailed.\par\par
+
+You can look at http://www.alpha-ii.com/Info/AudioInt.html, if you'd like to see some examples of
+ what interpolation does to a soundwave.\par\par
+
+{\b Analog simulation\par}
+Enabling this option will try to simulate anomalies of the analog hardware in the SNES.  In this
+ mode the DSP is emulated at 16-bit 32kHz stereo, just like the SNES.  A small amount (-72dB) of
+ noise is added to simulate RF interference.  The output is then inverted and upsampled to the
+ specified output sample rate, and finally run through a low-pass filter to remove aliased
+ frequencies.\par\par
+This option is only available when using normal stereo mixing.\par\par
+Note: Higher sample rates and bit depths will better simulate the analog output of the SNES.\par\par
+
+{\b "Surround" sound\par}
+Inverts the right channel to give the sound a wider feel.\par\par
+
+{\b Reverse stereo\par}
+Swaps the left and right channels for those of you who have your speakers backwards.\par\par
+
+{\b Use old ADPCM\par}
+Sample data in the SNES is compressed using ADPCM.  While SNESAmp has an accurate sample
+ decompression algorithm, some people like to use the old method used by emulators in the early
+ days.  The old method allows for integer overflow, so some sound effects, like wind, won't work.\par\par
+
+{\b Disable Echo\par}
+This will disable any echo effects by the DSP.  Use this if you want to add your own echo/reverb
+ effects.\par\par
+
+{\b Stereo separation\par}
+The stereo slider controls how far apart voices are played from the center.  At 50 the song will
+ sound like it would on the SNES.  At 0 the song will be completely centered, and at 100 all
+ voices will play on either the left or right side.\par\par
+This control was created for people who use headphones and don't like harsh panning, but it can also
+ be used to create a wider sound.\par\par
+
+{\b Echo feedback crosstalk\par}
+On the SNES, sounds that echoed on the left side stayed on the left side, as with the right.
+  Crosstalk lets the sound "leak" from one side to the other.  This makes the echo sound more
+ natural by letting it bounce around a bit.\par\par
+The higher the value, the more sound will leak to the other side.  Negative values cause the echo
+ to pan between each side as it fades out.\par\par
+
+
+{\page #{\footnote # Cfg_Mixing}}
+{\keepn
+{\fs24\cf1 Configuration Dialog\par}}
+
+Different songs are arranged at different volume levels.  The songs from some games will sound quiet
+ compared to the songs from other games.  To overcome this, an amplification control has been
+ implemented.  At 0.0dB music will be mixed at the same volume as the SNES.  Higher levels will
+ create louder music.\par\par
+
+{\b Automatic Amplification Reduction (AAR)\par}
+You can manually set the amplification level, but songs vary so much that manually adjusting
+ every song can become bothersome.  AAR is a method that tries to find the optimal level for each
+ song.  There are three settings:\par
+{\cellx1080\cellx5760
+\intbl Off\cell AAR is disabled.  You must manually set the amplification level.\cell\row
+\intbl On\cell When the sound gets too loud, the level will be reduced.\cell\row
+\intbl Increase\cell The level will be increased slowly until AAR takes place.\cell\row
+}\par\par
+
+{\b Amplification\par}
+This is the default level that all songs start out at.  A value between 6.0 and 9.0 is usually good.\par\par
+
+{\b Minimum and Maximum Level\par}
+These are the minimum and maximum values that the amplification level can be changed to by AAR.  You
+ can manually set the level outside this range.\par\par
+
+{\b Output Threshold\par}
+The threshold is how loud the final output must be before AAR will take effect.  If the output gets too
+ loud, clipping will occur, which can make the music sound distorted.  Sometimes, though, the music
+ will peak for brief moments, and the small amount of clipping that happens isn't noticible.  Allowing
+ for some clipping will produce overall louder music.\par\par
+Setting the threshold to 0.0dB will not allow any clipping.  Higher values will allow more clipping.\par\par
+If you use the Winamp equalizer or a DSP plug-in, you should set the threshold to 0.0dB or less.\par\par
+
+{\b Use the amplification level from the ID666 tag\par}
+If the tag contains a default amplification, AAR will be disabled and the level will be set to the value
+ in the tag.\par\par
+
+{\b Reset the level at the start of each song\par}
+This option will reset the amplification level to the default value everytime a song is started.
+  Disabling it will keep the current value when the next song starts.\par\par
+
+{\b Use Winamp's volume control for adjusting the level\par}
+Normally, you need to enable the Control dialog in order to change the amplification level in
+ real-time.  This setting will use the volume control in Winamp to control the level.  If you use
+ this, make sure you disable the volume control in the output plug-in.  Otherwise when the level
+ changes so will the volume of your sound card.\par\par
+
+
+{\page #{\footnote # Cfg_Time}}
+{\keepn
+{\fs24\cf1 Configuration Dialog\par}}
+
+The time options let you specify how SNESAmp interprets {\uldb{ID666 Tags}{\v ID6_Help}} and
+ how to playback songs.\par\par
+
+{\b Song & Fade Length\par}
+When an SPC is loaded that doesn't have the song and fade length saved in the ID666 tag, these
+ values will be used.  The maximum value for the song is 59:59.99 and the fade is 59.99 seconds.\par\par
+
+{\b Trailing Silence\par}
+After an SPC is through playing, a pause will be inserted before playing the next song.  This value
+ is the length of the pause in seconds.\par\par
+
+{\b Auto End\par}
+Some SPC's don't loop forever.  SNESAmp can automatically stop a song after it has been silent for
+ a period of time.  You can specify how many seconds to wait.  Leaving this field blank will always
+ play a song endlessly, regardless of the actual sound.  The auto end feature has no effect if a
+ song has a length specified in the ID666 tag and the playback timer is enabled.\par\par
+
+{\b Loop Repeat\par}
+Specifying a value here overrides the loop repeat value for all songs.  Leaving this field blank
+ will use the song's repeat value.  If a song doesn't have a loop time saved in its tag, this field
+ has no effect.\par\par
+
+{\b Enable playback timer\par}
+Disabling this option will cause SNESAmp to play songs endlessly, regardless of their ID666
+ settings.\par\par
+
+{\b Use a faster seeking method\par}
+This enables a seeking method that's faster by disabling DSP emulation.  Songs that check the DSP
+ registers for changes will not be seekable in this mode.\par\par
+
+{\b Default to binary ID666 tags\par}
+SNESAmp will attempt to determine whether an {\uldb{ID666 Tag}{\v ID6_Help}} is in text or binary
+ format, but when it's not sure or if the song doesn't have an ID666 tag, it will default to binary.\par\par
+
+
+{\page #{\footnote # Cfg_Title}}
+{\keepn
+{\fs24\cf1 Configuration Dialog\par}}
+
+When Winamp builds a playlist, you can customize how the songs will be displayed.\par\par
+For example, the string "%2 by %4" will display the song title and the artist's name in the
+ playlist.  If none of the specifiers are used in the song (i.e. a blank ID666 tag) the filename
+ will be displayed.\par\par
+
+Some format specifier notes:\par
+\tab %6 will automatically insert a copyright symbol (©) before the date\par
+\tab %D only displays the first line of the comment\par
+\tab You can insert special characters (% < = > [ | ]) by placing a % before them\par
+\tab Format specifiers are not case sensitive\par
+\tab Unknown format specifiers will be inserted literally\par
+
+\par {\b Conditional statements}\par
+\par By placing square brackets after a format specifier, you can choose to display text if and
+ only if that field contains a value.  By using a pipeline character you can also specify the text
+ to display if the field is empty.\par
+\par Print the comment in parenthesis, if a comment exists:\par
+%D[(%D)]\par\par
+Print the song title if it exists, otherwise print "(no title)":\par
+%2[%2 |(no title) ]\par
+
+\par {\b Fixed field lengths}\par
+\par You can also force a field to a certain number of characters by following the format specifier
+ with a <, =, or > character and a number.\par\par
+%D<30  No more than 30 characters will be printed.  If the comment is more than 30 characters, only
+ the first 30 characters will be printed.\par
+%3=15  Exactly 15 characters will be printed.  If the game title is less than 15, spaces will be
+ inserted.  If it's more than 15, only the first 15 will be printed.\par
+%2>20  At least 20 characters will be printed.  If the song title is less than 20 characters, spaces
+ will be inserted.\par\par
+
+Assuming an ID666 tag contained all fields, this tag would display the following:\par\par
+%9[%9=4]%3 - %2 %D[[%D%]] %B[(%B %C[%C|unknown])]\par\par
+1   game - song [comment] (emulator date)
+
+
+{\page #{\footnote # Cfg_Other}}
+{\keepn
+{\fs24\cf1 Configuration Dialog\par}}
+
+{\b Language\par}
+SNESAmp has been translated into several languages.  To use another language, you must download
+ a language resource module, and extract it into your plugins directory.  After you restart Winamp,
+ the drop-down box will contain a list of the modules you have.\par\par
+The (default) selection will cause SNESAmp to search for the language module that matches the
+ language in your Windows settings.\par\par
+If you don't have any language modules, SNESAmp will default to US English.\par\par
+If you would like to create a translation for SNESAmp, contact me and I'll give you the information
+ I need translated.\par\par
+
+{\b File Extensions\par}
+In this field you can enter the file extensions you would like to associate with Winamp.  This field
+ works the same as in the Nullsoft MPEG Audio Decoder plug-in.  Extensions are separated with a
+ semi-colon.\par\par
+Clicking on the 'Default' button will restore the default extensions of "SPC;SP*;RSN;ZST;ZS*"\par\par
+
+{\b Display the control dialog\par}
+This enables the {\uldb{Control}{\v Ctrl_Help}} dialog, a window that appears next to Winamp that
+ lets you change emulator settings in real-time.\par\par
+
+{\b Enable tricks\par}
+SNESAmp can hook into the Winamp process to provide some features like window docking, automatically
+ displaying and hiding the Control dialog, updating the ID666 tag editor on song changes, et cetera.
+  While these features are nice, enabling them can cause problems if you use SNESAmp in programs
+ like XMPlay or Winamp3.\par\par
+
+{\b Reset Configuration\par}
+Clicking on this button will reset all the configuration options to their default values.\par\par
+
+}

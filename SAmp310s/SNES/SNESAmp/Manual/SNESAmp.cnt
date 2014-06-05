@@ -1,0 +1,10 @@
+SNES (fixes a lot of songs)\cell\row
+\intbl\cell -\cell Stopped caching loop points (fixes Castlevania IV)\cell\row
+\intbl\cell -\cell Added clamping to pitch modulation (fixes Lavos in Chrono Trigger)\cell\row
+\intbl\cell -\cell Fixed a bug in KON/KOF emulation\cell\row
+\intbl\cell -\cell Changed the 16-bit mixing process to more closely emulate the SNES\cell\row
+}
+
+{\li360\par 2.99 10.2.03 Bugfix 3\par}
+{\cellx720\cellx870\cellx7200
+\intbl\cell +\cell Improved the snapping algorithm (the control and tag editor dialogs will dock

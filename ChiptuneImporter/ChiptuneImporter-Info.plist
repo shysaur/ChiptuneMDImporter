@@ -7,32 +7,14 @@
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleOSTypes</key>
-			<array>
-				<string>NSF </string>
-			</array>
-			<key>CFBundleTypeExtensions</key>
-			<array>
-				<string>nsf</string>
-			</array>
 			<key>CFBundleTypeName</key>
-			<string>Audio Overload NSF Soundtrack</string>
+			<string>Super NES SPC700 Sound Format</string>
 			<key>CFBundleTypeRole</key>
 			<string>MDImporter</string>
-		</dict>
-		<dict>
-			<key>CFBundleOSTypes</key>
+			<key>LSItemContentTypes</key>
 			<array>
-				<string>GBS </string>
+				<string>org.creaothceann.spc</string>
 			</array>
-			<key>CFBundleTypeExtensions</key>
-			<array>
-				<string>gbs</string>
-			</array>
-			<key>CFBundleTypeName</key>
-			<string>Audio Overload GBS Soundtrack</string>
-			<key>CFBundleTypeRole</key>
-			<string>MDImporter</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeName</key>
@@ -92,10 +74,29 @@
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<string>SPC </string>
+				<key>public.filename-extension</key>
+				<array>
+					<string>spc</string>
+				</array>
+			</dict>
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.audio</string>
-				<string>public.data</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeIdentifier</key>
+			<string>org.creaothceann.spc</string>
+			<key>UTTypeDescription</key>
+			<string>Super NES SPC700 Sound Format</string>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.audio</string>
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
@@ -104,6 +105,8 @@
 			<string>org.scottworley.gbs</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
+				<key>com.apple.ostype</key>
+				<string>GBS </string>
 				<key>public.filename-extension</key>
 				<array>
 					<string>gbs</string>
@@ -114,7 +117,6 @@
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.audio</string>
-				<string>public.data</string>
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
@@ -123,6 +125,8 @@
 			<string>org.kevtris.nsf</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
+				<key>com.apple.ostype</key>
+				<string>NSF </string>
 				<key>public.filename-extension</key>
 				<array>
 					<string>nsf</string>

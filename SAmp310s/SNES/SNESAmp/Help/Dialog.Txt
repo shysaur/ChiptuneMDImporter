@@ -1,0 +1,215 @@
+SNESAmp v3.10 Dialog Translation
+=============================================================================
+
+When translating, remember that there is limited space on the forms.  Use the
+shortest words possible in your language.  You do not have to use exact
+translations, just descriptions that mean the same thing.
+
+The labels on buttons, radio buttons, and check boxes can only be one line
+of text.  All other labels can be on two lines, if they need to be.
+
+Words that have an underscore (_) in them are displayed on buttons or in
+menus.  The underscore is placed before the letter that is a shortcut to that
+command.  Please place an underscore in your traslation next to the letter
+you want to be the shortcut key.
+
+
+About
+-----
+
+About SNESAmp =
+
+_ReadMe =
+
+Translated by <your name> =
+
+
+
+Configuration
+-------------
+
+Configure SNESAmp =
+
+_Help =
+OK =
+Cancel =
+_Apply =
+
+DSP =
+Mixing =
+Time =
+Title =
+Other =
+
+DSP Emulation =
+High Quality =
+Like the SNES =
+Custom =
+Sample Rate =
+Sample Size =
+Channels =
+Monaural =
+Stereo =
+Stereo(HQ) =
+Interpolation =
+None =
+Linear =
+Cubic =
+Gaussian =
+Hardware anomalies =
+"Surround" sound =
+Reverse stereo =
+Use old ADPCM =
+Disable Echo =
+Stereo separation =
+Echo feedback crosstalk =
+
+Mixing Volume =
+AAR =
+Off =
+On =
+Increase =
+Amplification =
+Output Threshold =
+Use the amplfication level from the ID666 tag =
+Reset the level at the start of each song =
+Use Winamp's volume control for adjusting the level =
+
+Time Options =
+Song Length =
+Fade Length =
+Trailing Silence =
+Auto End =
+Loop Repeat =
+Enable the playback timer =
+Use a faster seeking method (breaks some songs) =
+Default to binary ID666 tags =
+
+Title Formatting =
+Path =
+Filename =
+Song title =
+Game =
+Artist =
+Publisher =
+Copyright =
+OST title =
+OST disc =
+OST track =
+Dumper =
+Date dumped =
+Emulator =
+Comments =
+[ IF | ELSE ]  If %X exists use first statement, else use second =
+Copy no more than n characters =
+Copy exactly n characters =
+Copy at least n characters =
+
+Additional Control =
+Language =
+(default) =
+Language modules can be downloaded at =
+File Extensions =
+Default =
+Display the control dialog =
+Enable tricks =
+Reset configuration to default settings =
+Reset =
+
+
+Control
+-------
+
+Mute =
+Amplification =
+Pitch =
+Speed =
+Stereo separation =
+Echo feedback crosstalk =
+
+_Configure... =
+_About... =
+_Old ADPCM =
+Use _Timer =
+_Disable =
+Close =
+_Help =
+
+Solo =
+Unmute All =
+What's This? =
+
+
+Tag Editor
+----------
+
+ID666 Tag =
+
+_Copy =
+_Paste =
+Cl_ear =
+OK =
+Cancel =
+_Apply =
+
+Information =
+ID666 =
+Extended =
+
+Echo =
+Delay =
+Feedback =
+FIR filter =
+Noise clock =
+Timer =
+(not playing) =
+enabled =
+disabled =
+on =
+off =
+Output =
+Time =
+Songs =
+Samples =
+Bytes =
+Update on song change =
+Disable playback timer =
+
+Song =
+Game =
+Artist =
+Dumped by =
+on =
+with =
+unknown =
+Comments =
+_Song =
+_Fade =
+Binary ID666 format =
+
+OST Title =
+Disc =
+Track =
+Publisher =
+Copyright =
+Amplification =
+Muted Voices =
+_Intro =
+_Loop =
+_End =
+_Fade =
+Extended information =
+
+
+Error messages
+--------------
+
+Unable to open file
+ =
+
+Changes to ID666 tag could not be saved
+ =
+
+The Control dialog can be enabled again in the SNESAmp plug-in configuration
+under the Mixing tab.
+ =

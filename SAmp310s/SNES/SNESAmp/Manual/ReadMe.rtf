@@ -1,0 +1,362 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033
+
+@{\footnote
+*** ReadMe for SNESAmp v3.10 ***
+}
+
+{\fonttbl
+{\f0\fnil\fcharset0 MS Sans Serif;}
+{\f1\fswiss\fcharset0\fprq2 Helv;}
+}
+
+{\colortbl;\red0\green0\blue255;}
+
+\fs20
+
+{#{\footnote ReadMe}}
+{\keepn
+{\fs24\cf1\b SNESAmp v3.1\par}
+{Super NES® APU emulator plug-in for Winamp\par}}
+{\par
+SNESAmp is a plug-in for Winamp that emulates the audio processing unit (APU) of the Super Nintendo
+ Entertainment System®.  Its purpose is to allow you to play music from video games.\par\par
+SNESAmp can play both SPC's (APU dumps from emulators) and ZST's (ZSNES save states).  SPC files can
+ also be contained in RAR files with an .RSN extension.\par\par
+You can learn more about how to use SNESAmp by clicking on the Contents button above.\par\par
+
+{\uldb
+{Version history}{\v History}\par
+{What is the SPC700?}{\v SPC700}\par
+{Links}{\v Links}\par
+{Thanks}{\v Thanks}\par
+{Uninstalling SNESAmp}{\v Uninstall}\par
+}\par
+
+{\fs12
+"SNES" and "Super Nintendo Entertainment System" are trademarks of Nintendo Co., Limited and its
+ subsidiary companies.\par
+Copyright ©1999-2004 Alpha-II Productions\par
+}
+}
+
+
+
+{\page #{\footnote # Help}}
+{\keepn
+{\fs24\cf1\b SNESAmp v3.1\par}
+{Super NES® APU emulator plug-in for Winamp\par}}
+{\li360\par
+SNESAmp uses context sensitive help.  You can get help about any item by either:\par\par
+- clicking on the ? button in the corner of the window then clicking on the item you're interested in, or\par\par
+- hitting F1 when that particular item has the focus\par\par
+
+Click on the Contents button (above) for the full user's manual.\par
+}
+
+
+
+{\page #{\footnote History}}
+{\keepn
+{\fs24\cf1\b SNESAmp v3.1\par}
+{Super NES® APU emulator plug-in for Winamp\par}}
+\par
+
+{\b Version History\par}
+
+{\li360\par 3.1 26.1.04\par}
+{\cellx720\cellx870\cellx7200
+\intbl\cell +\cell Fields in the ID666 dialog are now readable when viewing an .spc from an .rsn archive\cell\row
+\intbl\cell +\cell Added customizable file extensions\cell\row
+\intbl\cell -\cell Fixed window snapping and placement issues when using the Modern skin in Winamp 5\cell\row
+\intbl\cell  \cell \par SNESAPU.DLL v2.0\cell\row
+\intbl\cell +\cell Rewrote the MMX mixing code.  Sample output is now identical to the SNES.\cell\row
+\intbl\cell +\cell Improved syncronization between the SPC700 and DSP\cell\row
+\intbl\cell +\cell Added 24- and 32-bit sample support to the MMX routine\cell\row
+\intbl\cell +\cell The DSP can now be emulated at 32kHz while the final output is upsampled and filtered to better simulate the analog hardware\cell\row
+\intbl\cell +\cell Replaced the fake low-pass filter with a 32-tap FIR filter\cell\row
+\intbl\cell -\cell Output is inverted only when analog simulation is enabled\cell\row
+\intbl\cell -\cell Obtained an accurate copy of the gaussian look-up table used in the SNES\cell\row
+\intbl\cell -\cell Improved the volume envelope code\cell\row
+\intbl\cell -\cell Echo FIR filter coefficients were getting applied in reverse order\cell\row
+}
+
+{\li360\par 3.05 1.8.03\par}
+{\cellx720\cellx870\cellx7200
+\intbl\cell +\cell Improved SPC loading code\cell\row
+\intbl\cell -\cell Fixed song end detection for autoend feature\cell\row
+\intbl\cell  \cell \par SNESAPU.DLL v1.01\cell\row
+\intbl\cell -\cell Fixed a call stack bug that was crashing the DSP emulator when a song would fade out\cell\row
+\intbl\cell -\cell Voice inactivity flag wasn't getting set\cell\row
+}
+
+{\li360\par 3.04 4.7.03\par}
+{\cellx720\cellx870\cellx7200
+\intbl\cell -\cell User defined interpolation setting wasn't getting saved correctly\cell\row
+\intbl\cell -\cell Fixed another balance control problem\cell\row
+\intbl\cell  \cell \par SNESAPU.DLL v1.0\cell\row
+\intbl\cell -\cell Fixed integer overflow in MMX FIR filter\cell\row
+\intbl\cell -\cell Voices' pitch wasn't getting adjusted if sample rate was changed during playback\cell\row
+}
+
+{\li360\par 3.03a 14.6.03\par}
+{\cellx720\cellx870\cellx7200
+\intbl\cell -\cell Reset volume when playing a song to prevent the balance control from affecting the sound card's volume when using waveOut 2.0.2a\cell\row
+\intbl\cell  \cell \par SNESAPU.DLL v0.99b\cell\row
+\intbl\cell +\cell Added a check to the amplification level so SNESAPU 0.99 will work with Peter Pawlowski's SPC plug-in\cell\row
+}
+
+{\li360\par 3.03 22.5.03\par}
+{\cellx720\cellx870\cellx7200
+\intbl\cell +\cell Added conditional statements to the title formatting string\cell\row
+\intbl\cell -\cell Files at four megabyte boundaries in RSN files weren't getting loaded\cell\row
+\intbl\cell -\cell Song titles from RSN's weren't getting displayed if Winamp was configured to read titles on load\cell\row
+\intbl\cell  \cell \par SNESAPU.DLL v0.99a\cell\row
+\intbl\cell -\cell Fixed a bug in the i386 FIR filter (remedies noisy songs on slower machines)\cell\row
+}
+
+{\li360\par 3.01a 9.5.03 Bugfix\par}
+{\cellx720\cellx870\cellx7200
+\intbl\cell -\cell unrar.dll wasn't getting loaded from the plugins directory\cell\row
+}
+
+{\li360\par 3.01 1.5.03 Bugfix 4 1/2\par}
+{\cellx720\cellx870\cellx7200
+\intbl\cell -\cell Preset loader had presets swapped\cell\row
+\intbl\cell -\cell The configuration amplification slider is was getting incorrectly initialized\cell\row
+\intbl\cell -\cell Amp was getting reset under the wrong conditions\cell\row
+\intbl\cell -\cell Forgot to include unrar.dll\cell\row
+}
+
+{\li360\par 3.0 30.4.03 Bugfix 4\par}
+{\cellx720\cellx870\cellx7200
+\intbl\cell +\cell Added RAR support (RAR'd SPC archives should have an RSN extension)\cell\row
+\intbl\cell +\cell Improved file detection routine\cell\row
+\intbl\cell +\cell Added option to disable "tricks" so SNESAmp can be used in other plug-in applications\cell\row
+\intbl\cell -\cell Fixed crash in the subclassing routine on exit\cell\row
+\intbl\cell -\cell Fixed AAR not being displayed correctly in Configuration\cell\row
+\intbl\cell -\cell Changed file filters in open dialog to use less memory\cell\row
+\intbl\cell -\cell Fixed dialog creep on systems with the taskbar locked at the top of the screen\cell\row
+\intbl\cell -\cell Dialogs initially appear in the same location as the main window\cell\row
+\intbl\cell -\cell Improved alpha layering detection for WinXP\cell\row
+\intbl\cell  \cell \par SNESAPU.DLL v0.99\cell\row
+\intbl\cell +\cell Added 24-bit and high quality 16-bit sample output\cell\row
+\intbl\cell -\cell Fixed several bugs in the envelope code so envelopes now work the same as the SNES (fixes a lot of songs)\cell\row
+\intbl\cell -\cell Stopped caching loop points (fixes Castlevania IV)\cell\row
+\intbl\cell -\cell Added clamping to pitch modulation (fixes Lavos in Chrono Trigger)\cell\row
+\intbl\cell -\cell Fixed a bug in KON/KOF emulation\cell\row
+\intbl\cell -\cell Changed the 16-bit mixing process to more closely emulate the SNES\cell\row
+}
+
+{\li360\par 2.99 10.2.03 Bugfix 3\par}
+{\cellx720\cellx870\cellx7200
+\intbl\cell +\cell Improved the snapping algorithm (the control and tag editor dialogs will dock to any Winamp window)\cell\row
+\intbl\cell +\cell Control dialog doesn't automatically gain the focus when it becomes visible\cell\row
+\intbl\cell +\cell Control dialog tries to work with transparency plug-ins\cell\row
+\intbl\cell +\cell Tag editor and control dialog remember their absolute screen positions\cell\row
+\intbl\cell +\cell Added ability to save the mixing level in the tag\cell\row
+\intbl\cell +\cell Added ability to disable the echo in the configuration\cell\row
+\intbl\cell +\cell Changed output threshold to +/-3.00dB\cell\row
+\intbl\cell -\cell Added version information to LRM's and improved LRM detection and loading (LRM's from previous versions of SNESAmp won't get loaded and crash)\cell\row
+\intbl\cell -\cell Fixed another return value error in the message handler (titlebar text scrolls)\cell\row
+\intbl\cell -\cell Visualization works with 32-bit samples\cell\row
+\intbl\cell -\cell Sometimes the mixing level in the config was displayed incorrectly\cell\row
+\intbl\cell -\cell Forgot to save the date in the tag\cell\row
+\intbl\cell -\cell Tag editor doesn't crash when the date is corrupted\cell\row
+\intbl\cell -\cell Forgot to apply the mute flags from the tag\cell\row
+\intbl\cell -\cell Fixed the time calculation so the buttons in the tag editor get the correct time when a song's speed has been adjusted via the control dialog\cell\row
+\intbl\cell -\cell Fixing a mixing level problem when auto attenuation was turned off\cell\row
+\intbl\cell  \cell \par SNESAPU.DLL v0.98\cell\row
+\intbl\cell +\cell Added micro ramping to the channel volumes in the 32-bit sample routine (reduces zipper effects and pops in some songs)\cell\row
+\intbl\cell -\cell Added a 17-bit clamp to the sample decompression (fixes Hiouden, but the wind in CT isn't quite right)\cell\row
+\intbl\cell -\cell Added linear interpolation to the FIR filter (fixes some songs that turned to noise)\cell\row
+\intbl\cell -\cell ENVX always gets updated, regardless of ADSR/GAIN flag (fixes Clue)\cell\row
+\intbl\cell -\cell Added code to the speed hack to try and isolate small polling loops (fixes the tempo problems some games were having)\cell\row
+\intbl\cell -\cell Changed the loader code, again, to copy extra RAM from the correct place (fixes incorrect sounds in Tales of Phantasia)\cell\row
+\intbl\cell -\cell Fixed a lame bug when clearing the in-ports (fixes Dragon Quest songs stopping half way through)\cell\row
+}
+
+{\li360\par 2.5  2.10.01 Remastered\par}
+{\cellx720\cellx870\cellx7200
+\intbl\cell +\cell Rewrote the entire ID666 editor, and pieces of the other code, after a Win2k install went bad\cell\row
+\intbl\cell +\cell Added support for the additional time fields in the XID6 tag\cell\row
+\intbl\cell +\cell Playback switches to fadeout if timer is enabled after song would've ended\cell\row
+\intbl\cell -\cell Fixed the way samples were sent to Winamp, so DSP plug-ins and EQ work again\cell\row
+\intbl\cell -\cell Decible value on threshold control was incorrect\cell\row
+\intbl\cell -\cell Fixed FIR filter detection in the ID666 editor\cell\row
+\intbl\cell -\cell Noise clock speed is displayed correctly\cell\row
+\intbl\cell -\cell Fixed the multiple instances bug when opening SPC's from Explorer\cell\row
+\intbl\cell -\cell Control dialog will stay visible if Winamp is left of the primary monitor\cell\row
+\intbl\cell -\cell SNESAPU.DLL can be installed in the Plugins folder, if the System folder isn't available\cell\row
+\intbl\cell -\cell SNESAPU was accidentally getting linked twice\cell\row
+\intbl\cell  \cell \par SNESAPU.DLL v0.95,0.96\cell\row
+\intbl\cell +\cell Added 4-point Gaussian interpolation\cell\row
+\intbl\cell +\cell Made fast seeking faster, and normal seeking slower and more accurate (now you can tell a difference between the two)\cell\row
+\intbl\cell +\cell Improved the method of reversing stereo channels\cell\row
+\intbl\cell +\cell Made more internal optimizations and changes\cell\row
+\intbl\cell -\cell Pushed some data through the SNES and rewrote the ADPCM routine (sample decompression is virtually perfect, except for Hiouden)\cell\row
+\intbl\cell -\cell Forgot to disable pitch modulation after a PMON flag was cleared (Asterix plays in tune)\cell\row
+\intbl\cell -\cell Fixed seeking routine that was incorrectly decompressing some sample blocks (Plok! seeks correctly)\cell\row
+\intbl\cell -\cell Echo delay was incorrect for most sample rates\cell\row
+\intbl\cell -\cell Echo was incorrectly mixed on non-MMX processors\cell\row
+\intbl\cell -\cell Did something to fix white noise generation not working in some songs\cell\row
+\intbl\cell -\cell Corrected internal DSP clock algorithm (envelopes and white noise generation work like they're supposed to)\cell\row
+\intbl\cell -\cell Changed low-pass filter to more of a SNES hardware simulator\cell\row
+}
+
+{\li360\par 2.1  10.3.01 Bugfix - Disc 2\par}
+{\cellx720\cellx870\cellx7200
+\intbl\cell +\cell Added "What's This?" popup menu to all controls\cell\row
+\intbl\cell +\cell Improved ID666 tag detection and loading\cell\row
+\intbl\cell -\cell Added the ability configure the amount of silence before ending a song\cell\row
+\intbl\cell -\cell Auto end function only works if song doesn't have an ID666 tag\cell\row
+\intbl\cell -\cell Fixed the tab key and keyboard shortcuts in the Configuration and ID666 editor dialogs\cell\row
+\intbl\cell -\cell Stereo controls are disabled when monaural is selected\cell\row
+\intbl\cell -\cell Threshold setting wasn't getting saved\cell\row
+\intbl\cell -\cell Apply button wasn't working right in Configuration dialog\cell\row
+\intbl\cell -\cell Cancel wasn't undoing changes in ID666 editor\cell\row
+\intbl\cell -\cell Copyright year and OST disc weren't getting pasted correctly\cell\row
+\intbl\cell -\cell Fixed some bugs in the extended information\cell\row
+\intbl\cell -\cell Coded a workaround for a bug in Winamp that was initializing the plug-in twice\cell\row
+\intbl\cell  \cell \par SNESAPU.DLL v0.92\cell\row
+\intbl\cell -\cell Fixed the low-pass filter (I'm amazed it was sort of working at all)\cell\row
+\intbl\cell -\cell Figured out (I think) how the DSP handles sample blocks with a range value greater than 12\cell\row
+\intbl\cell -\cell Forgot that the DSP needs to be limited to 64K as well (Secret of Evermore doesn't crash)\cell\row
+\intbl\cell -\cell Fixed a problem in the MMX dynamic code allocation that would crash the emulator when the configuration was changed\cell\row
+\intbl\cell -\cell Fixed several problems in the seeking\cell\row
+}
+
+{\li360\par 2.0  26.1.01 DJ Alpha Remix\par}
+{\cellx720\cellx870\cellx7200
+\intbl\cell +\cell Songs stop if no notes are playing\cell\row
+\intbl\cell +\cell APR can be limited to a user defined range\cell\row
+\intbl\cell +\cell Added multi-language support\cell\row
+\intbl\cell +\cell Configuration changes have an immediate effect\cell\row
+\intbl\cell +\cell Separated the time button into Song and Fade\cell\row
+\intbl\cell +\cell Fixed time buttons to get time from Winamp (no more lag added)\cell\row
+\intbl\cell +\cell Introduced extended ID666 support (OSV track numbers, publisher, voice muting)\cell\row
+\intbl\cell +\cell Reinstated binary ID666 support\cell\row
+\intbl\cell +\cell Improved the Control dialog all around\cell\row
+\intbl\cell +\cell Extracted emulation code into a separate DLL\cell\row
+\intbl\cell  \cell \par SNESAPU.DLL v0.9\cell\row
+\intbl\cell +\cell Added pitch, speed, and stereo contol\cell\row
+\intbl\cell +\cell Added 32-bit output for higher end sound cards\cell\row
+\intbl\cell +\cell Added option to change pitch for older sound cards\cell\row
+\intbl\cell +\cell Added echo feedback crosstalk for better reverb\cell\row
+\intbl\cell +\cell Added "surround" sound option\cell\row
+\intbl\cell +\cell Added reverse stereo option\cell\row
+\intbl\cell +\cell Added a faster seeking method\cell\row
+\intbl\cell +\cell Made a lot of internal optimizations and changes\cell\row
+\intbl\cell -\cell Fixed a bug in relative address calculations (Rudra no Hihou works)\cell\row
+\intbl\cell -\cell Echo filter was never getting used (SD3 sounds like it should)\cell\row
+\intbl\cell -\cell Improved low-pass filter\cell\row
+\intbl\cell -\cell Speed hack now works like it's supposed to\cell\row
+\intbl\cell -\cell STOP instruction stops the song instead of hanging\cell\row
+\intbl\cell -\cell Song and fade length are dead on accurate, regardless of output settings\cell\row
+\intbl\cell -\cell Loading routine was erasing in-ports (Terranigma doesn't skip)\cell\row
+}
+
+{\li360\par 1.2  22.5.00 Import Release with Bonus Tracks\par}
+{\cellx720\cellx870\cellx7200
+\intbl\cell +\cell Added context sensitive help to dialog boxes\cell\row
+\intbl\cell +\cell Added auto preamplifcation reduction (APR)\cell\row
+\intbl\cell +\cell Added a low-pass filter\cell\row
+\intbl\cell +\cell ZSNES saved states are playable\cell\row
+\intbl\cell +\cell Made seeking faster\cell\row
+\intbl\cell +\cell Current song length can be updated without having to save the ID666 tag\cell\row
+\intbl\cell +\cell Added out port status to control window\cell\row
+\intbl\cell +\cell Now uses PiMP installer for people who don't know how to use unzip\cell\row
+\intbl\cell -\cell Files are checked for validity before loading\cell\row
+\intbl\cell -\cell Song length must be at least 1 second\cell\row
+\intbl\cell -\cell Removed the ability to save tags in binary format\par (it was causing too many problems)\cell\row
+\intbl\cell -\cell Removed a line of code that was causing the ID666 editor to crash on empty tags\cell\row
+\intbl\cell -\cell ID666 editor terminates when a file handle is invalid\cell\row
+\intbl\cell -\cell Voices can't be accidentally keyed on at load time\par (should stop the DSP from crashing with interpolation disabled)\cell\row
+\intbl\cell -\cell Fixed problem with noise after seeking\cell\row
+\intbl\cell -\cell Made song length and fade more accurate\cell\row
+\intbl\cell -\cell Correctly implemented echo volume\cell\row
+}
+
+{\li360\par 1.0  15.4.00 Final Release\par}
+{\cellx720\cellx870\cellx7200
+\intbl\cell +\cell Configuration changes are applied to the next song\par (No need to restart Winamp)\cell\row
+\intbl\cell +\cell Changes to the time in the ID666 tag have an immediate effect\cell\row
+\intbl\cell +\cell Command sub-window can be disabled\cell\row
+\intbl\cell +\cell Made some minor optimizations\cell\row
+\intbl\cell -\cell No more slow songs, delays, or stalling\cell\row
+\intbl\cell -\cell EnvX register is updated correctly (Der Langrisser works)\cell\row
+\intbl\cell -\cell Sample blocks with a range greater than 16-bits aren't silenced\par (ADPCM is still incorrect)\cell\row
+\intbl\cell -\cell Voices with a pitch of 0 can't be keyed on\cell\row
+}
+
+{\li360\par 0.91 1.4.00 Bugfix\par}
+{\cellx720\cellx870\cellx7200
+\intbl\cell -\cell Configuration gets saved\cell\row
+\intbl\cell -\cell Fixed the 16-bit memory checking routine, again (Vortex works)\cell\row
+\intbl\cell -\cell Coded a workaround for SD3 SPC's that were playing too slow\cell\row
+}
+
+{\li360\par 0.9  25.3.00 Initial test release\par}
+
+
+
+{\page #{\footnote # SPC700}}
+{\keepn
+{\fs24\cf1\b SNESAmp v3.1\par}
+{Super NES® APU emulator plug-in for Winamp\par}}
+{\par
+The APU in the SNES was a separate module made from a Sony SPC700 and DSP, and 64K of RAM.  The
+ SPC700 was an 8-bit processor that ran at 1.024MHz.  Programs were written for the SPC700 to play
+ music with the DSP.\par\par
+The DSP was an eight voice wavetable synthesiser.  Each voice has its own left and right volume
+ control, envelope, pitch, and instrument settings, as well as the ability to use effects such as
+ echo, pitch modulation, and noise generation.  The main output of the DSP was 16-bit 32kHz stereo.\par\par
+With emulators, it is now possible to freeze the state of the APU at any moment and dump the memory
+ and registers to a file.  These files (SPC's) can be loaded by stand-alone APU emulators (like
+ SNESAmp) and resume playing.
+}
+
+
+{\page #{\footnote Links}}
+{\keepn
+{\fs24\cf1\b SNESAmp v3.1\par}
+{Super NES® APU emulator plug-in for Winamp\par}}
+{{\b\par Alpha-II Productions\par}
+http://www.alpha-ii.com\par\par
+{\li360 My personal homepage that I sometimes update.  Here you can find everything I make,
+ including the source code to SNESAmp.\par\par}
+{\b The SNES Music Archive\par}
+http://www.snesmusic.org\par\par
+{\li360 Maintained by Datschge, this is a quality SPC archive (full soundtracks with complete use of
+ the ID666 tag).\par\par}
+}
+
+
+
+{\page #{\footnote # Thanks}}
+{\keepn
+{\fs24\cf1\b SNESAmp v3.1\par}
+{Super NES® APU emulator plug-in for Winamp\par}}
+{\par SNESAmp has become what it is because of the support I receive from its users.  I appreciate
+ the comments, bug reports, and feature requests everyone sends me.\par\par
+Some people have played key roles in the development of SNESAmp and the SNESAPU emulation
+ library:\par
+Datschge, Marius Fodor, CaitSith2, Nitro, Gary Henderson, zsKnight, Sycraft, and the members of the
+ spcdumpers Yahoo! group.\par\par
+}
+
+
+
+{\page #{\footnote Uninstall}}
+{\keepn
+{\fs24\cf1\b SNESAmp v3.1\par}
+{Super NES® APU emulator plug-in for Winamp\par}}
+{\b\par Uninstalling\par}
+{The SNESAmp installer copies several files to your hard drive.  To uninstall SNESAmp, you must
+ delete these files manually.  SNESAmp makes no modifications to your registry.\par\par
+
+C:\\Program Files\\Winamp\\Plugins\\in_snes*.*\par
+C:\\Program Files\\Winamp\\Plugins\\SNESAmp*.*\par
+C:\\Program Files\\Winamp\\Plugins\\SNESAPU.DLL\par
+}
+
+}

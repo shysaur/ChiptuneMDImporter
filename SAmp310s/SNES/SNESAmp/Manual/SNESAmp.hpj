@@ -1,0 +1,11 @@
+ SPC700}}
+{\keepn
+{\fs24\cf1\b SNESAmp v3.1\par}
+{Super NES® APU emulator plug-in for Winamp\par}}
+{\par
+The APU in the SNES was a separate module made from a Sony SPC700 and DSP, and 64K of RAM.  The
+ SPC700 was an 8-bit processor that ran at 1.024MHz.  Programs were written for the SPC700 to play
+ music with the DSP.\par\par
+The DSP was an eight voice wavetable synthesiser.  Each voice has its own left and right volume
+ control, envelope, pitch, and instrument settings, as well as the ability to use effects such as
+ 

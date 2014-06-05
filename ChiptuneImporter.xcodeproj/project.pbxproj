@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		017D97C81940EEA400E84613 /* A2Date.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 017D97C31940EEA400E84613 /* A2Date.cpp */; };
+		017D97C91940EEA400E84613 /* A2Str.c in Sources */ = {isa = PBXBuildFile; fileRef = 017D97C51940EEA400E84613 /* A2Str.c */; };
+		017D97CC1940EEAE00E84613 /* ID666.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 017D97CA1940EEAE00E84613 /* ID666.cpp */; };
 		017EDAE2193D326300FE2B2B /* schema.xml in Resources */ = {isa = PBXBuildFile; fileRef = 017EDAE1193D326300FE2B2B /* schema.xml */; };
 		017EDAE5193D337C00FE2B2B /* schema.strings in Resources */ = {isa = PBXBuildFile; fileRef = 017EDAE3193D337C00FE2B2B /* schema.strings */; };
 		01FB7F34193D0E5C003707D7 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FB7F33193D0E5C003707D7 /* CoreServices.framework */; };
@@ -16,10 +19,17 @@
 		01FB7F40193D0E5C003707D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01FB7F3E193D0E5C003707D7 /* InfoPlist.strings */; };
 		01FB7F42193D0E5C003707D7 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 01FB7F41193D0E5C003707D7 /* main.c */; };
 		01FB7F44193D0E5C003707D7 /* GetMetadataForFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB7F43193D0E5C003707D7 /* GetMetadataForFile.m */; };
-		01FB7F47193D0E5C003707D7 /* ChiptuneMDImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB7F46193D0E5C003707D7 /* ChiptuneMDImporter.m */; };
+		01FB7F47193D0E5C003707D7 /* ChiptuneMDImporter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 01FB7F46193D0E5C003707D7 /* ChiptuneMDImporter.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		017D97C31940EEA400E84613 /* A2Date.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = A2Date.cpp; path = SAmp310s/A2Date.cpp; sourceTree = SOURCE_ROOT; };
+		017D97C41940EEA400E84613 /* A2Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = A2Date.h; path = SAmp310s/A2Date.h; sourceTree = SOURCE_ROOT; };
+		017D97C51940EEA400E84613 /* A2Str.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = A2Str.c; path = SAmp310s/A2Str.c; sourceTree = SOURCE_ROOT; };
+		017D97C61940EEA400E84613 /* A2Str.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = A2Str.h; path = SAmp310s/A2Str.h; sourceTree = SOURCE_ROOT; };
+		017D97C71940EEA400E84613 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Types.h; path = SAmp310s/Types.h; sourceTree = SOURCE_ROOT; };
+		017D97CA1940EEAE00E84613 /* ID666.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ID666.cpp; path = SAmp310s/SNES/ID666.cpp; sourceTree = SOURCE_ROOT; };
+		017D97CB1940EEAE00E84613 /* ID666.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ID666.h; path = SAmp310s/SNES/ID666.h; sourceTree = SOURCE_ROOT; };
 		017EDAE1193D326300FE2B2B /* schema.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = schema.xml; sourceTree = "<group>"; };
 		017EDAE4193D337C00FE2B2B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/schema.strings; sourceTree = "<group>"; };
 		01FB7F30193D0E5C003707D7 /* ChiptuneImporter.mdimporter */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChiptuneImporter.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,7 +42,7 @@
 		01FB7F41193D0E5C003707D7 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		01FB7F43193D0E5C003707D7 /* GetMetadataForFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetMetadataForFile.m; sourceTree = "<group>"; };
 		01FB7F45193D0E5C003707D7 /* ChiptuneMDImporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChiptuneMDImporter.h; sourceTree = "<group>"; };
-		01FB7F46193D0E5C003707D7 /* ChiptuneMDImporter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChiptuneMDImporter.m; sourceTree = "<group>"; };
+		01FB7F46193D0E5C003707D7 /* ChiptuneMDImporter.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ChiptuneMDImporter.mm; sourceTree = "<group>"; };
 		01FB7F49193D0E5C003707D7 /* ChiptuneImporter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChiptuneImporter-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,9 +61,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		017D97C21940EE6A00E84613 /* AlphaIISPCID666 */ = {
+			isa = PBXGroup;
+			children = (
+				017D97CA1940EEAE00E84613 /* ID666.cpp */,
+				017D97CB1940EEAE00E84613 /* ID666.h */,
+				017D97C31940EEA400E84613 /* A2Date.cpp */,
+				017D97C41940EEA400E84613 /* A2Date.h */,
+				017D97C51940EEA400E84613 /* A2Str.c */,
+				017D97C61940EEA400E84613 /* A2Str.h */,
+				017D97C71940EEA400E84613 /* Types.h */,
+			);
+			name = AlphaIISPCID666;
+			path = ChiptuneImporter;
+			sourceTree = "<group>";
+		};
 		01FB7F27193D0E5C003707D7 = {
 			isa = PBXGroup;
 			children = (
+				017D97C21940EE6A00E84613 /* AlphaIISPCID666 */,
 				01FB7F3B193D0E5C003707D7 /* ChiptuneImporter */,
 				01FB7F32193D0E5C003707D7 /* Frameworks */,
 				01FB7F31193D0E5C003707D7 /* Products */,
@@ -84,7 +110,7 @@
 			children = (
 				01FB7F43193D0E5C003707D7 /* GetMetadataForFile.m */,
 				01FB7F45193D0E5C003707D7 /* ChiptuneMDImporter.h */,
-				01FB7F46193D0E5C003707D7 /* ChiptuneMDImporter.m */,
+				01FB7F46193D0E5C003707D7 /* ChiptuneMDImporter.mm */,
 				01FB7F3C193D0E5C003707D7 /* Supporting Files */,
 			);
 			path = ChiptuneImporter;
@@ -167,7 +193,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01FB7F47193D0E5C003707D7 /* ChiptuneMDImporter.m in Sources */,
+				017D97C81940EEA400E84613 /* A2Date.cpp in Sources */,
+				017D97CC1940EEAE00E84613 /* ID666.cpp in Sources */,
+				01FB7F47193D0E5C003707D7 /* ChiptuneMDImporter.mm in Sources */,
+				017D97C91940EEA400E84613 /* A2Str.c in Sources */,
 				01FB7F42193D0E5C003707D7 /* main.c in Sources */,
 				01FB7F44193D0E5C003707D7 /* GetMetadataForFile.m in Sources */,
 			);

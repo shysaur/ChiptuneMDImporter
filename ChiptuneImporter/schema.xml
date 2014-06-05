@@ -5,6 +5,8 @@
   xsi:schemaLocation="http://www.apple.com/metadata
   file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.framework/Resources/MetadataSchema.xsd">
   <attributes>
+    <attribute name="kMDItemChiptuneOST" type="CFString"/>
+    <attribute name="kMDItemChiptuneDumper" type="CFString"/>
   </attributes>
   
   <types>
@@ -30,6 +32,26 @@
         kMDItemTitle
         kMDItemAuthors
         kMDItemCopyright
+      </displayattrs>
+    </type>
+    <type name="org.creaothceann.spc">
+      <allattrs>
+        kMDItemTitle
+        kMDItemAlbum
+        kMDItemAuthors
+        kMDItemInformation
+        kMDItemPublishers
+        kMDItemDurationSeconds
+        kMDItemChiptuneOST
+      </allattrs>
+      <displayattrs>
+        kMDItemTitle
+        kMDItemAlbum
+        kMDItemAuthors
+        kMDItemInformation
+        kMDItemPublishers
+        kMDItemDurationSeconds
+        kMDItemChiptuneOST
       </displayattrs>
     </type>
   </types>

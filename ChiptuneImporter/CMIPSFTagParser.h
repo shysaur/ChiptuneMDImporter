@@ -19,6 +19,7 @@
 + tagsWithFile:(FILE *)fp error:(BOOL*)err;
 - init;
 - initWithFile:(FILE *)fp error:(BOOL*)err;
+- (void)dealloc;
 - (BOOL)setTagsFromFile:(FILE *)fp;
 - (NSMutableDictionary*)tagDictionary;
 

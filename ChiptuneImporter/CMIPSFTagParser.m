@@ -60,6 +60,8 @@ NSNumber *DurationStringToSeconds(NSString *str) {
 
 - init
 {
+  tagdict = NULL;
+  tagend = NULL;
   enc = NSWindowsCP1252StringEncoding;
   return [super init];
 }
@@ -70,6 +72,11 @@ NSNumber *DurationStringToSeconds(NSString *str) {
   self = [self init];
   *err = [self setTagsFromFile:fp];
   return self;
+}
+
+
+- (void)dealloc {
+  free(tagdict);
 }
 
 

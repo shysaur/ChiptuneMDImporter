@@ -118,15 +118,15 @@ void AddAttributeNumber(NSMutableDictionary *sd, double n, CFStringRef name) {
   
   if (fseek(fp, 0x0E, SEEK_SET) < 0) return NO;
   if (fread(buf, sizeof(char), 32, fp) < 32) return NO;
-  [sd setObject:[NSString stringWithCString:buf encoding:NSWindowsCP1252StringEncoding] forKey:(NSString*)kMDItemTitle];
+  AddAttribute(sd, buf, kMDItemTitle);
   
   if (fseek(fp, 0x2E, SEEK_SET) < 0) return NO;
   if (fread(buf, sizeof(char), 32, fp) < 32) return NO;
-  [sd setObject:[NSArray arrayWithObject:[NSString stringWithCString:buf encoding:NSWindowsCP1252StringEncoding]] forKey:(NSString*)kMDItemAuthors];
+  AddAttributeArray(sd, buf, kMDItemAuthors);
   
   if (fseek(fp, 0x4E, SEEK_SET) < 0) return NO;
   if (fread(buf, sizeof(char), 32, fp) < 32) return NO;
-  [sd setObject:[NSString stringWithCString:buf encoding:NSWindowsCP1252StringEncoding] forKey:(NSString*)kMDItemCopyright];
+  AddAttribute(sd, buf, kMDItemCopyright);
   
   return YES;
 }
@@ -140,15 +140,15 @@ void AddAttributeNumber(NSMutableDictionary *sd, double n, CFStringRef name) {
   
   if (fseek(fp, 0x10, SEEK_SET) < 0) return NO;
   if (fread(buf, sizeof(char), 32, fp) < 32) return NO;
-  [sd setObject:[NSString stringWithCString:buf encoding:NSWindowsCP1252StringEncoding] forKey:(NSString*)kMDItemTitle];
+  AddAttribute(sd, buf, kMDItemTitle);
   
   if (fseek(fp, 0x30, SEEK_SET) < 0) return NO;
   if (fread(buf, sizeof(char), 32, fp) < 32) return NO;
-  [sd setObject:[NSArray arrayWithObject:[NSString stringWithCString:buf encoding:NSWindowsCP1252StringEncoding]] forKey:(NSString*)kMDItemAuthors];
+  AddAttributeArray(sd, buf, kMDItemAuthors);
   
   if (fseek(fp, 0x50, SEEK_SET) < 0) return NO;
   if (fread(buf, sizeof(char), 32, fp) < 32) return NO;
-  [sd setObject:[NSString stringWithCString:buf encoding:NSWindowsCP1252StringEncoding] forKey:(NSString*)kMDItemCopyright];
+  AddAttribute(sd, buf, kMDItemCopyright);
   
   return YES;
 }

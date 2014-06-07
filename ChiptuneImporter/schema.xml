@@ -3,13 +3,14 @@
 <schema version="1.0" xmlns="http://www.apple.com/metadata"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.apple.com/metadata
-  file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.framework/Resources/MetadataSchema.xsd">
+file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.framework/Resources/MetadataSchema.xsd">
   <attributes>
-    <attribute name="kMDItemChiptuneOST" type="CFString"/>
-    <attribute name="kMDItemChiptuneDumper" type="CFString"/>
+    <attribute name="com_danielecattaneo_chiptunemdimporter_ost" type="CFString"/>
+    <attribute name="com_danielecattaneo_chiptunemdimporter_dumper" type="CFString"/>
   </attributes>
   
   <types>
+    
     <type name="org.kevtris.nsf">
       <allattrs>
         kMDItemTitle
@@ -22,6 +23,7 @@
         kMDItemCopyright
       </displayattrs>
     </type>
+    
     <type name="org.scottworley.gbs">
       <allattrs>
         kMDItemTitle
@@ -34,25 +36,29 @@
         kMDItemCopyright
       </displayattrs>
     </type>
+    
     <type name="org.creaothceann.spc">
       <allattrs>
         kMDItemTitle
         kMDItemAlbum
         kMDItemAuthors
         kMDItemInformation
+        kMDItemCopyright
         kMDItemPublishers
         kMDItemDurationSeconds
-        kMDItemChiptuneOST
+        com_danielecattaneo_chiptunemdimporter_ost
+        com_danielecattaneo_chiptunemdimporter_dumper
       </allattrs>
       <displayattrs>
         kMDItemTitle
         kMDItemAlbum
         kMDItemAuthors
+        kMDItemCopyright
         kMDItemInformation
         kMDItemPublishers
         kMDItemDurationSeconds
-        kMDItemChiptuneOST
       </displayattrs>
     </type>
+    
   </types>
 </schema>

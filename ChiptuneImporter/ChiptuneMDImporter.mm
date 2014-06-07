@@ -13,8 +13,8 @@
 #import "ID666.h"
 
 
-const CFStringRef kMDItemChiptuneOST = (CFStringRef)@"kMDItemChiptuneOST";
-const CFStringRef kMDItemChiptuneDumper = (CFStringRef)@"kMDItemChiptuneDumper";
+const CFStringRef kMDItemChiptuneOST = (CFStringRef)@"com_danielecattaneo_chiptunemdimporter_ost";
+const CFStringRef kMDItemChiptuneDumper = (CFStringRef)@"com_danielecattaneo_chiptunemdimporter_dumper";
 
 typedef enum {
   kNSF,

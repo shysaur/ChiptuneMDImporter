@@ -60,5 +60,189 @@ file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.fra
       </displayattrs>
     </type>
     
+    <type name="org.neilcorlett.psf.playstation">
+      <allattrs>
+        kMDItemInformation
+        kMDItemTitle
+        kMDItemAuthors
+        kMDItemAlbum
+        kMDItemGenre
+        kMDItemCopyright
+        kMDItemDurationSeconds
+        com_danielecattaneo_chiptunemdimporter_dumper
+      </allattrs>
+      <displayattrs>
+        kMDItemInformation
+        kMDItemTitle
+        kMDItemAuthors
+        kMDItemAlbum
+        kMDItemGenre
+        kMDItemCopyright
+        kMDItemDurationSeconds
+        com_danielecattaneo_chiptunemdimporter_dumper
+      </displayattrs>
+    </type>
+    
+    <type name="org.neilcorlett.psf.playstation2">
+      <allattrs>
+        kMDItemInformation
+        kMDItemTitle
+        kMDItemAuthors
+        kMDItemAlbum
+        kMDItemGenre
+        kMDItemCopyright
+        kMDItemDurationSeconds
+        com_danielecattaneo_chiptunemdimporter_dumper
+      </allattrs>
+      <displayattrs>
+        kMDItemInformation
+        kMDItemTitle
+        kMDItemAuthors
+        kMDItemAlbum
+        kMDItemGenre
+        kMDItemCopyright
+        kMDItemDurationSeconds
+        com_danielecattaneo_chiptunemdimporter_dumper
+      </displayattrs>
+    </type>
+    
+    <type name="org.neilcorlett.psf.saturn">
+      <allattrs>
+        kMDItemInformation
+        kMDItemTitle
+        kMDItemAuthors
+        kMDItemAlbum
+        kMDItemGenre
+        kMDItemCopyright
+        kMDItemDurationSeconds
+        com_danielecattaneo_chiptunemdimporter_dumper
+      </allattrs>
+      <displayattrs>
+        kMDItemInformation
+        kMDItemTitle
+        kMDItemAuthors
+        kMDItemAlbum
+        kMDItemGenre
+        kMDItemCopyright
+        kMDItemDurationSeconds
+        com_danielecattaneo_chiptunemdimporter_dumper
+      </displayattrs>
+    </type>
+    
+    <type name="org.neilcorlett.psf.dreamcast">
+      <allattrs>
+        kMDItemInformation
+        kMDItemTitle
+        kMDItemAuthors
+        kMDItemAlbum
+        kMDItemGenre
+        kMDItemCopyright
+        kMDItemDurationSeconds
+        com_danielecattaneo_chiptunemdimporter_dumper
+      </allattrs>
+      <displayattrs>
+        kMDItemInformation
+        kMDItemTitle
+        kMDItemAuthors
+        kMDItemAlbum
+        kMDItemGenre
+        kMDItemCopyright
+        kMDItemDurationSeconds
+        com_danielecattaneo_chiptunemdimporter_dumper
+      </displayattrs>
+    </type>
+    
+    <type name="org.neilcorlett.psf.nintendo64">
+      <allattrs>
+        kMDItemInformation
+        kMDItemTitle
+        kMDItemAuthors
+        kMDItemAlbum
+        kMDItemGenre
+        kMDItemCopyright
+        kMDItemDurationSeconds
+        com_danielecattaneo_chiptunemdimporter_dumper
+      </allattrs>
+      <displayattrs>
+        kMDItemInformation
+        kMDItemTitle
+        kMDItemAuthors
+        kMDItemAlbum
+        kMDItemGenre
+        kMDItemCopyright
+        kMDItemDurationSeconds
+        com_danielecattaneo_chiptunemdimporter_dumper
+      </displayattrs>
+    </type>
+    
+    <type name="org.neilcorlett.psf.agb">
+      <allattrs>
+        kMDItemInformation
+        kMDItemTitle
+        kMDItemAuthors
+        kMDItemAlbum
+        kMDItemGenre
+        kMDItemCopyright
+        kMDItemDurationSeconds
+        com_danielecattaneo_chiptunemdimporter_dumper
+      </allattrs>
+      <displayattrs>
+        kMDItemInformation
+        kMDItemTitle
+        kMDItemAuthors
+        kMDItemAlbum
+        kMDItemGenre
+        kMDItemCopyright
+        kMDItemDurationSeconds
+        com_danielecattaneo_chiptunemdimporter_dumper
+      </displayattrs>
+    </type>
+    
+    <type name="org.neilcorlett.psf.capcomq">
+      <allattrs>
+        kMDItemInformation
+        kMDItemTitle
+        kMDItemAuthors
+        kMDItemAlbum
+        kMDItemGenre
+        kMDItemCopyright
+        kMDItemDurationSeconds
+        com_danielecattaneo_chiptunemdimporter_dumper
+      </allattrs>
+      <displayattrs>
+        kMDItemInformation
+        kMDItemTitle
+        kMDItemAuthors
+        kMDItemAlbum
+        kMDItemGenre
+        kMDItemCopyright
+        kMDItemDurationSeconds
+        com_danielecattaneo_chiptunemdimporter_dumper
+      </displayattrs>
+    </type>
+    
+    <type name="org.neilcorlett.psf.nintendods">
+      <allattrs>
+        kMDItemInformation
+        kMDItemTitle
+        kMDItemAuthors
+        kMDItemAlbum
+        kMDItemGenre
+        kMDItemCopyright
+        kMDItemDurationSeconds
+        com_danielecattaneo_chiptunemdimporter_dumper
+      </allattrs>
+      <displayattrs>
+        kMDItemInformation
+        kMDItemTitle
+        kMDItemAuthors
+        kMDItemAlbum
+        kMDItemGenre
+        kMDItemCopyright
+        kMDItemDurationSeconds
+        com_danielecattaneo_chiptunemdimporter_dumper
+      </displayattrs>
+    </type>
+    
   </types>
 </schema>

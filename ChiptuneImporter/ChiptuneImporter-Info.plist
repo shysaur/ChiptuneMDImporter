@@ -8,6 +8,86 @@
 	<array>
 		<dict>
 			<key>CFBundleTypeName</key>
+			<string>Nintendo DS Sound Format</string>
+			<key>CFBundleTypeRole</key>
+			<string>MDImporter</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>org.neilcorlett.psf.nintendods</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Capcom Q Sound Format</string>
+			<key>CFBundleTypeRole</key>
+			<string>MDImporter</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>org.neilcorlett.psf.capcomq</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Game Boy Advance Sound Format</string>
+			<key>CFBundleTypeRole</key>
+			<string>MDImporter</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>org.neilcorlett.psf.agb</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Nintendo 64 Sound Format</string>
+			<key>CFBundleTypeRole</key>
+			<string>MDImporter</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>org.neilcorlett.psf.nintendo64</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Dreamcast Sound Format</string>
+			<key>CFBundleTypeRole</key>
+			<string>MDImporter</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>org.neilcorlett.psf.dreamcast</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Sega Saturn Sound Format</string>
+			<key>CFBundleTypeRole</key>
+			<string>MDImporter</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>org.neilcorlett.psf.saturn</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Playstation 2 Sound Format</string>
+			<key>CFBundleTypeRole</key>
+			<string>MDImporter</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>org.neilcorlett.psf.playstation2</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Playstation Sound Format</string>
+			<key>CFBundleTypeRole</key>
+			<string>MDImporter</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>org.neilcorlett.psf.playstation</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
 			<string>Super NES SPC700 Sound Format</string>
 			<key>CFBundleTypeRole</key>
 			<string>MDImporter</string>
@@ -48,7 +128,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>0.1.0</string>
 	<key>CFBundleVersion</key>
-	<string>53</string>
+	<string>78</string>
 	<key>CFPlugInDynamicRegisterFunction</key>
 	<string></string>
 	<key>CFPlugInDynamicRegistration</key>
@@ -73,6 +153,174 @@
 	<string>Copyright © 2014 Daniele Cattaneo. All rights reserved.</string>
 	<key>UTImportedTypeDeclarations</key>
 	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.audio</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Nintendo DS Sound Format</string>
+			<key>UTTypeIdentifier</key>
+			<string>org.neilcorlett.psf.nintendods</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<string>2SF </string>
+				<key>public.filename-extension</key>
+				<array>
+					<string>mini2sf</string>
+					<string>2sf</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.audio</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Capcom Q Sound Format</string>
+			<key>UTTypeIdentifier</key>
+			<string>org.neilcorlett.psf.capcomq</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<string>QSF </string>
+				<key>public.filename-extension</key>
+				<array>
+					<string>miniqsf</string>
+					<string>qsf</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.audio</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Game Boy Advance Sound Format</string>
+			<key>UTTypeIdentifier</key>
+			<string>org.neilcorlett.psf.agb</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<string>GSF </string>
+				<key>public.filename-extension</key>
+				<array>
+					<string>minigsf</string>
+					<string>gsf</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.audio</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Nintendo 64 Sound Format</string>
+			<key>UTTypeIdentifier</key>
+			<string>org.neilcorlett.psf.nintendo64</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<string>USF </string>
+				<key>public.filename-extension</key>
+				<array>
+					<string>miniusf</string>
+					<string>usf</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.audio</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Dreamcast Sound Format</string>
+			<key>UTTypeIdentifier</key>
+			<string>org.neilcorlett.psf.dreamcast</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<string>DSF </string>
+				<key>public.filename-extension</key>
+				<array>
+					<string>minidsf</string>
+					<string>dsf</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.audio</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Sega Saturn Sound Format</string>
+			<key>UTTypeIdentifier</key>
+			<string>org.neilcorlett.psf.saturn</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<string>SSF </string>
+				<key>public.filename-extension</key>
+				<array>
+					<string>minissf</string>
+					<string>ssf</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.audio</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Playstation 2 Sound Format</string>
+			<key>UTTypeIdentifier</key>
+			<string>org.neilcorlett.psf.playstation2</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<string>PSF2</string>
+				<key>public.filename-extension</key>
+				<array>
+					<string>minipsf2</string>
+					<string>psf2</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.audio</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Playstation Sound Format</string>
+			<key>UTTypeIdentifier</key>
+			<string>org.neilcorlett.psf.playstation</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>com.apple.ostype</key>
+				<string>PSF </string>
+				<key>public.filename-extension</key>
+				<array>
+					<string>minipsf</string>
+					<string>psf</string>
+				</array>
+			</dict>
+		</dict>
 		<dict>
 			<key>UTTypeConformsTo</key>
 			<array>

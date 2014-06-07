@@ -20,6 +20,7 @@
 		01FB7F42193D0E5C003707D7 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 01FB7F41193D0E5C003707D7 /* main.c */; };
 		01FB7F44193D0E5C003707D7 /* GetMetadataForFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB7F43193D0E5C003707D7 /* GetMetadataForFile.m */; };
 		01FB7F47193D0E5C003707D7 /* ChiptuneMDImporter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 01FB7F46193D0E5C003707D7 /* ChiptuneMDImporter.mm */; };
+		01FD721519437468003EFF02 /* CMIPSFTagParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FD721419437468003EFF02 /* CMIPSFTagParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		01FB7F45193D0E5C003707D7 /* ChiptuneMDImporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChiptuneMDImporter.h; sourceTree = "<group>"; };
 		01FB7F46193D0E5C003707D7 /* ChiptuneMDImporter.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ChiptuneMDImporter.mm; sourceTree = "<group>"; };
 		01FB7F49193D0E5C003707D7 /* ChiptuneImporter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChiptuneImporter-Prefix.pch"; sourceTree = "<group>"; };
+		01FD721319437468003EFF02 /* CMIPSFTagParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMIPSFTagParser.h; path = ChiptuneImporter/CMIPSFTagParser.h; sourceTree = "<group>"; };
+		01FD721419437468003EFF02 /* CMIPSFTagParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMIPSFTagParser.m; path = ChiptuneImporter/CMIPSFTagParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,7 @@
 		01FB7F27193D0E5C003707D7 = {
 			isa = PBXGroup;
 			children = (
+				01FD720F19436BB8003EFF02 /* PSFTags */,
 				017D97C21940EE6A00E84613 /* AlphaIISPCID666 */,
 				01FB7F3B193D0E5C003707D7 /* ChiptuneImporter */,
 				01FB7F32193D0E5C003707D7 /* Frameworks */,
@@ -127,6 +131,15 @@
 				017EDAE3193D337C00FE2B2B /* schema.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		01FD720F19436BB8003EFF02 /* PSFTags */ = {
+			isa = PBXGroup;
+			children = (
+				01FD721319437468003EFF02 /* CMIPSFTagParser.h */,
+				01FD721419437468003EFF02 /* CMIPSFTagParser.m */,
+			);
+			name = PSFTags;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +228,7 @@
 				01FB7F47193D0E5C003707D7 /* ChiptuneMDImporter.mm in Sources */,
 				017D97C91940EEA400E84613 /* A2Str.c in Sources */,
 				01FB7F42193D0E5C003707D7 /* main.c in Sources */,
+				01FD721519437468003EFF02 /* CMIPSFTagParser.m in Sources */,
 				01FB7F44193D0E5C003707D7 /* GetMetadataForFile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

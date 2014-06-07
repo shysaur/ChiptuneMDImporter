@@ -7,6 +7,7 @@
 //
 
 #import "ChiptuneMDImporter.h"
+#import "CMIPSFTagParser.h"
 #include <stdio.h>
 #include <stdint.h>
 
@@ -19,6 +20,7 @@ const CFStringRef kMDItemChiptuneDumper = (CFStringRef)@"com_danielecattaneo_chi
 typedef enum {
   kNSF,
   kGBS,
+  kPSF,
   kUnsupported,
   kUnreadable
 } tFileType;
@@ -32,10 +34,12 @@ typedef struct {
 
 const uint8_t nsf_magic[] = {'N','E','S','M', 0x1A};
 const uint8_t gbs_magic[] = {'G','B','S', 0x01};
+const uint8_t psf_magic[] = {'P','S','F'};
 
 const tMagic magics[] = {
   {kNSF, 5, nsf_magic},
   {kGBS, 4, gbs_magic},
+  {kPSF, 3, psf_magic},
   {kUnsupported, 0, NULL}
 };
 
@@ -100,6 +104,9 @@ void AddAttributeNumber(NSMutableDictionary *sd, double n, CFStringRef name) {
       break;
     case kGBS:
       result = [self importGBS:fp attributes:spotlightData];
+      break;
+    case kPSF:
+      result = [self importPSF:fp attributes:spotlightData];
       break;
     default:
       result = NO;
@@ -178,6 +185,56 @@ void AddAttributeNumber(NSMutableDictionary *sd, double n, CFStringRef name) {
   songlen = spctag.GetSong();
   if (songlen != spctag.defSong) AddAttributeNumber(sd, songlen/64000.0, kMDItemDurationSeconds);
   AddAttribute(sd, spctag.dumper, kMDItemChiptuneDumper);
+  
+  return YES;
+}
+
+
+- (BOOL)importPSF:(FILE *)fp attributes:(NSMutableDictionary *)sd
+{
+  NSString *key;
+  NSMutableDictionary *intermdict;
+  CMIPSFTagParser *tp;
+  BOOL res;
+  
+  tp = [CMIPSFTagParser tagsWithFile:fp error:&res];
+  if (!res) return NO;
+  
+  intermdict = [tp tagDictionary];
+  if (!intermdict) return NO;
+  
+  for (key in intermdict) {
+    CFStringRef outk = NULL;
+    id val;
+    
+    if ([key isEqualToString:@"comment"])
+      outk = kMDItemInformation;
+    else if ([key isEqualToString:@"title"])
+      outk = kMDItemTitle;
+    else if ([key isEqualToString:@"artist"])
+      outk = kMDItemAuthors;
+    else if ([key isEqualToString:@"game"])
+      outk = kMDItemAlbum;
+    else if ([key isEqualToString:@"genre"])
+      outk = kMDItemGenre;
+    else if ([key isEqualToString:@"copyright"])
+      outk = kMDItemCopyright;
+    else if ([key isEqualToString:@"length"])
+      outk = kMDItemDurationSeconds;
+    else if ([key hasSuffix:@"by"] && [key length] == 5)
+      outk = kMDItemChiptuneDumper;
+    
+    if (outk) {
+      if (outk == kMDItemAuthors)
+        val = [NSArray arrayWithObject:[intermdict valueForKey:key]];
+      else if (outk == kMDItemDurationSeconds)
+        val = DurationStringToSeconds([intermdict valueForKey:key]);
+      else
+        val = [intermdict valueForKey:key];
+      
+      [sd setValue:val forKey:(__bridge NSString*)outk];
+    }
+  }
   
   return YES;
 }

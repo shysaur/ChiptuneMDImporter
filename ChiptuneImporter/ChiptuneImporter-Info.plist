@@ -45,8 +45,10 @@
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>${PRODUCT_NAME}</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>53</string>
 	<key>CFPlugInDynamicRegisterFunction</key>
 	<string></string>
 	<key>CFPlugInDynamicRegistration</key>
@@ -72,6 +74,15 @@
 	<key>UTImportedTypeDeclarations</key>
 	<array>
 		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.audio</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Super NES SPC700 Sound Format</string>
+			<key>UTTypeIdentifier</key>
+			<string>org.creaothceann.spc</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>com.apple.ostype</key>
@@ -81,15 +92,6 @@
 					<string>spc</string>
 				</array>
 			</dict>
-			<key>UTTypeConformsTo</key>
-			<array>
-				<string>public.audio</string>
-				<string>public.content</string>
-			</array>
-			<key>UTTypeIdentifier</key>
-			<string>org.creaothceann.spc</string>
-			<key>UTTypeDescription</key>
-			<string>Super NES SPC700 Sound Format</string>
 		</dict>
 		<dict>
 			<key>UTTypeConformsTo</key>

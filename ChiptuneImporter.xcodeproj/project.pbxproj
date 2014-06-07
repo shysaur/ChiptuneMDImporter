@@ -139,6 +139,7 @@
 				01FB7F2C193D0E5C003707D7 /* Sources */,
 				01FB7F2D193D0E5C003707D7 /* Frameworks */,
 				01FB7F2E193D0E5C003707D7 /* Resources */,
+				01FD720E19433253003EFF02 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -187,6 +188,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01FD720E19433253003EFF02 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "VERNO=$(/usr/libexec/PlistBuddy -c \"Print :CFBundleVersion\" \"$INFOPLIST_FILE\")\necho $VERNO\nVERNO=$((VERNO+1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $VERNO\" \"$INFOPLIST_FILE\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		01FB7F2C193D0E5C003707D7 /* Sources */ = {

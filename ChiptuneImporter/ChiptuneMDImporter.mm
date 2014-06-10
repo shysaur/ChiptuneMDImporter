@@ -14,8 +14,12 @@
 #import "ID666.h"
 
 
-const CFStringRef kMDItemChiptuneOST = (CFStringRef)@"com_danielecattaneo_chiptunemdimporter_ost";
-const CFStringRef kMDItemChiptuneDumper = (CFStringRef)@"com_danielecattaneo_chiptunemdimporter_dumper";
+const CFStringRef kMDItemChiptuneOST =
+        (CFStringRef)@"com_danielecattaneo_chiptunemdimporter_ost";
+const CFStringRef kMDItemChiptuneDumper =
+        (CFStringRef)@"com_danielecattaneo_chiptunemdimporter_dumper";
+const CFStringRef kMDItemChiptuneExpansion =
+        (CFStringRef)@"com_danielecattaneo_chiptunemdimporter_expansion";
 
 typedef enum {
   kNSF,
@@ -65,13 +69,19 @@ tFileType DetectFileType(FILE *fp) {
 
 void AddAttribute(NSMutableDictionary *sd, char *s, CFStringRef name) {
   if (*s != '\0')
-    [sd setObject:[NSString stringWithCString:s encoding:NSWindowsCP1252StringEncoding] forKey:(__bridge NSString*)name];
+    [sd setObject:[NSString stringWithCString:s
+                            encoding:NSWindowsCP1252StringEncoding]
+        forKey:(__bridge NSString*)name];
 }
 
 
 void AddAttributeArray(NSMutableDictionary *sd, char *s, CFStringRef name) {
   if (*s != '\0')
-    [sd setObject:[NSArray arrayWithObject:[NSString stringWithCString:s encoding:NSWindowsCP1252StringEncoding]] forKey:(__bridge NSString*)name];
+    [sd setObject:[NSArray
+                   arrayWithObject:[NSString
+                                    stringWithCString:s
+                                    encoding:NSWindowsCP1252StringEncoding]]
+           forKey:(__bridge NSString*)name];
 }
 
 
@@ -83,7 +93,8 @@ void AddAttributeNumber(NSMutableDictionary *sd, double n, CFStringRef name) {
 @implementation ChiptuneMDImporter
 
 
-- (BOOL)importFileAtPath:(NSString *)filePath attributes:(NSMutableDictionary *)spotlightData
+- (BOOL)importFileAtPath:(NSString *)filePath
+              attributes:(NSMutableDictionary *)spotlightData
 {
   BOOL result;
   tFileType ft;
@@ -119,21 +130,40 @@ void AddAttributeNumber(NSMutableDictionary *sd, double n, CFStringRef name) {
 
 - (BOOL)importNSF:(FILE *)fp attributes:(NSMutableDictionary *)sd
 {
-  char buf[32+1];
+  const char *exp[] = {
+    "VRC6",
+    "VRC7",
+    "FDS",
+    "MMC5",
+    "Namco 106",
+    "Sunsoft FME-07"
+  };
+  char header[0x80];
+  char buf[256];
+  int i, expm;
+  
+  if (fseek(fp, 0, SEEK_SET) < 0) return NO;
+  if (fread(header, sizeof(char), 0x80, fp) < 0x80) return NO;
   
   buf[32] = '\0';
-  
-  if (fseek(fp, 0x0E, SEEK_SET) < 0) return NO;
-  if (fread(buf, sizeof(char), 32, fp) < 32) return NO;
+  memcpy(buf, header+0xE, 32);
   AddAttribute(sd, buf, kMDItemTitle);
-  
-  if (fseek(fp, 0x2E, SEEK_SET) < 0) return NO;
-  if (fread(buf, sizeof(char), 32, fp) < 32) return NO;
+  memcpy(buf, header+0x2E, 32);
   AddAttributeArray(sd, buf, kMDItemAuthors);
-  
-  if (fseek(fp, 0x4E, SEEK_SET) < 0) return NO;
-  if (fread(buf, sizeof(char), 32, fp) < 32) return NO;
+  memcpy(buf, header+0x4E, 32);
   AddAttribute(sd, buf, kMDItemCopyright);
+  
+  buf[0] = '\0';
+  if (header[0x7B]) {
+    expm = 1;
+    for (i=0; i<6; i++, expm <<= 1) {
+      if ((expm - 1) & header[0x7B])
+        strcat(buf, ", ");
+      if (expm & header[0x7B])
+        strcat(buf, exp[i]);
+    }
+    AddAttribute(sd, buf, kMDItemChiptuneExpansion);
+  }
   
   return YES;
 }
@@ -141,20 +171,18 @@ void AddAttributeNumber(NSMutableDictionary *sd, double n, CFStringRef name) {
 
 - (BOOL)importGBS:(FILE *)fp attributes:(NSMutableDictionary *)sd
 {
+  char header[0x70];
   char buf[32+1];
   
+  if (fseek(fp, 0x00, SEEK_SET) < 0) return NO;
+  if (fread(header, sizeof(char), 0x70, fp) < 0x70) return NO;
+  
   buf[32] = '\0';
-  
-  if (fseek(fp, 0x10, SEEK_SET) < 0) return NO;
-  if (fread(buf, sizeof(char), 32, fp) < 32) return NO;
+  memcpy(buf, header+0x10, 32);
   AddAttribute(sd, buf, kMDItemTitle);
-  
-  if (fseek(fp, 0x30, SEEK_SET) < 0) return NO;
-  if (fread(buf, sizeof(char), 32, fp) < 32) return NO;
+  memcpy(buf, header+0x30, 32);
   AddAttributeArray(sd, buf, kMDItemAuthors);
-  
-  if (fseek(fp, 0x50, SEEK_SET) < 0) return NO;
-  if (fread(buf, sizeof(char), 32, fp) < 32) return NO;
+  memcpy(buf, header+0x50, 32);
   AddAttribute(sd, buf, kMDItemCopyright);
   
   return YES;

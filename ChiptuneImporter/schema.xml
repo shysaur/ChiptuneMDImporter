@@ -7,6 +7,7 @@ file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.fra
   <attributes>
     <attribute name="com_danielecattaneo_chiptunemdimporter_ost" type="CFString"/>
     <attribute name="com_danielecattaneo_chiptunemdimporter_dumper" type="CFString"/>
+    <attribute name="com_danielecattaneo_chiptunemdimporter_expansion" type="CFString"/>
   </attributes>
   
   <types>
@@ -16,11 +17,13 @@ file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.fra
         kMDItemTitle
         kMDItemAuthors
         kMDItemCopyright
+        com_danielecattaneo_chiptunemdimporter_expansion
       </allattrs>
       <displayattrs>
         kMDItemTitle
         kMDItemAuthors
         kMDItemCopyright
+        com_danielecattaneo_chiptunemdimporter_expansion
       </displayattrs>
     </type>
     

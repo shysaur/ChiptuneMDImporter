@@ -6,8 +6,10 @@
   Copyright (c) 2014 Daniele Cattaneo. All rights reserved.
 */
 
-"com_danielecattaneo_chiptunemdimporter_ost" = "Original Soundtrack";
+"com_danielecattaneo_chiptunemdimporter_ost" = "Soundtrack";
 "com_danielecattaneo_chiptunemdimporter_dumper" = "Dumper";
+"com_danielecattaneo_chiptunemdimporter_expansion" = "Expansion";
 
 "com_danielecattaneo_chiptunemdimporter_ost.Description" = "Title of the original soundtrack album disc.";
 "com_danielecattaneo_chiptunemdimporter_dumper.Description" = "Author of the sound code dump.";
+"com_danielecattaneo_chiptunemdimporter_expansion.Description" = "Expansion chip used.";

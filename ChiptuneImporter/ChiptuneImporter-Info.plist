@@ -7,8 +7,6 @@
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleTypeName</key>
-			<string>Nintendo DS Sound Format</string>
 			<key>CFBundleTypeRole</key>
 			<string>MDImporter</string>
 			<key>LSItemContentTypes</key>
@@ -17,8 +15,6 @@
 			</array>
 		</dict>
 		<dict>
-			<key>CFBundleTypeName</key>
-			<string>Capcom Q Sound Format</string>
 			<key>CFBundleTypeRole</key>
 			<string>MDImporter</string>
 			<key>LSItemContentTypes</key>
@@ -27,8 +23,6 @@
 			</array>
 		</dict>
 		<dict>
-			<key>CFBundleTypeName</key>
-			<string>Game Boy Advance Sound Format</string>
 			<key>CFBundleTypeRole</key>
 			<string>MDImporter</string>
 			<key>LSItemContentTypes</key>
@@ -37,8 +31,6 @@
 			</array>
 		</dict>
 		<dict>
-			<key>CFBundleTypeName</key>
-			<string>Nintendo 64 Sound Format</string>
 			<key>CFBundleTypeRole</key>
 			<string>MDImporter</string>
 			<key>LSItemContentTypes</key>
@@ -47,8 +39,6 @@
 			</array>
 		</dict>
 		<dict>
-			<key>CFBundleTypeName</key>
-			<string>Dreamcast Sound Format</string>
 			<key>CFBundleTypeRole</key>
 			<string>MDImporter</string>
 			<key>LSItemContentTypes</key>
@@ -57,8 +47,6 @@
 			</array>
 		</dict>
 		<dict>
-			<key>CFBundleTypeName</key>
-			<string>Sega Saturn Sound Format</string>
 			<key>CFBundleTypeRole</key>
 			<string>MDImporter</string>
 			<key>LSItemContentTypes</key>
@@ -67,8 +55,6 @@
 			</array>
 		</dict>
 		<dict>
-			<key>CFBundleTypeName</key>
-			<string>Playstation 2 Sound Format</string>
 			<key>CFBundleTypeRole</key>
 			<string>MDImporter</string>
 			<key>LSItemContentTypes</key>
@@ -77,8 +63,6 @@
 			</array>
 		</dict>
 		<dict>
-			<key>CFBundleTypeName</key>
-			<string>Playstation Sound Format</string>
 			<key>CFBundleTypeRole</key>
 			<string>MDImporter</string>
 			<key>LSItemContentTypes</key>
@@ -87,8 +71,6 @@
 			</array>
 		</dict>
 		<dict>
-			<key>CFBundleTypeName</key>
-			<string>Super NES SPC700 Sound Format</string>
 			<key>CFBundleTypeRole</key>
 			<string>MDImporter</string>
 			<key>LSItemContentTypes</key>
@@ -97,8 +79,6 @@
 			</array>
 		</dict>
 		<dict>
-			<key>CFBundleTypeName</key>
-			<string>Game Boy Sound File</string>
 			<key>CFBundleTypeRole</key>
 			<string>MDImporter</string>
 			<key>LSItemContentTypes</key>
@@ -107,8 +87,6 @@
 			</array>
 		</dict>
 		<dict>
-			<key>CFBundleTypeName</key>
-			<string>Nintendo Sound File</string>
 			<key>CFBundleTypeRole</key>
 			<string>MDImporter</string>
 			<key>LSItemContentTypes</key>
@@ -128,7 +106,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>0.1.0</string>
 	<key>CFBundleVersion</key>
-	<string>89</string>
+	<string>90</string>
 	<key>CFPlugInDynamicRegisterFunction</key>
 	<string></string>
 	<key>CFPlugInDynamicRegistration</key>
@@ -157,6 +135,7 @@
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.audio</string>
+				<string>public.data</string>
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
@@ -165,8 +144,6 @@
 			<string>org.neilcorlett.psf.nintendods</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
-				<key>com.apple.ostype</key>
-				<string>2SF </string>
 				<key>public.filename-extension</key>
 				<array>
 					<string>mini2sf</string>
@@ -178,6 +155,7 @@
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.audio</string>
+				<string>public.data</string>
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
@@ -186,8 +164,6 @@
 			<string>org.neilcorlett.psf.capcomq</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
-				<key>com.apple.ostype</key>
-				<string>QSF </string>
 				<key>public.filename-extension</key>
 				<array>
 					<string>miniqsf</string>
@@ -199,6 +175,7 @@
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.audio</string>
+				<string>public.data</string>
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
@@ -207,8 +184,6 @@
 			<string>org.neilcorlett.psf.agb</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
-				<key>com.apple.ostype</key>
-				<string>GSF </string>
 				<key>public.filename-extension</key>
 				<array>
 					<string>minigsf</string>
@@ -220,6 +195,7 @@
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.audio</string>
+				<string>public.data</string>
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
@@ -228,8 +204,6 @@
 			<string>org.neilcorlett.psf.nintendo64</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
-				<key>com.apple.ostype</key>
-				<string>USF </string>
 				<key>public.filename-extension</key>
 				<array>
 					<string>miniusf</string>
@@ -241,6 +215,7 @@
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.audio</string>
+				<string>public.data</string>
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
@@ -249,8 +224,6 @@
 			<string>org.neilcorlett.psf.dreamcast</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
-				<key>com.apple.ostype</key>
-				<string>DSF </string>
 				<key>public.filename-extension</key>
 				<array>
 					<string>minidsf</string>
@@ -262,6 +235,7 @@
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.audio</string>
+				<string>public.data</string>
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
@@ -270,8 +244,6 @@
 			<string>org.neilcorlett.psf.saturn</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
-				<key>com.apple.ostype</key>
-				<string>SSF </string>
 				<key>public.filename-extension</key>
 				<array>
 					<string>minissf</string>
@@ -283,6 +255,7 @@
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.audio</string>
+				<string>public.data</string>
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
@@ -291,8 +264,6 @@
 			<string>org.neilcorlett.psf.playstation2</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
-				<key>com.apple.ostype</key>
-				<string>PSF2</string>
 				<key>public.filename-extension</key>
 				<array>
 					<string>minipsf2</string>
@@ -304,6 +275,7 @@
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.audio</string>
+				<string>public.data</string>
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
@@ -312,8 +284,6 @@
 			<string>org.neilcorlett.psf.playstation</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
-				<key>com.apple.ostype</key>
-				<string>PSF </string>
 				<key>public.filename-extension</key>
 				<array>
 					<string>minipsf</string>
@@ -325,6 +295,7 @@
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.audio</string>
+				<string>public.data</string>
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
@@ -333,8 +304,6 @@
 			<string>org.creaothceann.spc</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
-				<key>com.apple.ostype</key>
-				<string>SPC </string>
 				<key>public.filename-extension</key>
 				<array>
 					<string>spc</string>
@@ -345,6 +314,7 @@
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.audio</string>
+				<string>public.data</string>
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
@@ -353,8 +323,6 @@
 			<string>org.scottworley.gbs</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
-				<key>com.apple.ostype</key>
-				<string>GBS </string>
 				<key>public.filename-extension</key>
 				<array>
 					<string>gbs</string>
@@ -365,6 +333,7 @@
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.audio</string>
+				<string>public.data</string>
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
@@ -373,8 +342,6 @@
 			<string>org.kevtris.nsf</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
-				<key>com.apple.ostype</key>
-				<string>NSF </string>
 				<key>public.filename-extension</key>
 				<array>
 					<string>nsf</string>

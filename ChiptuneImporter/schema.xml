@@ -45,7 +45,7 @@ file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.fra
         kMDItemTitle
         kMDItemAlbum
         kMDItemAuthors
-        kMDItemInformation
+        kMDItemComment
         kMDItemCopyright
         kMDItemPublishers
         kMDItemDurationSeconds
@@ -57,7 +57,7 @@ file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.fra
         kMDItemAlbum
         kMDItemAuthors
         kMDItemCopyright
-        kMDItemInformation
+        kMDItemComment
         kMDItemPublishers
         kMDItemDurationSeconds
       </displayattrs>
@@ -65,7 +65,7 @@ file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.fra
     
     <type name="org.neilcorlett.psf.playstation">
       <allattrs>
-        kMDItemInformation
+        kMDItemComment
         kMDItemTitle
         kMDItemAuthors
         kMDItemAlbum
@@ -75,7 +75,7 @@ file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.fra
         com_danielecattaneo_chiptunemdimporter_dumper
       </allattrs>
       <displayattrs>
-        kMDItemInformation
+        kMDItemComment
         kMDItemTitle
         kMDItemAuthors
         kMDItemAlbum
@@ -88,7 +88,7 @@ file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.fra
     
     <type name="org.neilcorlett.psf.playstation2">
       <allattrs>
-        kMDItemInformation
+        kMDItemComment
         kMDItemTitle
         kMDItemAuthors
         kMDItemAlbum
@@ -98,7 +98,7 @@ file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.fra
         com_danielecattaneo_chiptunemdimporter_dumper
       </allattrs>
       <displayattrs>
-        kMDItemInformation
+        kMDItemComment
         kMDItemTitle
         kMDItemAuthors
         kMDItemAlbum
@@ -111,7 +111,7 @@ file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.fra
     
     <type name="org.neilcorlett.psf.saturn">
       <allattrs>
-        kMDItemInformation
+        kMDItemComment
         kMDItemTitle
         kMDItemAuthors
         kMDItemAlbum
@@ -121,7 +121,7 @@ file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.fra
         com_danielecattaneo_chiptunemdimporter_dumper
       </allattrs>
       <displayattrs>
-        kMDItemInformation
+        kMDItemComment
         kMDItemTitle
         kMDItemAuthors
         kMDItemAlbum
@@ -134,7 +134,7 @@ file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.fra
     
     <type name="org.neilcorlett.psf.dreamcast">
       <allattrs>
-        kMDItemInformation
+        kMDItemComment
         kMDItemTitle
         kMDItemAuthors
         kMDItemAlbum
@@ -144,7 +144,7 @@ file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.fra
         com_danielecattaneo_chiptunemdimporter_dumper
       </allattrs>
       <displayattrs>
-        kMDItemInformation
+        kMDItemComment
         kMDItemTitle
         kMDItemAuthors
         kMDItemAlbum
@@ -157,7 +157,7 @@ file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.fra
     
     <type name="org.neilcorlett.psf.nintendo64">
       <allattrs>
-        kMDItemInformation
+        kMDItemComment
         kMDItemTitle
         kMDItemAuthors
         kMDItemAlbum
@@ -167,7 +167,7 @@ file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.fra
         com_danielecattaneo_chiptunemdimporter_dumper
       </allattrs>
       <displayattrs>
-        kMDItemInformation
+        kMDItemComment
         kMDItemTitle
         kMDItemAuthors
         kMDItemAlbum
@@ -180,7 +180,7 @@ file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.fra
     
     <type name="org.neilcorlett.psf.agb">
       <allattrs>
-        kMDItemInformation
+        kMDItemComment
         kMDItemTitle
         kMDItemAuthors
         kMDItemAlbum
@@ -190,7 +190,7 @@ file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.fra
         com_danielecattaneo_chiptunemdimporter_dumper
       </allattrs>
       <displayattrs>
-        kMDItemInformation
+        kMDItemComment
         kMDItemTitle
         kMDItemAuthors
         kMDItemAlbum
@@ -203,7 +203,7 @@ file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.fra
     
     <type name="org.neilcorlett.psf.capcomq">
       <allattrs>
-        kMDItemInformation
+        kMDItemComment
         kMDItemTitle
         kMDItemAuthors
         kMDItemAlbum
@@ -213,7 +213,7 @@ file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.fra
         com_danielecattaneo_chiptunemdimporter_dumper
       </allattrs>
       <displayattrs>
-        kMDItemInformation
+        kMDItemComment
         kMDItemTitle
         kMDItemAuthors
         kMDItemAlbum
@@ -226,7 +226,7 @@ file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.fra
     
     <type name="org.neilcorlett.psf.nintendods">
       <allattrs>
-        kMDItemInformation
+        kMDItemComment
         kMDItemTitle
         kMDItemAuthors
         kMDItemAlbum
@@ -236,7 +236,7 @@ file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.fra
         com_danielecattaneo_chiptunemdimporter_dumper
       </allattrs>
       <displayattrs>
-        kMDItemInformation
+        kMDItemComment
         kMDItemTitle
         kMDItemAuthors
         kMDItemAlbum

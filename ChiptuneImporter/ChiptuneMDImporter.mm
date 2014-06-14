@@ -204,7 +204,7 @@ void AddAttributeNumber(NSMutableDictionary *sd, double n, CFStringRef name) {
   AddAttribute(sd, spctag.game, kMDItemAlbum);
   AddAttribute(sd, spctag.ost, kMDItemChiptuneOST);
   AddAttributeArray(sd, spctag.artist, kMDItemAuthors);
-  AddAttribute(sd, spctag.comment, kMDItemInformation);
+  AddAttribute(sd, spctag.comment, kMDItemComment);
   AddAttributeArray(sd, spctag.pub, kMDItemPublishers);
   if (spctag.copy) {
     sprintf(buf, "%d", spctag.copy);
@@ -236,7 +236,7 @@ void AddAttributeNumber(NSMutableDictionary *sd, double n, CFStringRef name) {
     id val;
     
     if ([key isEqualToString:@"comment"])
-      outk = kMDItemInformation;
+      outk = kMDItemComment;
     else if ([key isEqualToString:@"title"])
       outk = kMDItemTitle;
     else if ([key isEqualToString:@"artist"])

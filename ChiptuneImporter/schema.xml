@@ -60,6 +60,7 @@ file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.fra
         kMDItemComment
         kMDItemPublishers
         kMDItemDurationSeconds
+        com_danielecattaneo_chiptunemdimporter_dumper
       </displayattrs>
     </type>
     

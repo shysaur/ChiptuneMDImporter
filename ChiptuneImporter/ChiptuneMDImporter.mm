@@ -157,10 +157,11 @@ void AddAttributeNumber(NSMutableDictionary *sd, double n, CFStringRef name) {
   if (header[0x7B]) {
     expm = 1;
     for (i=0; i<6; i++, expm <<= 1) {
-      if ((expm - 1) & header[0x7B])
-        strcat(buf, ", ");
-      if (expm & header[0x7B])
+      if (expm & header[0x7B]) {
+        if ((expm - 1) & header[0x7B])
+          strcat(buf, ", ");
         strcat(buf, exp[i]);
+      }
     }
     AddAttribute(sd, buf, kMDItemChiptuneExpansion);
   }
@@ -189,7 +190,8 @@ void AddAttributeNumber(NSMutableDictionary *sd, double n, CFStringRef name) {
 }
 
 
-- (BOOL)attemptToImportSPC:(const char *)fn attributes:(NSMutableDictionary *)sd
+- (BOOL)attemptToImportSPC:(const char *)fn
+                attributes:(NSMutableDictionary *)sd
 {
   char buf[80];
   int songlen;
@@ -211,7 +213,8 @@ void AddAttributeNumber(NSMutableDictionary *sd, double n, CFStringRef name) {
     AddAttribute(sd, buf, kMDItemCopyright);
   }
   songlen = spctag.GetSong();
-  if (songlen != spctag.defSong) AddAttributeNumber(sd, songlen/64000.0, kMDItemDurationSeconds);
+  if (songlen != spctag.defSong)
+    AddAttributeNumber(sd, songlen/64000.0, kMDItemDurationSeconds);
   AddAttribute(sd, spctag.dumper, kMDItemChiptuneDumper);
   
   return YES;

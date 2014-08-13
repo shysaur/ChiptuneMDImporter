@@ -102,11 +102,11 @@ void AddAttributeNumber(NSMutableDictionary *sd, double n, CFStringRef name) {
   FILE *fp;
   
   fn = [filePath cStringUsingEncoding:NSUTF8StringEncoding];
-  if (!(fp = fopen(fn, "rb"))) return NO;
   
   if ([self attemptToImportSPC:fn attributes:spotlightData])
     return YES;
   
+  if (!(fp = fopen(fn, "rb"))) return NO;
   ft = DetectFileType(fp);
   
   switch (ft) {

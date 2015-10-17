@@ -135,32 +135,32 @@ BOOL CMIImportPSF(FILE *fp, NSMutableDictionary *sd)
     CFStringRef outk = NULL;
     id val;
     
-    if ([key isEqualToString:@"comment"])
+    if ([key isEqual:@"comment"])
       outk = kMDItemComment;
-    else if ([key isEqualToString:@"title"])
+    else if ([key isEqual:@"title"])
       outk = kMDItemTitle;
-    else if ([key isEqualToString:@"artist"])
+    else if ([key isEqual:@"artist"])
       outk = kMDItemAuthors;
-    else if ([key isEqualToString:@"game"])
+    else if ([key isEqual:@"game"])
       outk = kMDItemAlbum;
-    else if ([key isEqualToString:@"genre"])
+    else if ([key isEqual:@"genre"])
       outk = kMDItemGenre;
-    else if ([key isEqualToString:@"copyright"])
+    else if ([key isEqual:@"copyright"])
       outk = kMDItemCopyright;
-    else if ([key isEqualToString:@"length"])
+    else if ([key isEqual:@"length"])
       outk = kMDItemDurationSeconds;
     else if ([key hasSuffix:@"by"] && [key length] == 5)
       outk = kMDItemChiptuneDumper;
     
     if (outk) {
       if (outk == kMDItemAuthors)
-        val = [NSArray arrayWithObject:[intermdict valueForKey:key]];
+        val = [NSArray arrayWithObject:[intermdict objectForKey:key]];
       else if (outk == kMDItemDurationSeconds)
-        val = DurationStringToSeconds([intermdict valueForKey:key]);
+        val = DurationStringToSeconds([intermdict objectForKey:key]);
       else
-        val = [intermdict valueForKey:key];
+        val = [intermdict objectForKey:key];
       
-      [sd setValue:val forKey:(__bridge NSString*)outk];
+      [sd CMI_setAttribute:val forKey:outk];
     }
   }
   
@@ -209,7 +209,7 @@ BOOL CMIImportFile(NSString *filePath, NSMutableDictionary *spotlightData)
   const char *fn;
   FILE *fp;
   
-  fn = [filePath cStringUsingEncoding:NSUTF8StringEncoding];
+  fn = [filePath fileSystemRepresentation];
   
   if (CMIAttemptToImportSPC(fn, spotlightData))
     return YES;

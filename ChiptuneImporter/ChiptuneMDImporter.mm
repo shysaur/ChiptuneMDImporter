@@ -70,8 +70,8 @@ tFileType DetectFileType(FILE *fp) {
 void AddAttribute(NSMutableDictionary *sd, char *s, CFStringRef name) {
   if (*s != '\0')
     [sd setObject:[NSString stringWithCString:s
-                            encoding:NSWindowsCP1252StringEncoding]
-        forKey:(__bridge NSString*)name];
+                                     encoding:NSWindowsCP1252StringEncoding]
+           forKey:(__bridge NSString*)name];
 }
 
 
@@ -90,45 +90,7 @@ void AddAttributeNumber(NSMutableDictionary *sd, double n, CFStringRef name) {
 }
 
 
-@implementation ChiptuneMDImporter
-
-
-- (BOOL)importFileAtPath:(NSString *)filePath
-              attributes:(NSMutableDictionary *)spotlightData
-{
-  BOOL result;
-  tFileType ft;
-  const char *fn;
-  FILE *fp;
-  
-  fn = [filePath cStringUsingEncoding:NSUTF8StringEncoding];
-  
-  if ([self attemptToImportSPC:fn attributes:spotlightData])
-    return YES;
-  
-  if (!(fp = fopen(fn, "rb"))) return NO;
-  ft = DetectFileType(fp);
-  
-  switch (ft) {
-    case kNSF:
-      result = [self importNSF:fp attributes:spotlightData];
-      break;
-    case kGBS:
-      result = [self importGBS:fp attributes:spotlightData];
-      break;
-    case kPSF:
-      result = [self importPSF:fp attributes:spotlightData];
-      break;
-    default:
-      result = NO;
-  }
-
-  fclose(fp);
-  return result;
-}
-
-
-- (BOOL)importNSF:(FILE *)fp attributes:(NSMutableDictionary *)sd
+BOOL importNSF(FILE *fp, NSMutableDictionary *sd)
 {
   const char *exp[] = {
     "VRC6",
@@ -170,7 +132,7 @@ void AddAttributeNumber(NSMutableDictionary *sd, double n, CFStringRef name) {
 }
 
 
-- (BOOL)importGBS:(FILE *)fp attributes:(NSMutableDictionary *)sd
+BOOL importGBS(FILE *fp, NSMutableDictionary *sd)
 {
   char header[0x70];
   char buf[32+1];
@@ -190,8 +152,7 @@ void AddAttributeNumber(NSMutableDictionary *sd, double n, CFStringRef name) {
 }
 
 
-- (BOOL)attemptToImportSPC:(const char *)fn
-                attributes:(NSMutableDictionary *)sd
+BOOL attemptToImportSPC(const char *fn, NSMutableDictionary *sd)
 {
   char buf[80];
   int songlen;
@@ -221,7 +182,7 @@ void AddAttributeNumber(NSMutableDictionary *sd, double n, CFStringRef name) {
 }
 
 
-- (BOOL)importPSF:(FILE *)fp attributes:(NSMutableDictionary *)sd
+BOOL importPSF(FILE *fp, NSMutableDictionary *sd)
 {
   NSString *key;
   NSMutableDictionary *intermdict;
@@ -271,4 +232,38 @@ void AddAttributeNumber(NSMutableDictionary *sd, double n, CFStringRef name) {
 }
 
 
-@end
+BOOL importFile(NSString *filePath, NSMutableDictionary *spotlightData)
+{
+  BOOL result;
+  tFileType ft;
+  const char *fn;
+  FILE *fp;
+  
+  fn = [filePath cStringUsingEncoding:NSUTF8StringEncoding];
+  
+  if (attemptToImportSPC(fn, spotlightData))
+    return YES;
+  
+  if (!(fp = fopen(fn, "rb"))) return NO;
+  ft = DetectFileType(fp);
+  
+  switch (ft) {
+    case kNSF:
+      result = importNSF(fp, spotlightData);
+      break;
+    case kGBS:
+      result = importGBS(fp, spotlightData);
+      break;
+    case kPSF:
+      result = importPSF(fp, spotlightData);
+      break;
+    default:
+      result = NO;
+  }
+  
+  fclose(fp);
+  return result;
+}
+
+
+

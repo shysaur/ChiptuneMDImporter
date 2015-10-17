@@ -25,10 +25,9 @@ Boolean GetMetadataForFile(void *thisInterface, CFMutableDictionaryRef attribute
 Boolean GetMetadataForFile(void *thisInterface, CFMutableDictionaryRef attributes, CFStringRef contentTypeUTI, CFStringRef pathToFile)
 {
   Boolean ok = FALSE;
+  
   @autoreleasepool {
-    ChiptuneMDImporter *importer = [[ChiptuneMDImporter alloc] init];
-      
-    ok = [importer importFileAtPath:(__bridge NSString *)pathToFile attributes:(__bridge NSMutableDictionary *)attributes];
+    ok = importFile((__bridge NSString *)pathToFile, (__bridge NSMutableDictionary *)attributes);
   }
   
 	// Return the status

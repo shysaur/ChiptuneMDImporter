@@ -8,9 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ChiptuneMDImporter : NSObject
 
-- (BOOL)importFileAtPath:(NSString *)filePath
-              attributes:(NSMutableDictionary *)attributes;
+#ifdef __cplusplus
+extern "C" {
+#endif
+  
+BOOL importFile(NSString *filePath, NSMutableDictionary *attributes);
 
-@end
+#ifdef __cplusplus
+}
+#endif

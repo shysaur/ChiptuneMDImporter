@@ -32,17 +32,12 @@ typedef enum {
 
 BOOL CMIImportNSF(FILE *fp, NSMutableDictionary *sd)
 {
-  const char *exp[] = {
-    "VRC6",
-    "VRC7",
-    "FDS",
-    "MMC5",
-    "Namco 106",
-    "Sunsoft FME-07"
-  };
   char header[0x80];
-  char buf[256];
+  char buf[32+1];
   int i, expm;
+  NSMutableString *expstr;
+  NSArray * const exp =
+    @[@"VRC6", @"VRC7", @"FDS", @"MMC5", @"Namco 106", @"Sunsoft FME-07"];
   
   if (fseek(fp, 0, SEEK_SET) < 0) return NO;
   if (fread(header, sizeof(char), 0x80, fp) < 0x80) return NO;
@@ -55,17 +50,18 @@ BOOL CMIImportNSF(FILE *fp, NSMutableDictionary *sd)
   memcpy(buf, header+0x4E, 32);
   [sd CMI_setCStringAttribute:buf forKey:kMDItemCopyright];
   
-  buf[0] = '\0';
+  expstr = [NSMutableString string];
   if (header[0x7B]) {
     expm = 1;
-    for (i=0; i<6; i++, expm <<= 1) {
+    for (i=0; i<6; i++) {
       if (expm & header[0x7B]) {
         if ((expm - 1) & header[0x7B])
-          strcat(buf, ", ");
-        strcat(buf, exp[i]);
+          [expstr appendString:@", "];
+        [expstr appendString:[exp objectAtIndex:i]];
       }
+      expm <<= 1;
     }
-    [sd CMI_setCStringAttribute:buf forKey:kMDItemChiptuneExpansion];
+    [sd CMI_setAttribute:expstr forKey:kMDItemChiptuneExpansion];
   }
   
   return YES;
@@ -94,7 +90,7 @@ BOOL CMIImportGBS(FILE *fp, NSMutableDictionary *sd)
 
 BOOL CMIAttemptToImportSPC(const char *fn, NSMutableDictionary *sd)
 {
-  char buf[80];
+  NSString *tmp;
   int songlen;
   ID666 spctag;
   ID6Type res;
@@ -110,8 +106,8 @@ BOOL CMIAttemptToImportSPC(const char *fn, NSMutableDictionary *sd)
   [sd CMI_setCStringAttribute:spctag.comment forKey:kMDItemComment];
   [sd CMI_setArrayAttributeWithCString:spctag.pub forKey:kMDItemPublishers];
   if (spctag.copy) {
-    sprintf(buf, "%d", spctag.copy);
-    [sd CMI_setCStringAttribute:buf forKey:kMDItemCopyright];
+    tmp = [NSString stringWithFormat:@"%d", spctag.copy];
+    [sd CMI_setAttribute:tmp forKey:kMDItemCopyright];
   }
   songlen = spctag.GetSong();
   if (songlen != spctag.defSong)

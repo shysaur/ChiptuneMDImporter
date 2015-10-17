@@ -13,7 +13,7 @@
 extern "C" {
 #endif
   
-BOOL importFile(NSString *filePath, NSMutableDictionary *attributes);
+BOOL CMIImportFile(NSString *filePath, NSMutableDictionary *attributes);
 
 #ifdef __cplusplus
 }

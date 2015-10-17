@@ -27,7 +27,7 @@ Boolean GetMetadataForFile(void *thisInterface, CFMutableDictionaryRef attribute
   Boolean ok = FALSE;
   
   @autoreleasepool {
-    ok = importFile((__bridge NSString *)pathToFile, (__bridge NSMutableDictionary *)attributes);
+    ok = CMIImportFile((__bridge NSString *)pathToFile, (__bridge NSMutableDictionary *)attributes);
   }
   
 	// Return the status

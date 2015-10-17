@@ -6,11 +6,10 @@
 //  Copyright (c) 2014 Daniele Cattaneo. All rights reserved.
 //
 
-#import "ChiptuneMDImporter.h"
-#import "CMIPSFTagParser.h"
 #include <stdio.h>
 #include <stdint.h>
-
+#import "ChiptuneMDImporter.h"
+#import "CMIPSFTagParser.h"
 #import "ID666.h"
 
 
@@ -27,44 +26,7 @@ typedef enum {
   kPSF,
   kUnsupported,
   kUnreadable
-} tFileType;
-
-typedef struct {
-  tFileType ft;
-  size_t size;
-  const uint8_t *data;
-} tMagic;
-
-
-const uint8_t nsf_magic[] = {'N','E','S','M', 0x1A};
-const uint8_t gbs_magic[] = {'G','B','S', 0x01};
-const uint8_t psf_magic[] = {'P','S','F'};
-
-const tMagic magics[] = {
-  {kNSF, 5, nsf_magic},
-  {kGBS, 4, gbs_magic},
-  {kPSF, 3, psf_magic},
-  {kUnsupported, 0, NULL}
-};
-
-
-tFileType DetectFileType(FILE *fp) {
-  int i;
-  uint8_t buf[16];
-  tFileType ft;
-  
-  errno = 0;
-  rewind(fp);
-  if (errno) return kUnreadable;
-  
-  if (fread(buf, sizeof(uint8_t), 16, fp) < 16)
-    return kUnreadable;
-  
-  for (i=0; magics[i].ft != kUnsupported; i++)
-    if (memcmp(buf, magics[i].data, magics[i].size) == 0)
-      break;
-  return ft = magics[i].ft;
-}
+} CMIFileType;
 
 
 void AddAttribute(NSMutableDictionary *sd, char *s, CFStringRef name) {
@@ -90,7 +52,7 @@ void AddAttributeNumber(NSMutableDictionary *sd, double n, CFStringRef name) {
 }
 
 
-BOOL importNSF(FILE *fp, NSMutableDictionary *sd)
+BOOL CMIImportNSF(FILE *fp, NSMutableDictionary *sd)
 {
   const char *exp[] = {
     "VRC6",
@@ -132,7 +94,7 @@ BOOL importNSF(FILE *fp, NSMutableDictionary *sd)
 }
 
 
-BOOL importGBS(FILE *fp, NSMutableDictionary *sd)
+BOOL CMIImportGBS(FILE *fp, NSMutableDictionary *sd)
 {
   char header[0x70];
   char buf[32+1];
@@ -152,7 +114,7 @@ BOOL importGBS(FILE *fp, NSMutableDictionary *sd)
 }
 
 
-BOOL attemptToImportSPC(const char *fn, NSMutableDictionary *sd)
+BOOL CMIAttemptToImportSPC(const char *fn, NSMutableDictionary *sd)
 {
   char buf[80];
   int songlen;
@@ -182,7 +144,7 @@ BOOL attemptToImportSPC(const char *fn, NSMutableDictionary *sd)
 }
 
 
-BOOL importPSF(FILE *fp, NSMutableDictionary *sd)
+BOOL CMIImportPSF(FILE *fp, NSMutableDictionary *sd)
 {
   NSString *key;
   NSMutableDictionary *intermdict;
@@ -232,30 +194,64 @@ BOOL importPSF(FILE *fp, NSMutableDictionary *sd)
 }
 
 
-BOOL importFile(NSString *filePath, NSMutableDictionary *spotlightData)
+CMIFileType CMIDetectFileType(FILE *fp) {
+  int i;
+  uint8_t buf[16];
+  CMIFileType ft;
+  
+  const uint8_t nsf_magic[] = {'N','E','S','M', 0x1A};
+  const uint8_t gbs_magic[] = {'G','B','S', 0x01};
+  const uint8_t psf_magic[] = {'P','S','F'};
+  
+  const struct {
+    CMIFileType ft;
+    size_t size;
+    const uint8_t *data;
+  } magics[] = {
+    {kNSF, 5, nsf_magic},
+    {kGBS, 4, gbs_magic},
+    {kPSF, 3, psf_magic},
+    {kUnsupported, 0, NULL}
+  };
+  
+  errno = 0;
+  rewind(fp);
+  if (errno) return kUnreadable;
+  
+  if (fread(buf, sizeof(uint8_t), 16, fp) < 16)
+    return kUnreadable;
+  
+  for (i=0; magics[i].ft != kUnsupported; i++)
+    if (memcmp(buf, magics[i].data, magics[i].size) == 0)
+      break;
+  return ft = magics[i].ft;
+}
+
+
+BOOL CMIImportFile(NSString *filePath, NSMutableDictionary *spotlightData)
 {
   BOOL result;
-  tFileType ft;
+  CMIFileType ft;
   const char *fn;
   FILE *fp;
   
   fn = [filePath cStringUsingEncoding:NSUTF8StringEncoding];
   
-  if (attemptToImportSPC(fn, spotlightData))
+  if (CMIAttemptToImportSPC(fn, spotlightData))
     return YES;
   
   if (!(fp = fopen(fn, "rb"))) return NO;
-  ft = DetectFileType(fp);
+  ft = CMIDetectFileType(fp);
   
   switch (ft) {
     case kNSF:
-      result = importNSF(fp, spotlightData);
+      result = CMIImportNSF(fp, spotlightData);
       break;
     case kGBS:
-      result = importGBS(fp, spotlightData);
+      result = CMIImportGBS(fp, spotlightData);
       break;
     case kPSF:
-      result = importPSF(fp, spotlightData);
+      result = CMIImportPSF(fp, spotlightData);
       break;
     default:
       result = NO;

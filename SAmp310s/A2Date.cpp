@@ -30,7 +30,7 @@ A2Date::~A2Date() {}
 //**************************************************************************************************
 // Incremental
 
-A2Date* __fastcall A2Date::Add(s32 i)
+A2Date* A2Date::Add(s32 i)
 {
 	if (date.d+i < aDays[date.m-1])
 	{
@@ -43,32 +43,32 @@ A2Date* __fastcall A2Date::Add(s32 i)
 	return this;
 }
 
-A2Date* __fastcall A2Date::operator--()
+A2Date* A2Date::operator--()
 {
 	return Add(-1);
 }
 
 
-A2Date* __fastcall A2Date::operator-=(s32 i)
+A2Date* A2Date::operator-=(s32 i)
 {
 	return Add(-i);
 }
 
 
-A2Date* __fastcall A2Date::operator+=(s32 i)
+A2Date* A2Date::operator+=(s32 i)
 {
 	return Add(i);
 }
 
 
-A2Date* __fastcall A2Date::operator++()
+A2Date* A2Date::operator++()
 {
 	return Add(1);
 }
 
 
 //**************************************************************************************************
-b8 __fastcall A2Date::SetDate(s32 year, s32 month, s32 day)
+b8 A2Date::SetDate(s32 year, s32 month, s32 day)
 {
 	if (!year || !month || !day) return 0;		//If any value is 0
 
@@ -88,7 +88,7 @@ b8 __fastcall A2Date::SetDate(s32 year, s32 month, s32 day)
 
 
 //**************************************************************************************************
-b8 __fastcall A2Date::SetDate(s32 days)
+b8 A2Date::SetDate(s32 days)
 {
 	s32	y,m,d;
 	b8	bc;
@@ -145,16 +145,16 @@ b8 __fastcall A2Date::SetDate(s32 days)
 
 
 //**************************************************************************************************
-v0 __fastcall A2Date::GetDate(s32 &year, s32 &month, s32 &day)
+v0 A2Date::GetDate(s32 &year, s32 &month, s32 &day)
 {
-	if (&year) year = date.y;
-	if (&month) month = date.m;
-	if (&day) day = date.d;
+	year = date.y;
+	month = date.m;
+	day = date.d;
 }
 
 
 //**************************************************************************************************
-u32 __fastcall A2Date::GetDays()
+u32 A2Date::GetDays()
 {
 	s32	y,m,d;
 
@@ -185,7 +185,7 @@ u32 __fastcall A2Date::GetDays()
 
 
 //**************************************************************************************************
-b8 __fastcall A2Date::ToStr(s8 *str)
+b8 A2Date::ToStr(s8 *str)
 {
 	if (!*(s32*)&date) return 0;
 

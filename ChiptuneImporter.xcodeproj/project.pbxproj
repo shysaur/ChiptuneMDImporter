@@ -73,13 +73,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		017D97C31940EEA400E84613 /* A2Date.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = A2Date.cpp; path = SAmp310s/A2Date.cpp; sourceTree = SOURCE_ROOT; };
-		017D97C41940EEA400E84613 /* A2Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = A2Date.h; path = SAmp310s/A2Date.h; sourceTree = SOURCE_ROOT; };
-		017D97C51940EEA400E84613 /* A2Str.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = A2Str.c; path = SAmp310s/A2Str.c; sourceTree = SOURCE_ROOT; };
-		017D97C61940EEA400E84613 /* A2Str.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = A2Str.h; path = SAmp310s/A2Str.h; sourceTree = SOURCE_ROOT; };
-		017D97C71940EEA400E84613 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Types.h; path = SAmp310s/Types.h; sourceTree = SOURCE_ROOT; };
-		017D97CA1940EEAE00E84613 /* ID666.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ID666.cpp; path = SAmp310s/SNES/ID666.cpp; sourceTree = SOURCE_ROOT; };
-		017D97CB1940EEAE00E84613 /* ID666.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ID666.h; path = SAmp310s/SNES/ID666.h; sourceTree = SOURCE_ROOT; };
+		017D97C31940EEA400E84613 /* A2Date.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.cpp.cpp; name = A2Date.cpp; path = SAmp310s/A2Date.cpp; sourceTree = SOURCE_ROOT; tabWidth = 4; usesTabs = 1; };
+		017D97C41940EEA400E84613 /* A2Date.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.h; name = A2Date.h; path = SAmp310s/A2Date.h; sourceTree = SOURCE_ROOT; tabWidth = 4; usesTabs = 1; };
+		017D97C51940EEA400E84613 /* A2Str.c */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.c; name = A2Str.c; path = SAmp310s/A2Str.c; sourceTree = SOURCE_ROOT; tabWidth = 4; usesTabs = 1; };
+		017D97C61940EEA400E84613 /* A2Str.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.h; name = A2Str.h; path = SAmp310s/A2Str.h; sourceTree = SOURCE_ROOT; tabWidth = 4; usesTabs = 1; };
+		017D97C71940EEA400E84613 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.h; name = Types.h; path = SAmp310s/Types.h; sourceTree = SOURCE_ROOT; tabWidth = 4; usesTabs = 1; };
+		017D97CA1940EEAE00E84613 /* ID666.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ID666.cpp; path = SAmp310s/SNES/ID666.cpp; sourceTree = SOURCE_ROOT; tabWidth = 4; usesTabs = 1; wrapsLines = 1; };
+		017D97CB1940EEAE00E84613 /* ID666.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.h; name = ID666.h; path = SAmp310s/SNES/ID666.h; sourceTree = SOURCE_ROOT; tabWidth = 4; usesTabs = 1; };
 		017EDAE1193D326300FE2B2B /* schema.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = schema.xml; sourceTree = "<group>"; };
 		017EDAE4193D337C00FE2B2B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/schema.strings; sourceTree = "<group>"; };
 		017FE5101BD2E9A200D8C41E /* ChiptuneImporterUTIHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChiptuneImporterUTIHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };

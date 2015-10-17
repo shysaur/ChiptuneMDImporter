@@ -176,7 +176,7 @@ private:
 	// In:
 	//    -> SPC header containing ID666 tag
 
-	v0	__fastcall GetID666(SPCHdr&);
+	v0	GetID666(SPCHdr&);
 
 
 	//**********************************************************************************************
@@ -191,7 +191,7 @@ private:
 	// Out:
 	//    True, if file has an XID6 tag
 
-	b8	__fastcall GetXID6(XID6Chk *pTag, s32 size);
+	b8	GetXID6(XID6Chk *pTag, s32 size);
 
 
 	//**********************************************************************************************
@@ -210,7 +210,7 @@ private:
 	// Out:
 	//    nothing
 
-	v0	__fastcall ToSPC(SPCHdr& spc, b8 bin);
+	v0	ToSPC(SPCHdr& spc, b8 bin);
 
 
 	//**********************************************************************************************
@@ -226,7 +226,7 @@ private:
 	//    -1, if string contains invalid characters
 	//    length of string, otherwise
 
-	static s32	__fastcall IsText(s8 *str, u32 len);
+	static s32	IsText(s8 *str, u32 len);
 
 
 	//**********************************************************************************************
@@ -242,7 +242,7 @@ private:
 	// Out:
 	//    -> next sub-chunk position
 
-	static XID6Chk*	__fastcall WriteVal(XID6Chk *pChk, u8 id, u16 data);
+	static XID6Chk*	WriteVal(XID6Chk *pChk, u8 id, u16 data);
 
 
 	//**********************************************************************************************
@@ -259,7 +259,7 @@ private:
 	// Out:
 	//    -> next sub-chunk position
 
-	static XID6Chk*	__fastcall WriteStr(XID6Chk *pChk, u8 id, const s8 *str);
+	static XID6Chk*	WriteStr(XID6Chk *pChk, u8 id, const s8 *str);
 
 
 	//**********************************************************************************************
@@ -275,10 +275,10 @@ private:
 	// Out:
 	//    -> next sub-chunk position
 
-	static XID6Chk*	__fastcall WriteInt(XID6Chk *pChk, u8 id, u32 data);
+	static XID6Chk*	WriteInt(XID6Chk *pChk, u8 id, u32 data);
 
 
-	b8 __fastcall ToStr(s8 **ppStr, s8 *pFmt, const u32 len);
+	b8 ToStr(s8 **ppStr, s8 *pFmt, const u32 len);
 
 
 	//**********************************************************************************************
@@ -292,7 +292,7 @@ public:
 	ID666();
 	~ID666();
 
-	ID666*	__fastcall operator=(const ID666&);	//Copy ID666 object
+	ID666*	operator=(const ID666&);	//Copy ID666 object
 
 	//**********************************************************************************************
 	// Load Tag from SPC File
@@ -305,7 +305,7 @@ public:
 	// Out:
 	//    Type of file tag was loaded from
 
-	ID6Type	__fastcall LoadTag(const s8 *file, const u32 size = 0);
+	ID6Type	LoadTag(const s8 *file, const u32 size = 0);
 
 
 	//**********************************************************************************************
@@ -318,8 +318,8 @@ public:
 	// Out:
 	//    True, if tag was successfully saved
 
-	b8	__fastcall SaveTag(b8 bin, b8 ext);
-//	b8	__fastcall SaveTag(b8 bin, b8 ext, SPCReg *pReg, void *pRAM, void *pDSP, void *pXRAM);
+	b8	SaveTag(b8 bin, b8 ext);
+//	b8	SaveTag(b8 bin, b8 ext, SPCReg *pReg, void *pRAM, void *pDSP, void *pXRAM);
 
 
 	//**********************************************************************************************
@@ -347,7 +347,7 @@ public:
 	//    true, if the date was successfully converted
 	//    false, if the date contained invalid numbers, or was uninterpretable
 
-	static b8 	__fastcall FixDate(A2Date &date, u32 year, u8 month, u8 day);
+	static b8 	FixDate(A2Date &date, u32 year, u8 month, u8 day);
 	v0	inline SetDate(u32 year, u8 month, u8 day)
 				{if (FixDate(date,year,month,day)) datetxt[0] = 0;}
 
@@ -382,7 +382,7 @@ public:
 	//    False, if string did not contain any items from the format string.  (Output string will
 	//           contain the filename.)
 
-	b8	__fastcall ToStr(s8 *str, s8 *format);
+	b8	ToStr(s8 *str, s8 *format);
 
 
 	//**********************************************************************************************
@@ -452,8 +452,8 @@ public:
 // Out:
 //    see SPCType enumeration
 
-ID6Type __fastcall IsSPC(const s8 *fn, FILE* &fh);
-ID6Type __fastcall IsSPC(const s8 *pFile, u32 size);
+ID6Type IsSPC(const s8 *fn, FILE* &fh);
+ID6Type IsSPC(const s8 *pFile, u32 size);
 
 
 //**************************************************************************************************
@@ -469,4 +469,4 @@ ID6Type __fastcall IsSPC(const s8 *pFile, u32 size);
 // Out:
 //    Time in 1/64000ths second
 
-u32 __fastcall Str2Ticks(const s8 *str);
+u32 Str2Ticks(const s8 *str);

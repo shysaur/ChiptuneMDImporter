@@ -7,7 +7,7 @@
 *                                                           Copyright (C)2003 Alpha-II Productions *
 ***************************************************************************************************/
 
-#include	"Types.h"
+#include "Types.h"
 #include "strings.h"
 
 
@@ -16,7 +16,7 @@
 
 s8* ScanStrR(const s8 *pStr, s8 c)
 {
-  return strrchr(pStr, c);
+	return strrchr(pStr, c);
 }
 
 
@@ -26,7 +26,7 @@ s8* ScanStrR(const s8 *pStr, s8 c)
 
 b8 CmpStrL(const s8 *pDest, const s8 *pSrc, u32 len)
 {
-  return memcmp(pDest, pSrc, len) ? 0 : 1;
+	return memcmp(pDest, pSrc, len) ? 0 : 1;
 }
 
 
@@ -35,11 +35,11 @@ b8 CmpStrL(const s8 *pDest, const s8 *pSrc, u32 len)
 
 b8 CmpCopyL(s8 *pDest, const s8 *pSrc, u32 len)
 {
-  if (strncmp(pDest, pSrc, len) == 0)
-    return 1;
-  else
-    strncpy(pDest, pSrc, len);
-  return 0;
+	if (strncmp(pDest, pSrc, len) == 0)
+		return 1;
+	else
+		strncpy(pDest, pSrc, len);
+	return 0;
 }
 
 
@@ -48,7 +48,7 @@ b8 CmpCopyL(s8 *pDest, const s8 *pSrc, u32 len)
 
 s8* CopyStr(s8 *pDest, const s8 *pSrc)
 {
-  return stpcpy(pDest, pSrc);
+	return stpcpy(pDest, pSrc);
 }
 
 
@@ -57,7 +57,7 @@ s8* CopyStr(s8 *pDest, const s8 *pSrc)
 
 s8* CopyStrL(s8 *pDest, const s8 *pSrc, s32 l)
 {
-  return stpncpy(pDest, pSrc, l);
+	return stpncpy(pDest, pSrc, l);
 }
 
 
@@ -66,9 +66,9 @@ s8* CopyStrL(s8 *pDest, const s8 *pSrc, s32 l)
 
 s8* CopyStrC(s8 *pDest, const s8 *pSrc, s8 c)
 {
-  while (*pSrc != c && *pSrc != '\0')
-    *(pDest++) = *(pSrc++);
-  return pDest-1;
+	while (*pSrc != c && *pSrc != '\0')
+		*(pDest++) = *(pSrc++);
+	return pDest-1;
 }
 
 
@@ -77,17 +77,17 @@ s8* CopyStrC(s8 *pDest, const s8 *pSrc, s8 c)
 
 s8* StrEnd(const s8 *pStr)
 {
-  return (s8*)pStr + strlen(pStr);
+	return (s8*)pStr + strlen(pStr);
 }
 
 
 //**************************************************************************************************
 // Convert Integer to Hex
 
-s8*	Int2Hex(u32 i, u32 d)
+s8* Int2Hex(u32 i, u32 d)
 {
-	static s8	hex[16] = {"0123456789ABCDEF"};
-	static s8	str[9];
+	static s8 hex[16] = {"0123456789ABCDEF"};
+	static s8 str[9];
 
 	str[d] = 0;
 	while(d--)
@@ -98,4 +98,4 @@ s8*	Int2Hex(u32 i, u32 d)
 
 	return str;
 }
-      
+			

@@ -55,7 +55,7 @@ ID666::~ID666() {}
 // Private Functions
 
 //**************************************************************************************************
-v0 __fastcall ID666::GetID666(SPCHdr &spc)
+v0 ID666::GetID666(SPCHdr &spc)
 {
 	s32	i,j,k;
 	u32	d,m,y;
@@ -176,7 +176,7 @@ v0 __fastcall ID666::GetID666(SPCHdr &spc)
 
 
 //**************************************************************************************************
-b8 __fastcall ID666::GetXID6(XID6Chk *pTag, s32 size)
+b8 ID666::GetXID6(XID6Chk *pTag, s32 size)
 {
 	s32		i,r;
 #ifdef	TIDY
@@ -374,7 +374,7 @@ Done:
 
 
 //**************************************************************************************************
-s32 __fastcall ID666::IsText(s8 *str, u32 length)
+s32 ID666::IsText(s8 *str, u32 length)
 {
 	u32	c = 0;
 
@@ -387,7 +387,7 @@ s32 __fastcall ID666::IsText(s8 *str, u32 length)
 
 
 //**************************************************************************************************
-XID6Chk* __fastcall ID666::WriteVal(XID6Chk *pChk, u8 id, u16 val)
+XID6Chk* ID666::WriteVal(XID6Chk *pChk, u8 id, u16 val)
 {
 	if (val != 0)
 	{
@@ -402,7 +402,7 @@ XID6Chk* __fastcall ID666::WriteVal(XID6Chk *pChk, u8 id, u16 val)
 
 
 //**************************************************************************************************
-XID6Chk* __fastcall ID666::WriteInt(XID6Chk *pChk, u8 id, u32 data)
+XID6Chk* ID666::WriteInt(XID6Chk *pChk, u8 id, u32 data)
 {
 	if (data != 0)
 	{
@@ -419,7 +419,7 @@ XID6Chk* __fastcall ID666::WriteInt(XID6Chk *pChk, u8 id, u32 data)
 
 
 //**************************************************************************************************
-XID6Chk* __fastcall ID666::WriteStr(XID6Chk *pChk, u8 id, const s8 *str)
+XID6Chk* ID666::WriteStr(XID6Chk *pChk, u8 id, const s8 *str)
 {
 	u32		i,j;
 
@@ -446,7 +446,7 @@ XID6Chk* __fastcall ID666::WriteStr(XID6Chk *pChk, u8 id, const s8 *str)
 // Public Functions
 
 //**************************************************************************************************
-ID6Type __fastcall ID666::LoadTag(const s8 *fn, const u32 size)
+ID6Type ID666::LoadTag(const s8 *fn, const u32 size)
 {
 	SPCHdr	spc;
 	ID6Type	type;
@@ -559,7 +559,7 @@ ID6Type __fastcall ID666::LoadTag(const s8 *fn, const u32 size)
 
 
 //**************************************************************************************************
-b8 __fastcall ID666::SaveTag(b8 bin, b8 ext)
+b8 ID666::SaveTag(b8 bin, b8 ext)
 {
 	u32		xbuf[512];
 	u32		*pBuf;
@@ -601,7 +601,7 @@ b8 __fastcall ID666::SaveTag(b8 bin, b8 ext)
 //		id6.date.GetDate(y,m,d);
 //		p = WriteInt(p, XID6_DATE, (y<<16) | ((m&0xFF)<<8) | (d&0xFF));
 
-		if (ost) p = WriteStr(p, XID6_OST, ost);
+		p = WriteStr(p, XID6_OST, ost);
 		p = WriteVal(p, XID6_DISC, disc);
 		p = WriteVal(p, XID6_TRACK, track);
 		p = WriteVal(p, XID6_COPY, copy);
@@ -645,7 +645,7 @@ b8 __fastcall ID666::SaveTag(b8 bin, b8 ext)
 
 
 //**************************************************************************************************
-ID666* __fastcall ID666::operator=(const ID666 &id6)
+ID666* ID666::operator=(const ID666 &id6)
 {
 	strcpy(file, id6.file);
 
@@ -703,7 +703,7 @@ u32 ID666::GetTotal()
 
 
 //**************************************************************************************************
-b8 __fastcall ID666::FixDate(A2Date &date, u32 year, u8 month, u8 day)
+b8 ID666::FixDate(A2Date &date, u32 year, u8 month, u8 day)
 {
 	if (year < 100)								//Add century, if not included in year
 	{
@@ -744,7 +744,7 @@ b8 __fastcall ID666::FixDate(A2Date &date, u32 year, u8 month, u8 day)
 
 
 //**************************************************************************************************
-v0 __fastcall ID666::ToSPC(SPCHdr &spc, b8 bin)
+v0 ID666::ToSPC(SPCHdr &spc, b8 bin)
 {
 	s8	*cr;
 	s32	d,m,y;
@@ -997,7 +997,7 @@ static u32 FindEnd(s8 *str, u32 *pIf, u32 *pElse)
 				*str++ = '?'; \
 			}
 
-b8 __fastcall ID666::ToStr(s8 **ppStr, s8 *pFmt, const u32 len)
+b8 ID666::ToStr(s8 **ppStr, s8 *pFmt, const u32 len)
 {
 	s8		temp[12];
 	u32		cnd,f=0,e=0;						//Length of statement, and contained if and else
@@ -1155,7 +1155,7 @@ b8 __fastcall ID666::ToStr(s8 **ppStr, s8 *pFmt, const u32 len)
 	return 0;
 }
 
-b8 __fastcall ID666::ToStr(s8 *str, s8 *format)
+b8 ID666::ToStr(s8 *str, s8 *format)
 {
 	if (ToStr(&str, format, (u32)strlen(format))) return 1;
 
@@ -1167,7 +1167,7 @@ b8 __fastcall ID666::ToStr(s8 *str, s8 *format)
 //**************************************************************************************************
 // Does File Contain SPC Data?
 
-ID6Type __fastcall IsSPC(const s8 *fn, FILE* &fh)
+ID6Type IsSPC(const s8 *fn, FILE* &fh)
 {
 	s8		header[28];
 	s32		i,l;
@@ -1240,7 +1240,7 @@ Done:
 	return ID6_UNK;
 }
 
-ID6Type __fastcall IsSPC(const s8 *pFile, u32 size)
+ID6Type IsSPC(const s8 *pFile, u32 size)
 {
 	s32	i;
 
@@ -1297,7 +1297,7 @@ Done:
 //**************************************************************************************************
 // String to Ticks
 
-u32 __fastcall Str2Ticks(const s8 *cstr)
+u32 Str2Ticks(const s8 *cstr)
 {
 	s8	str[4],*d;
 	s32	s,m;

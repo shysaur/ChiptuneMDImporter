@@ -25,7 +25,7 @@
 class A2Date
 {
 private:
-	A2Date*	__fastcall Add(s32);
+	A2Date*	Add(s32);
 
 	struct
 	{
@@ -49,10 +49,10 @@ public:
 	inline b8 operator>(A2Date &a2date)  {return *(s32*)&date > *(s32*)&a2date.date;}
 	inline b8 operator!=(A2Date &a2date) {return *(s32*)&date != *(s32*)&a2date.date;}
 
-	A2Date*	__fastcall operator--();
-	A2Date*	__fastcall operator-=(s32);
-	A2Date*	__fastcall operator+=(s32);
-	A2Date*	__fastcall operator++();
+	A2Date*	operator--();
+	A2Date*	operator-=(s32);
+	A2Date*	operator+=(s32);
+	A2Date*	operator++();
 
 
 	//**********************************************************************************************
@@ -76,7 +76,7 @@ public:
 	// Out:
 	//    true, if date was valid
 
-	b8	__fastcall SetDate(s32 year, s32 month, s32 day);
+	b8	SetDate(s32 year, s32 month, s32 day);
 
 
 	//------------------------------------------
@@ -86,7 +86,7 @@ public:
 	// Out:
 	//    true, if date was valid
 
-	b8	__fastcall SetDate(s32 days);
+	b8	SetDate(s32 days);
 
 
 	//------------------------------------------
@@ -108,8 +108,8 @@ public:
 	//    Fields will contain 0's, if object doesn't contain a valid date
 
 	inline operator s32() {return *(s32*)&date;}//Returns the date represented as a packed s32
-	v0	__fastcall GetDate(s32 &year, s32 &month, s32 &day);
-	u32	__fastcall GetDays();
+	v0	GetDate(s32 &year, s32 &month, s32 &day);
+	u32	GetDays();
 
 
 	//**********************************************************************************************
@@ -121,5 +121,5 @@ public:
 	// Out:
 	//    true, if a date was copied
 
-	b8	__fastcall ToStr(s8 *str);
+	b8	ToStr(s8 *str);
 };

@@ -31,6 +31,7 @@
 		017FE50B1BD2DD0E00D8C41E /* ChiptuneImporter.mdimporter in CopyFiles */ = {isa = PBXBuildFile; fileRef = 01FB7F30193D0E5C003707D7 /* ChiptuneImporter.mdimporter */; };
 		017FE5171BD2E9A200D8C41E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 017FE5161BD2E9A200D8C41E /* main.m */; };
 		017FE5221BD2EA2300D8C41E /* ChiptuneImporterUTIHelper.app in Resources */ = {isa = PBXBuildFile; fileRef = 017FE5101BD2E9A200D8C41E /* ChiptuneImporterUTIHelper.app */; };
+		017FE5271BD300B400D8C41E /* NSMutableDictionary+CMI.m in Sources */ = {isa = PBXBuildFile; fileRef = 017FE5261BD300B400D8C41E /* NSMutableDictionary+CMI.m */; settings = {ASSET_TAGS = (); }; };
 		01FB7F34193D0E5C003707D7 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FB7F33193D0E5C003707D7 /* CoreServices.framework */; };
 		01FB7F36193D0E5C003707D7 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FB7F35193D0E5C003707D7 /* CoreFoundation.framework */; };
 		01FB7F38193D0E5C003707D7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FB7F37193D0E5C003707D7 /* CoreData.framework */; };
@@ -84,6 +85,8 @@
 		017FE5101BD2E9A200D8C41E /* ChiptuneImporterUTIHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChiptuneImporterUTIHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		017FE5161BD2E9A200D8C41E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		017FE51D1BD2E9A200D8C41E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		017FE5251BD300B400D8C41E /* NSMutableDictionary+CMI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+CMI.h"; sourceTree = "<group>"; };
+		017FE5261BD300B400D8C41E /* NSMutableDictionary+CMI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+CMI.m"; sourceTree = "<group>"; };
 		01FB7F30193D0E5C003707D7 /* ChiptuneImporter.mdimporter */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChiptuneImporter.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
 		01FB7F33193D0E5C003707D7 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		01FB7F35193D0E5C003707D7 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -190,6 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				01FB7F43193D0E5C003707D7 /* GetMetadataForFile.m */,
+				017FE5251BD300B400D8C41E /* NSMutableDictionary+CMI.h */,
+				017FE5261BD300B400D8C41E /* NSMutableDictionary+CMI.m */,
 				01FB7F45193D0E5C003707D7 /* ChiptuneMDImporter.h */,
 				01FB7F46193D0E5C003707D7 /* ChiptuneMDImporter.mm */,
 				01FB7F3C193D0E5C003707D7 /* Supporting Files */,
@@ -351,6 +356,7 @@
 				01FB7F42193D0E5C003707D7 /* main.c in Sources */,
 				01FD721519437468003EFF02 /* CMIPSFTagParser.m in Sources */,
 				017FE5031BD2D95600D8C41E /* ChiptuneMDImporter.mm in Sources */,
+				017FE5271BD300B400D8C41E /* NSMutableDictionary+CMI.m in Sources */,
 				01FB7F44193D0E5C003707D7 /* GetMetadataForFile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

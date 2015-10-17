@@ -10,6 +10,7 @@
 #include <stdint.h>
 #import "ChiptuneMDImporter.h"
 #import "CMIPSFTagParser.h"
+#import "NSMutableDictionary+CMI.h"
 #import "ID666.h"
 
 
@@ -27,29 +28,6 @@ typedef enum {
   kUnsupported,
   kUnreadable
 } CMIFileType;
-
-
-void AddAttribute(NSMutableDictionary *sd, char *s, CFStringRef name) {
-  if (*s != '\0')
-    [sd setObject:[NSString stringWithCString:s
-                                     encoding:NSWindowsCP1252StringEncoding]
-           forKey:(__bridge NSString*)name];
-}
-
-
-void AddAttributeArray(NSMutableDictionary *sd, char *s, CFStringRef name) {
-  if (*s != '\0')
-    [sd setObject:[NSArray
-                   arrayWithObject:[NSString
-                                    stringWithCString:s
-                                    encoding:NSWindowsCP1252StringEncoding]]
-           forKey:(__bridge NSString*)name];
-}
-
-
-void AddAttributeNumber(NSMutableDictionary *sd, double n, CFStringRef name) {
-  [sd setObject:[NSNumber numberWithDouble:n] forKey:(__bridge NSString*)name];
-}
 
 
 BOOL CMIImportNSF(FILE *fp, NSMutableDictionary *sd)
@@ -71,11 +49,11 @@ BOOL CMIImportNSF(FILE *fp, NSMutableDictionary *sd)
   
   buf[32] = '\0';
   memcpy(buf, header+0xE, 32);
-  AddAttribute(sd, buf, kMDItemTitle);
+  [sd CMI_setCStringAttribute:buf forKey:kMDItemTitle];
   memcpy(buf, header+0x2E, 32);
-  AddAttributeArray(sd, buf, kMDItemAuthors);
+  [sd CMI_setArrayAttributeWithCString:buf forKey:kMDItemAuthors];
   memcpy(buf, header+0x4E, 32);
-  AddAttribute(sd, buf, kMDItemCopyright);
+  [sd CMI_setCStringAttribute:buf forKey:kMDItemCopyright];
   
   buf[0] = '\0';
   if (header[0x7B]) {
@@ -87,7 +65,7 @@ BOOL CMIImportNSF(FILE *fp, NSMutableDictionary *sd)
         strcat(buf, exp[i]);
       }
     }
-    AddAttribute(sd, buf, kMDItemChiptuneExpansion);
+    [sd CMI_setCStringAttribute:buf forKey:kMDItemChiptuneExpansion];
   }
   
   return YES;
@@ -104,11 +82,11 @@ BOOL CMIImportGBS(FILE *fp, NSMutableDictionary *sd)
   
   buf[32] = '\0';
   memcpy(buf, header+0x10, 32);
-  AddAttribute(sd, buf, kMDItemTitle);
+  [sd CMI_setCStringAttribute:buf forKey:kMDItemTitle];
   memcpy(buf, header+0x30, 32);
-  AddAttributeArray(sd, buf, kMDItemAuthors);
+  [sd CMI_setArrayAttributeWithCString:buf forKey:kMDItemAuthors];
   memcpy(buf, header+0x50, 32);
-  AddAttribute(sd, buf, kMDItemCopyright);
+  [sd CMI_setCStringAttribute:buf forKey:kMDItemCopyright];
   
   return YES;
 }
@@ -125,20 +103,20 @@ BOOL CMIAttemptToImportSPC(const char *fn, NSMutableDictionary *sd)
   if (res == ID6_UNK || res == ID6_ERR)
     return NO;
   
-  AddAttribute(sd, spctag.song, kMDItemTitle);
-  AddAttribute(sd, spctag.game, kMDItemAlbum);
-  AddAttribute(sd, spctag.ost, kMDItemChiptuneOST);
-  AddAttributeArray(sd, spctag.artist, kMDItemAuthors);
-  AddAttribute(sd, spctag.comment, kMDItemComment);
-  AddAttributeArray(sd, spctag.pub, kMDItemPublishers);
+  [sd CMI_setCStringAttribute:spctag.song forKey:kMDItemTitle];
+  [sd CMI_setCStringAttribute:spctag.game forKey:kMDItemAlbum];
+  [sd CMI_setCStringAttribute:spctag.ost forKey:kMDItemChiptuneOST];
+  [sd CMI_setArrayAttributeWithCString:spctag.artist forKey:kMDItemAuthors];
+  [sd CMI_setCStringAttribute:spctag.comment forKey:kMDItemComment];
+  [sd CMI_setArrayAttributeWithCString:spctag.pub forKey:kMDItemPublishers];
   if (spctag.copy) {
     sprintf(buf, "%d", spctag.copy);
-    AddAttribute(sd, buf, kMDItemCopyright);
+    [sd CMI_setCStringAttribute:buf forKey:kMDItemCopyright];
   }
   songlen = spctag.GetSong();
   if (songlen != spctag.defSong)
-    AddAttributeNumber(sd, songlen/64000.0, kMDItemDurationSeconds);
-  AddAttribute(sd, spctag.dumper, kMDItemChiptuneDumper);
+    [sd CMI_setAttribute:@(songlen/64000.0) forKey:kMDItemDurationSeconds];
+  [sd CMI_setCStringAttribute:spctag.dumper forKey:kMDItemChiptuneDumper];
   
   return YES;
 }

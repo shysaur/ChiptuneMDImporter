@@ -39,7 +39,7 @@
 		01FB7F40193D0E5C003707D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01FB7F3E193D0E5C003707D7 /* InfoPlist.strings */; };
 		01FB7F42193D0E5C003707D7 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 01FB7F41193D0E5C003707D7 /* main.c */; };
 		01FB7F44193D0E5C003707D7 /* GetMetadataForFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB7F43193D0E5C003707D7 /* GetMetadataForFile.m */; };
-		01FD721519437468003EFF02 /* CMIPSFTagParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FD721419437468003EFF02 /* CMIPSFTagParser.m */; };
+		01FD721519437468003EFF02 /* CMIPSFTagDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FD721419437468003EFF02 /* CMIPSFTagDictionary.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,8 +99,8 @@
 		01FB7F45193D0E5C003707D7 /* ChiptuneMDImporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChiptuneMDImporter.h; sourceTree = "<group>"; };
 		01FB7F46193D0E5C003707D7 /* ChiptuneMDImporter.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ChiptuneMDImporter.mm; sourceTree = "<group>"; };
 		01FB7F49193D0E5C003707D7 /* ChiptuneImporter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChiptuneImporter-Prefix.pch"; sourceTree = "<group>"; };
-		01FD721319437468003EFF02 /* CMIPSFTagParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMIPSFTagParser.h; path = ChiptuneImporter/CMIPSFTagParser.h; sourceTree = "<group>"; };
-		01FD721419437468003EFF02 /* CMIPSFTagParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMIPSFTagParser.m; path = ChiptuneImporter/CMIPSFTagParser.m; sourceTree = "<group>"; };
+		01FD721319437468003EFF02 /* CMIPSFTagDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMIPSFTagDictionary.h; path = ChiptuneImporter/CMIPSFTagDictionary.h; sourceTree = "<group>"; };
+		01FD721419437468003EFF02 /* CMIPSFTagDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMIPSFTagDictionary.m; path = ChiptuneImporter/CMIPSFTagDictionary.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,8 +218,8 @@
 		01FD720F19436BB8003EFF02 /* PSFTags */ = {
 			isa = PBXGroup;
 			children = (
-				01FD721319437468003EFF02 /* CMIPSFTagParser.h */,
-				01FD721419437468003EFF02 /* CMIPSFTagParser.m */,
+				01FD721319437468003EFF02 /* CMIPSFTagDictionary.h */,
+				01FD721419437468003EFF02 /* CMIPSFTagDictionary.m */,
 			);
 			name = PSFTags;
 			sourceTree = "<group>";
@@ -354,7 +354,7 @@
 				017D97CC1940EEAE00E84613 /* ID666.cpp in Sources */,
 				017D97C91940EEA400E84613 /* A2Str.c in Sources */,
 				01FB7F42193D0E5C003707D7 /* main.c in Sources */,
-				01FD721519437468003EFF02 /* CMIPSFTagParser.m in Sources */,
+				01FD721519437468003EFF02 /* CMIPSFTagDictionary.m in Sources */,
 				017FE5031BD2D95600D8C41E /* ChiptuneMDImporter.mm in Sources */,
 				017FE5271BD300B400D8C41E /* NSMutableDictionary+CMI.m in Sources */,
 				01FB7F44193D0E5C003707D7 /* GetMetadataForFile.m in Sources */,

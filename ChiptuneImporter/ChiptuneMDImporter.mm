@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #import "ChiptuneMDImporter.h"
-#import "CMIPSFTagParser.h"
+#import "CMIPSFTagDictionary.h"
 #import "NSMutableDictionary+CMI.h"
 #import "ID666.h"
 
@@ -121,17 +121,12 @@ BOOL CMIAttemptToImportSPC(const char *fn, NSMutableDictionary *sd)
 BOOL CMIImportPSF(FILE *fp, NSMutableDictionary *sd)
 {
   NSString *key;
-  NSMutableDictionary *intermdict;
-  CMIPSFTagParser *tp;
-  BOOL res;
+  CMIPSFTagDictionary *tp;
   
-  tp = [CMIPSFTagParser tagsWithFile:fp error:&res];
-  if (!res) return NO;
+  tp = [[CMIPSFTagDictionary alloc] initWithPSFFilePointer:fp];
+  if (!tp) return NO;
   
-  intermdict = [tp tagDictionary];
-  if (!intermdict) return NO;
-  
-  for (key in intermdict) {
+  for (key in tp) {
     CFStringRef outk = NULL;
     id val;
     
@@ -154,11 +149,11 @@ BOOL CMIImportPSF(FILE *fp, NSMutableDictionary *sd)
     
     if (outk) {
       if (outk == kMDItemAuthors)
-        val = [NSArray arrayWithObject:[intermdict objectForKey:key]];
+        val = [NSArray arrayWithObject:[tp objectForKey:key]];
       else if (outk == kMDItemDurationSeconds)
-        val = DurationStringToSeconds([intermdict objectForKey:key]);
+        val = DurationStringToSeconds([tp objectForKey:key]);
       else
-        val = [intermdict objectForKey:key];
+        val = [tp objectForKey:key];
       
       [sd CMI_setAttribute:val forKey:outk];
     }

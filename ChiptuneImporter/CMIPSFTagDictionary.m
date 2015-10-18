@@ -1,12 +1,12 @@
 //
-//  CMIPSFTagParser.m
+//  CMIPSFTagDictionary.m
 //  ChiptuneImporter
 //
 //  Created by Daniele Cattaneo on 07/06/14.
 //  Copyright (c) 2014 Daniele Cattaneo. All rights reserved.
 //
 
-#import "CMIPSFTagParser.h"
+#import "CMIPSFTagDictionary.h"
 #include <stdio.h>
 #include <limits.h>
 
@@ -41,71 +41,81 @@ NSNumber *DurationStringToSeconds(NSString *str) {
 }
 
 
-@implementation CMIPSFTagParser
+@implementation CMIPSFTagDictionary
 
 
-+ alloc
+- (instancetype)initWithObjects:(const id _Nonnull __unsafe_unretained *)objects forKeys:(const id<NSCopying> _Nonnull __unsafe_unretained *)keys count:(NSUInteger)cnt
 {
-  return [super alloc];
+  self = [super init];
+  storage = [[NSDictionary alloc] initWithObjects:objects forKeys:keys count:cnt];
+  return storage ? self : nil;
 }
 
 
-+ tagsWithFile:(FILE *)fp error:(BOOL*)err
+- (instancetype)initWithPSFFilePointer:(FILE *)fp
 {
-  CMIPSFTagParser *tp;
-  tp = [[CMIPSFTagParser alloc] initWithFile:fp error:err];
-  return tp;
-}
-
-
-- init
-{
-  tagdict = NULL;
-  tagend = NULL;
-  enc = NSWindowsCP1252StringEncoding;
-  return [super init];
-}
-
-
-- initWithFile:(FILE *)fp error:(BOOL*)err
-{
-  self = [self init];
-  *err = [self setTagsFromFile:fp];
+  NSData *raw;
+  
+  self = [super init];
+  
+  raw = [self rawTagDataFromFile:fp];
+  if (!raw)
+    return nil;
+  
+  storage = [self tagDictionaryFromRawTagData:raw];
+  if (!storage)
+    return nil;
+  
   return self;
 }
 
 
-- (void)dealloc {
-  free(tagdict);
+- (NSUInteger)count
+{
+  return [storage count];
 }
 
 
-- (BOOL)setTagsFromFile:(FILE *)fp
+- (id)objectForKey:(id)aKey
 {
+  return [storage objectForKey:aKey];
+}
+
+
+- (NSEnumerator *)keyEnumerator
+{
+  return [storage keyEnumerator];
+}
+
+
+- (NSData *)rawTagDataFromFile:(FILE *)fp
+{
+  NSData *res;
   off_t tag_size;
   char temp[5];
   uint32_t header[4];
+  char *tagdict;
   
   rewind(fp);
-  if (fread(header, 4, 4, fp) < 4) return NO;
-  if (fseek(fp, (size_t)header[1]+(size_t)header[2]+16, SEEK_SET)) return NO;
+  if (fread(header, 4, 4, fp) < 4) return nil;
+  if (fseek(fp, (size_t)header[1]+(size_t)header[2]+16, SEEK_SET)) return nil;
   
-  if (fread(temp, 1, 5, fp) < 5) return NO;
-  if (memcmp(temp, "[TAG]", 5) != 0) return NO;
+  if (fread(temp, 1, 5, fp) < 5) return nil;
+  if (memcmp(temp, "[TAG]", 5) != 0) return nil;
   
   tag_size = ftello(fp);
   fseek(fp, 0, SEEK_END);
   tag_size = ftello(fp) - tag_size;
-  if (!(tagdict = (char*)malloc(tag_size))) return NO;
+  if (!(tagdict = (char*)malloc(tag_size))) return nil;
   fseek(fp, -tag_size, SEEK_END);
   fread(tagdict, 1, tag_size, fp);
-  tagend = tagdict + tag_size;
   
-  return YES;
+  res = [[NSData alloc] initWithBytesNoCopy:tagdict length:tag_size freeWhenDone:YES];
+  return res;
 }
 
 
-- (NSMutableDictionary*)tagDictionary
+- (NSDictionary *)tagDictionaryFromRawTagData:(NSData *)raw
 {
   typedef enum {
     kKeyLeadSpaceSkip,
@@ -116,10 +126,12 @@ NSNumber *DurationStringToSeconds(NSString *str) {
     kGetNewline
   } tPsfParserState;
   
+  NSStringEncoding enc = NSWindowsCP1252StringEncoding;
   NSMutableDictionary *intermdict;
   NSMutableDictionary *outdict;
   tPsfParserState state;
-  char *tp = tagdict;
+  char *tp = (char*)[raw bytes];
+  char *tagend = tp + [raw length];
   char *tag_namestart = NULL;
   char *tag_nameend = NULL;
   char *tag_datastart = NULL;
@@ -220,7 +232,7 @@ NSNumber *DurationStringToSeconds(NSString *str) {
     [outdict setValue:vout forKey:key];
   }
   
-  return outdict;
+  return [outdict copy];
 }
 
 

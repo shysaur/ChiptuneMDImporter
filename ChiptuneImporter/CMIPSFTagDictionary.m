@@ -17,7 +17,7 @@ NSNumber *DurationStringToSeconds(NSString *str) {
   char *cs;
   char *cp;
   
-  cs = strdup([str cStringUsingEncoding:NSASCIIStringEncoding]);
+  cs = strdup([str UTF8String]);
   cp = cs;
   while (*cp) {
     char *ce;
@@ -34,10 +34,10 @@ NSNumber *DurationStringToSeconds(NSString *str) {
       secs = strtod(cp, &cp);
     }
   }
-  secs += (float)(h * 3600 + m * 60);
+  secs += (double)(h * 3600 + m * 60);
   free(cs);
   
-  return [NSNumber numberWithDouble:secs];
+  return @(secs);
 }
 
 
@@ -97,48 +97,55 @@ NSNumber *DurationStringToSeconds(NSString *str) {
   char *tagdict;
   
   rewind(fp);
-  if (fread(header, 4, 4, fp) < 4) return nil;
-  if (fseek(fp, (size_t)header[1]+(size_t)header[2]+16, SEEK_SET)) return nil;
   
-  if (fread(temp, 1, 5, fp) < 5) return nil;
-  if (memcmp(temp, "[TAG]", 5) != 0) return nil;
+  if (fread(header, 4, 4, fp) < 4)
+    return nil;
+  if (fseek(fp, (size_t)header[1]+(size_t)header[2]+16, SEEK_SET))
+    return nil;
+  
+  if (fread(temp, 1, 5, fp) < 5)
+    return nil;
+  if (memcmp(temp, "[TAG]", 5) != 0)
+    return nil;
   
   tag_size = ftello(fp);
-  fseek(fp, 0, SEEK_END);
+  if (fseek(fp, 0, SEEK_END))
+    return nil;
   tag_size = ftello(fp) - tag_size;
-  if (!(tagdict = (char*)malloc(tag_size))) return nil;
-  fseek(fp, -tag_size, SEEK_END);
-  fread(tagdict, 1, tag_size, fp);
+  if (!(tagdict = (char*)malloc(tag_size)))
+    return nil;
+  
+  if (fseek(fp, -tag_size, SEEK_END))
+    goto fail2;
+  if (fread(tagdict, 1, tag_size, fp) < tag_size)
+    goto fail2;
   
   res = [[NSData alloc] initWithBytesNoCopy:tagdict length:tag_size freeWhenDone:YES];
   return res;
+  
+fail2:
+  free(tagdict);
+  return nil;
 }
 
 
 - (NSDictionary *)tagDictionaryFromRawTagData:(NSData *)raw
 {
-  typedef enum {
-    kKeyLeadSpaceSkip,
-    kKeySkip,
-    kGetEquals,
-    kValueLeadSpaceSkip,
-    kValueSkip,
-    kGetNewline
-  } tPsfParserState;
-  
-  NSStringEncoding enc = NSWindowsCP1252StringEncoding;
+  char *tag_namestart = NULL, *tag_nameend = NULL;
+  char *tag_datastart = NULL, *tag_dataend = NULL;
+  char *tp, *tagend;
   NSMutableDictionary *intermdict;
+  NSStringEncoding enc;
+  NSMutableData *td;
   NSArray *keys;
-  tPsfParserState state;
-  char *tp = (char*)[raw bytes];
-  char *tagend = tp + [raw length];
-  char *tag_namestart = NULL;
-  char *tag_nameend = NULL;
-  char *tag_datastart = NULL;
-  char *tag_dataend = NULL;
+  NSString *key, *val;
+  enum {
+    kKeyLeadSpaceSkip, kKeySkip, kGetEquals,
+    kValueLeadSpaceSkip, kValueSkip, kGetNewline
+  } state;
   
-  NSString *key;
-  
+  tp = (char*)[raw bytes];
+  tagend = tp + [raw length];
   state = kKeyLeadSpaceSkip;
   intermdict = [[NSMutableDictionary alloc] init];
   
@@ -198,19 +205,14 @@ NSNumber *DurationStringToSeconds(NSString *str) {
           if (*tp == 0x0A) {
             *tag_nameend = '\0';
             *tag_dataend = '\0';
-            if (strcmp(tag_namestart , "utf8") == 0)
-              enc = NSUTF8StringEncoding;
-            else {
-              NSMutableData *td;
-              key = [NSString stringWithUTF8String:tag_namestart];
-              if ((td = [intermdict objectForKey:key])) {
-                [td appendBytes:"\n" length:1];
-                [td appendBytes:tag_datastart length:tag_dataend-tag_datastart];
-              } else {
-                td = [NSMutableData dataWithBytes:tag_datastart length:tag_dataend-tag_datastart];
-                [intermdict setObject:td forKey:key];
-              }
+            key = [NSString stringWithUTF8String:tag_namestart];
+            if ((td = [intermdict objectForKey:key])) {
+              [td appendBytes:"\n" length:1];
+            } else {
+              td = [NSMutableData data];
+              [intermdict setObject:td forKey:key];
             }
+            [td appendBytes:tag_datastart length:tag_dataend-tag_datastart];
             state = kKeyLeadSpaceSkip;
           }
           tp++;
@@ -223,14 +225,16 @@ NSNumber *DurationStringToSeconds(NSString *str) {
     }
   }
   
+  if ([intermdict objectForKey:@"utf8"])
+    enc = NSUTF8StringEncoding;
+  else
+    enc = NSWindowsCP1252StringEncoding;
+  
   keys = [intermdict allKeys];
   for (key in keys) {
-    NSData *vin;
-    NSString *vout;
-    
-    vin = [intermdict objectForKey:key];
-    vout = [[NSString alloc] initWithData:vin encoding:enc];
-    [intermdict setObject:vout forKey:key];
+    td = [intermdict objectForKey:key];
+    val = [[NSString alloc] initWithData:td encoding:enc];
+    [intermdict setObject:val forKey:key];
   }
   
   return [intermdict copy];

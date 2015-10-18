@@ -32,9 +32,8 @@
 		017FE5171BD2E9A200D8C41E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 017FE5161BD2E9A200D8C41E /* main.m */; };
 		017FE5221BD2EA2300D8C41E /* ChiptuneImporterUTIHelper.app in Resources */ = {isa = PBXBuildFile; fileRef = 017FE5101BD2E9A200D8C41E /* ChiptuneImporterUTIHelper.app */; };
 		017FE5271BD300B400D8C41E /* NSMutableDictionary+CMI.m in Sources */ = {isa = PBXBuildFile; fileRef = 017FE5261BD300B400D8C41E /* NSMutableDictionary+CMI.m */; settings = {ASSET_TAGS = (); }; };
-		01FB7F34193D0E5C003707D7 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FB7F33193D0E5C003707D7 /* CoreServices.framework */; };
+		01D5640F1BD3E3C9002ABA1D /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D5640E1BD3E3C9002ABA1D /* CoreServices.framework */; };
 		01FB7F36193D0E5C003707D7 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FB7F35193D0E5C003707D7 /* CoreFoundation.framework */; };
-		01FB7F38193D0E5C003707D7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FB7F37193D0E5C003707D7 /* CoreData.framework */; };
 		01FB7F3A193D0E5C003707D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FB7F39193D0E5C003707D7 /* Foundation.framework */; };
 		01FB7F40193D0E5C003707D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01FB7F3E193D0E5C003707D7 /* InfoPlist.strings */; };
 		01FB7F42193D0E5C003707D7 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 01FB7F41193D0E5C003707D7 /* main.c */; };
@@ -87,10 +86,9 @@
 		017FE51D1BD2E9A200D8C41E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		017FE5251BD300B400D8C41E /* NSMutableDictionary+CMI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+CMI.h"; sourceTree = "<group>"; };
 		017FE5261BD300B400D8C41E /* NSMutableDictionary+CMI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+CMI.m"; sourceTree = "<group>"; };
+		01D5640E1BD3E3C9002ABA1D /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		01FB7F30193D0E5C003707D7 /* ChiptuneImporter.mdimporter */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChiptuneImporter.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
-		01FB7F33193D0E5C003707D7 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		01FB7F35193D0E5C003707D7 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		01FB7F37193D0E5C003707D7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		01FB7F39193D0E5C003707D7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		01FB7F3D193D0E5C003707D7 /* ChiptuneImporter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChiptuneImporter-Info.plist"; sourceTree = "<group>"; };
 		01FB7F3F193D0E5C003707D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 		01FB7F43193D0E5C003707D7 /* GetMetadataForFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetMetadataForFile.m; sourceTree = "<group>"; };
 		01FB7F45193D0E5C003707D7 /* ChiptuneMDImporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChiptuneMDImporter.h; sourceTree = "<group>"; };
 		01FB7F46193D0E5C003707D7 /* ChiptuneMDImporter.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ChiptuneMDImporter.mm; sourceTree = "<group>"; };
-		01FB7F49193D0E5C003707D7 /* ChiptuneImporter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChiptuneImporter-Prefix.pch"; sourceTree = "<group>"; };
 		01FD721319437468003EFF02 /* CMIPSFTagDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMIPSFTagDictionary.h; path = ChiptuneImporter/CMIPSFTagDictionary.h; sourceTree = "<group>"; };
 		01FD721419437468003EFF02 /* CMIPSFTagDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMIPSFTagDictionary.m; path = ChiptuneImporter/CMIPSFTagDictionary.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,9 +112,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01D5640F1BD3E3C9002ABA1D /* CoreServices.framework in Frameworks */,
 				01FB7F36193D0E5C003707D7 /* CoreFoundation.framework in Frameworks */,
-				01FB7F38193D0E5C003707D7 /* CoreData.framework in Frameworks */,
-				01FB7F34193D0E5C003707D7 /* CoreServices.framework in Frameworks */,
 				01FB7F3A193D0E5C003707D7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,9 +177,8 @@
 		01FB7F32193D0E5C003707D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				01FB7F33193D0E5C003707D7 /* CoreServices.framework */,
+				01D5640E1BD3E3C9002ABA1D /* CoreServices.framework */,
 				01FB7F35193D0E5C003707D7 /* CoreFoundation.framework */,
-				01FB7F37193D0E5C003707D7 /* CoreData.framework */,
 				01FB7F39193D0E5C003707D7 /* Foundation.framework */,
 			);
 			name = Frameworks;
@@ -208,7 +203,6 @@
 				01FB7F3D193D0E5C003707D7 /* ChiptuneImporter-Info.plist */,
 				01FB7F3E193D0E5C003707D7 /* InfoPlist.strings */,
 				01FB7F41193D0E5C003707D7 /* main.c */,
-				01FB7F49193D0E5C003707D7 /* ChiptuneImporter-Prefix.pch */,
 				017EDAE1193D326300FE2B2B /* schema.xml */,
 				017EDAE3193D337C00FE2B2B /* schema.strings */,
 			);
@@ -523,7 +517,6 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ChiptuneImporter/ChiptuneImporter-Prefix.pch";
 				INFOPLIST_FILE = "ChiptuneImporter/ChiptuneImporter-Info.plist";
 				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
 				LIBRARY_STYLE = BUNDLE;
@@ -540,7 +533,6 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ChiptuneImporter/ChiptuneImporter-Prefix.pch";
 				INFOPLIST_FILE = "ChiptuneImporter/ChiptuneImporter-Info.plist";
 				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
 				LIBRARY_STYLE = BUNDLE;
@@ -561,6 +553,7 @@
 				017FE5071BD2DCD100D8C41E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		017FE51E1BD2E9A200D8C41E /* Build configuration list for PBXNativeTarget "ChiptuneImporterUTIHelper" */ = {
 			isa = XCConfigurationList;
@@ -569,6 +562,7 @@
 				017FE5201BD2E9A200D8C41E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01FB7F2B193D0E5C003707D7 /* Build configuration list for PBXProject "ChiptuneImporter" */ = {
 			isa = XCConfigurationList;

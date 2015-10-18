@@ -9,7 +9,9 @@
 "com_danielecattaneo_chiptunemdimporter_ost" = "Soundtrack";
 "com_danielecattaneo_chiptunemdimporter_dumper" = "Dumper";
 "com_danielecattaneo_chiptunemdimporter_expansion" = "Expansion";
+"com_danielecattaneo_chiptunemdimporter_sidrevision" = "SID Revision";
 
 "com_danielecattaneo_chiptunemdimporter_ost.Description" = "Title of the original soundtrack album disc.";
 "com_danielecattaneo_chiptunemdimporter_dumper.Description" = "Author of the sound code dump.";
 "com_danielecattaneo_chiptunemdimporter_expansion.Description" = "Expansion chip used.";
+"com_danielecattaneo_chiptunemdimporter_sidrevision.Description" = "Preferred revision of the SID chip for playing this file.";

@@ -8,6 +8,7 @@ file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.fra
     <attribute name="com_danielecattaneo_chiptunemdimporter_ost" type="CFString"/>
     <attribute name="com_danielecattaneo_chiptunemdimporter_dumper" type="CFString"/>
     <attribute name="com_danielecattaneo_chiptunemdimporter_expansion" type="CFString"/>
+    <attribute name="com_danielecattaneo_chiptunemdimporter_sidrevision" type="CFString"/>
   </attributes>
   
   <types>
@@ -37,6 +38,21 @@ file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.fra
         kMDItemTitle
         kMDItemAuthors
         kMDItemCopyright
+      </displayattrs>
+    </type>
+    
+    <type name="org.sidmusic.sidtune">
+      <allattrs>
+        kMDItemTitle
+        kMDItemAuthors
+        kMDItemCopyright
+        com_danielecattaneo_chiptunemdimporter_sidrevision
+      </allattrs>
+      <displayattrs>
+        kMDItemTitle
+        kMDItemAuthors
+        kMDItemCopyright
+        com_danielecattaneo_chiptunemdimporter_sidrevision
       </displayattrs>
     </type>
     

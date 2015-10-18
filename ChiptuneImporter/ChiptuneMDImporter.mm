@@ -20,11 +20,14 @@ const CFStringRef kMDItemChiptuneDumper =
         (CFStringRef)@"com_danielecattaneo_chiptunemdimporter_dumper";
 const CFStringRef kMDItemChiptuneExpansion =
         (CFStringRef)@"com_danielecattaneo_chiptunemdimporter_expansion";
+const CFStringRef kMDItemChiptuneSIDRevision =
+        (CFStringRef)@"com_danielecattaneo_chiptunemdimporter_sidrevision";
 
 typedef enum {
   kNSF,
   kGBS,
   kPSF,
+  kSID,
   kUnsupported,
   kUnreadable
 } CMIFileType;
@@ -83,6 +86,43 @@ BOOL CMIImportGBS(FILE *fp, NSMutableDictionary *sd)
   [sd CMI_setArrayAttributeWithCString:buf forKey:kMDItemAuthors];
   memcpy(buf, header+0x50, 32);
   [sd CMI_setCStringAttribute:buf forKey:kMDItemCopyright];
+  
+  return YES;
+}
+
+
+BOOL CMIImportSID(FILE *fp, NSMutableDictionary *sd)
+{
+  NSString *sidrev;
+  char header[0x7C];
+  char buf[32+1];
+  
+  if (fseek(fp, 0x00, SEEK_SET) < 0) return NO;
+  if (fread(header, sizeof(char), 0x7C, fp) < 0x7C) return NO;
+  
+  buf[32] = '\0';
+  memcpy(buf, header+0x16, 32);
+  [sd CMI_setCStringAttribute:buf forKey:kMDItemTitle];
+  memcpy(buf, header+0x36, 32);
+  [sd CMI_setArrayAttributeWithCString:buf forKey:kMDItemAuthors];
+  memcpy(buf, header+0x56, 32);
+  [sd CMI_setCStringAttribute:buf forKey:kMDItemCopyright];
+  
+  if ((((unsigned)header[4])*0x100 + header[5]) >= 2) {
+    switch ((header[0x77] & 0b110000) >> 4) {
+      case 1:
+        sidrev = @"6581";
+        break;
+      case 2:
+        sidrev = @"8580";
+        break;
+      case 3:
+        sidrev = @"6581, 8580";
+        break;
+    }
+    if (sidrev)
+      [sd CMI_setAttribute:sidrev forKey:kMDItemChiptuneSIDRevision];
+  }
   
   return YES;
 }
@@ -168,9 +208,11 @@ CMIFileType CMIDetectFileType(FILE *fp) {
   uint8_t buf[16];
   CMIFileType ft;
   
-  const uint8_t nsf_magic[] = {'N','E','S','M', 0x1A};
-  const uint8_t gbs_magic[] = {'G','B','S', 0x01};
-  const uint8_t psf_magic[] = {'P','S','F'};
+  const uint8_t  nsf_magic[] = {'N','E','S','M', 0x1A};
+  const uint8_t  gbs_magic[] = {'G','B','S', 0x01};
+  const uint8_t  psf_magic[] = {'P','S','F'};
+  const uint8_t psid_magic[] = {'P','S','I', 'D'};
+  const uint8_t rsid_magic[] = {'R','S','I', 'D'};
   
   const struct {
     CMIFileType ft;
@@ -180,6 +222,8 @@ CMIFileType CMIDetectFileType(FILE *fp) {
     {kNSF, 5, nsf_magic},
     {kGBS, 4, gbs_magic},
     {kPSF, 3, psf_magic},
+    {kSID, 4, psid_magic},
+    {kSID, 4, rsid_magic},
     {kUnsupported, 0, NULL}
   };
   
@@ -221,6 +265,9 @@ BOOL CMIImportFile(NSString *filePath, NSMutableDictionary *spotlightData)
       break;
     case kPSF:
       result = CMIImportPSF(fp, spotlightData);
+      break;
+    case kSID:
+      result = CMIImportSID(fp, spotlightData);
       break;
     default:
       result = NO;

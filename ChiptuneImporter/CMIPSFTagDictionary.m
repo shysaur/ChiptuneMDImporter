@@ -204,7 +204,7 @@ NSNumber *DurationStringToSeconds(NSString *str) {
               NSMutableData *td;
               key = [NSString stringWithUTF8String:tag_namestart];
               if ((td = [intermdict objectForKey:key])) {
-                [td appendBytes:"0x0A" length:1];
+                [td appendBytes:"\n" length:1];
                 [td appendBytes:tag_datastart length:tag_dataend-tag_datastart];
               } else {
                 td = [NSMutableData dataWithBytes:tag_datastart length:tag_dataend-tag_datastart];

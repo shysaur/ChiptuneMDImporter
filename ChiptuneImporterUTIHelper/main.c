@@ -1,5 +1,5 @@
 //
-//  main.m
+//  main.c
 //  ChiptuneImporterUTIHelper
 //
 //  Created by Daniele Cattaneo on 17/10/15.

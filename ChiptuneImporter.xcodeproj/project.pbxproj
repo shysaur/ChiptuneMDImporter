@@ -29,7 +29,7 @@
 		017EDAE5193D337C00FE2B2B /* schema.strings in Resources */ = {isa = PBXBuildFile; fileRef = 017EDAE3193D337C00FE2B2B /* schema.strings */; };
 		017FE5031BD2D95600D8C41E /* ChiptuneMDImporter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 01FB7F46193D0E5C003707D7 /* ChiptuneMDImporter.mm */; settings = {ASSET_TAGS = (); }; };
 		017FE50B1BD2DD0E00D8C41E /* ChiptuneImporter.mdimporter in CopyFiles */ = {isa = PBXBuildFile; fileRef = 01FB7F30193D0E5C003707D7 /* ChiptuneImporter.mdimporter */; };
-		017FE5171BD2E9A200D8C41E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 017FE5161BD2E9A200D8C41E /* main.m */; };
+		017FE5171BD2E9A200D8C41E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 017FE5161BD2E9A200D8C41E /* main.c */; };
 		017FE5221BD2EA2300D8C41E /* ChiptuneImporterUTIHelper.app in Resources */ = {isa = PBXBuildFile; fileRef = 017FE5101BD2E9A200D8C41E /* ChiptuneImporterUTIHelper.app */; };
 		017FE5271BD300B400D8C41E /* NSMutableDictionary+CMI.m in Sources */ = {isa = PBXBuildFile; fileRef = 017FE5261BD300B400D8C41E /* NSMutableDictionary+CMI.m */; settings = {ASSET_TAGS = (); }; };
 		01D5640F1BD3E3C9002ABA1D /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D5640E1BD3E3C9002ABA1D /* CoreServices.framework */; };
@@ -82,7 +82,7 @@
 		017EDAE1193D326300FE2B2B /* schema.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = schema.xml; sourceTree = "<group>"; };
 		017EDAE4193D337C00FE2B2B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/schema.strings; sourceTree = "<group>"; };
 		017FE5101BD2E9A200D8C41E /* ChiptuneImporterUTIHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChiptuneImporterUTIHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		017FE5161BD2E9A200D8C41E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		017FE5161BD2E9A200D8C41E /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		017FE51D1BD2E9A200D8C41E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		017FE5251BD300B400D8C41E /* NSMutableDictionary+CMI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+CMI.h"; sourceTree = "<group>"; };
 		017FE5261BD300B400D8C41E /* NSMutableDictionary+CMI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+CMI.m"; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 		017FE5151BD2E9A200D8C41E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				017FE5161BD2E9A200D8C41E /* main.m */,
+				017FE5161BD2E9A200D8C41E /* main.c */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -336,7 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				017FE5171BD2E9A200D8C41E /* main.m in Sources */,
+				017FE5171BD2E9A200D8C41E /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

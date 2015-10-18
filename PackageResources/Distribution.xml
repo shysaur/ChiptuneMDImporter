@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<installer-gui-script minSpecVersion="1">
+    <title>ChiptuneImporter</title> 
+
+    <pkg-ref id="com.danielecattaneo.chiptuneimporter"/>
+    <license file="gpl-2.0-standalone.html" uti="public.html"/>
+    <options customize="never" require-scripts="false"/>
+    <domains enable_anywhere="false" enable_currentUserHome="true" enable_localSystem="true"/>
+    <choices-outline>
+        <line choice="default">
+            <line choice="com.danielecattaneo.chiptuneimporter"/>
+        </line>
+    </choices-outline>
+    <choice id="default"/>
+    <choice id="com.danielecattaneo.chiptuneimporter" visible="false">
+        <pkg-ref id="com.danielecattaneo.chiptuneimporter"/>
+    </choice>
+    <pkg-ref id="com.danielecattaneo.chiptuneimporter" version="" onConclusion="none">ChiptuneImporter.pkg</pkg-ref>
+</installer-gui-script>

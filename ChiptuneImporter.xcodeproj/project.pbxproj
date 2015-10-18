@@ -244,8 +244,8 @@
 			buildPhases = (
 				01FB7F2C193D0E5C003707D7 /* Sources */,
 				01FB7F2D193D0E5C003707D7 /* Frameworks */,
-				01FB7F2E193D0E5C003707D7 /* Resources */,
 				01FD720E19433253003EFF02 /* ShellScript */,
+				01FB7F2E193D0E5C003707D7 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -419,6 +419,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.danielecattaneo.ChiptuneImporterUTIHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -437,6 +438,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.danielecattaneo.ChiptuneImporterUTIHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -518,11 +520,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "ChiptuneImporter/ChiptuneImporter-Info.plist";
-				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
+				INSTALL_PATH = /Library/Spotlight;
 				LIBRARY_STYLE = BUNDLE;
 				PRODUCT_BUNDLE_IDENTIFIER = com.danielecattaneo.chiptuneimporter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = mdimporter;
 			};
 			name = Debug;
@@ -534,11 +535,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "ChiptuneImporter/ChiptuneImporter-Info.plist";
-				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
+				INSTALL_PATH = /Library/Spotlight;
 				LIBRARY_STYLE = BUNDLE;
 				PRODUCT_BUNDLE_IDENTIFIER = com.danielecattaneo.chiptuneimporter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = mdimporter;
 			};
 			name = Release;

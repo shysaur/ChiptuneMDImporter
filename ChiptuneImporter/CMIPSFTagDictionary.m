@@ -128,7 +128,7 @@ NSNumber *DurationStringToSeconds(NSString *str) {
   
   NSStringEncoding enc = NSWindowsCP1252StringEncoding;
   NSMutableDictionary *intermdict;
-  NSMutableDictionary *outdict;
+  NSArray *keys;
   tPsfParserState state;
   char *tp = (char*)[raw bytes];
   char *tagend = tp + [raw length];
@@ -202,12 +202,14 @@ NSNumber *DurationStringToSeconds(NSString *str) {
               enc = NSUTF8StringEncoding;
             else {
               NSMutableData *td;
-              key = [NSString stringWithCString:tag_namestart encoding:NSASCIIStringEncoding];
-              if ((td = [intermdict valueForKey:key])) {
+              key = [NSString stringWithUTF8String:tag_namestart];
+              if ((td = [intermdict objectForKey:key])) {
                 [td appendBytes:"0x0A" length:1];
                 [td appendBytes:tag_datastart length:tag_dataend-tag_datastart];
-              } else
-                [intermdict setValue:[NSMutableData dataWithBytes:tag_datastart length:tag_dataend-tag_datastart] forKey:key];
+              } else {
+                td = [NSMutableData dataWithBytes:tag_datastart length:tag_dataend-tag_datastart];
+                [intermdict setObject:td forKey:key];
+              }
             }
             state = kKeyLeadSpaceSkip;
           }
@@ -221,18 +223,17 @@ NSNumber *DurationStringToSeconds(NSString *str) {
     }
   }
   
-  outdict = [[NSMutableDictionary alloc] initWithCapacity:[intermdict count]];
-  
-  for (key in intermdict) {
+  keys = [intermdict allKeys];
+  for (key in keys) {
     NSData *vin;
     NSString *vout;
     
-    vin = [intermdict valueForKey:key];
+    vin = [intermdict objectForKey:key];
     vout = [[NSString alloc] initWithData:vin encoding:enc];
-    [outdict setValue:vout forKey:key];
+    [intermdict setObject:vout forKey:key];
   }
   
-  return [outdict copy];
+  return [intermdict copy];
 }
 
 

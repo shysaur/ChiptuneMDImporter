@@ -1,4 +1,4 @@
 #!/bin/sh
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -v "$2/Library/Spotlight/ChiptuneImporter.mdimporter/Contents/Resources/ChiptuneImporterUTIHelper.app"
-/usr/bin/mdimport -d3 -r "$2/Library/Spotlight/ChiptuneImporter.mdimporter"
+su $USER -c "/usr/bin/mdimport -d3 -r ""$2/Library/Spotlight/ChiptuneImporter.mdimporter"
 exit 0

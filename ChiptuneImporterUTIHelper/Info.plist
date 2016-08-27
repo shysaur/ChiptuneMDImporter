@@ -33,6 +33,26 @@
 				<string>public.data</string>
 				<string>public.content</string>
 			</array>
+			<key>UTTypeDescription</key>
+			<string>Nitro Composer Sound Format</string>
+			<key>UTTypeIdentifier</key>
+			<string>org.neilcorlett.psf.nitrocomposer</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>minincsf</string>
+					<string>ncsf</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.audio</string>
+				<string>public.data</string>
+				<string>public.content</string>
+			</array>
 			<key>UTTypeIdentifier</key>
 			<string>org.sidmusic.sidtune</string>
 			<key>UTTypeDescription</key>

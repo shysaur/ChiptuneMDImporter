@@ -11,6 +11,14 @@
 			<string>MDImporter</string>
 			<key>LSItemContentTypes</key>
 			<array>
+				<string>org.neilcorlett.psf.nitrocomposer</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>MDImporter</string>
+			<key>LSItemContentTypes</key>
+			<array>
 				<string>org.sidmusic.sidtune</string>
 			</array>
 		</dict>
@@ -114,7 +122,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>142</string>
+	<string>143</string>
 	<key>CFPlugInDynamicRegisterFunction</key>
 	<string></string>
 	<key>CFPlugInDynamicRegistration</key>

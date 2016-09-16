@@ -148,7 +148,7 @@ v0 ID666::GetID666(SPCHdr &spc)
 			emu = 0;
 
 		memcpy(datetxt,spc.date,11);
-		y = 0;
+		y = m = d = 0;
 		strcpy(str,datetxt);
 		if (str[0] != 0)
 		{

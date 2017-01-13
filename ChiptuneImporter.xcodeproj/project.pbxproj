@@ -35,6 +35,8 @@
 		01D483D51E294442008E0408 /* A2Str.c in Sources */ = {isa = PBXBuildFile; fileRef = 017D97C51940EEA400E84613 /* A2Str.c */; };
 		01D483D61E294465008E0408 /* libChiptuneImporterImpl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D483C71E294406008E0408 /* libChiptuneImporterImpl.a */; };
 		01D483D81E294546008E0408 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D483D71E294546008E0408 /* libc++.tbd */; };
+		01D483E21E2946E5008E0408 /* libChiptuneImporterImpl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D483C71E294406008E0408 /* libChiptuneImporterImpl.a */; };
+		01D483E91E29476F008E0408 /* CMIPSFTagParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D483E81E29476F008E0408 /* CMIPSFTagParserTest.m */; };
 		01D5640F1BD3E3C9002ABA1D /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D5640E1BD3E3C9002ABA1D /* CoreServices.framework */; };
 		01FB7F36193D0E5C003707D7 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FB7F35193D0E5C003707D7 /* CoreFoundation.framework */; };
 		01FB7F3A193D0E5C003707D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FB7F39193D0E5C003707D7 /* Foundation.framework */; };
@@ -57,6 +59,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 017FE50F1BD2E9A100D8C41E;
 			remoteInfo = ChiptuneImporterUTIHelper;
+		};
+		01D483E31E2946E5008E0408 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01FB7F28193D0E5C003707D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01D483C61E294406008E0408;
+			remoteInfo = ChiptuneImporterImpl;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -90,6 +99,9 @@
 		017FE5261BD300B400D8C41E /* NSMutableDictionary+CMI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+CMI.m"; sourceTree = "<group>"; };
 		01D483C71E294406008E0408 /* libChiptuneImporterImpl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libChiptuneImporterImpl.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		01D483D71E294546008E0408 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		01D483DD1E2946E5008E0408 /* ChiptuneImporterTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChiptuneImporterTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		01D483E11E2946E5008E0408 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01D483E81E29476F008E0408 /* CMIPSFTagParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMIPSFTagParserTest.m; sourceTree = "<group>"; };
 		01D5640E1BD3E3C9002ABA1D /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		01FB7F30193D0E5C003707D7 /* ChiptuneImporter.mdimporter */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChiptuneImporter.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
 		01FB7F35193D0E5C003707D7 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -116,6 +128,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01D483DA1E2946E5008E0408 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01D483E21E2946E5008E0408 /* libChiptuneImporterImpl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,12 +186,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		01D483DE1E2946E5008E0408 /* ChiptuneImporterTest */ = {
+			isa = PBXGroup;
+			children = (
+				01D483E81E29476F008E0408 /* CMIPSFTagParserTest.m */,
+				01D483E11E2946E5008E0408 /* Info.plist */,
+			);
+			path = ChiptuneImporterTest;
+			sourceTree = "<group>";
+		};
 		01FB7F27193D0E5C003707D7 = {
 			isa = PBXGroup;
 			children = (
 				01FD720F19436BB8003EFF02 /* Implementation */,
 				01FB7F3B193D0E5C003707D7 /* ChiptuneImporter */,
 				017FE5111BD2E9A200D8C41E /* ChiptuneImporterUTIHelper */,
+				01D483DE1E2946E5008E0408 /* ChiptuneImporterTest */,
 				01FB7F32193D0E5C003707D7 /* Frameworks */,
 				01FB7F31193D0E5C003707D7 /* Products */,
 			);
@@ -183,6 +213,7 @@
 				01FB7F30193D0E5C003707D7 /* ChiptuneImporter.mdimporter */,
 				017FE5101BD2E9A200D8C41E /* ChiptuneImporterUTIHelper.app */,
 				01D483C71E294406008E0408 /* libChiptuneImporterImpl.a */,
+				01D483DD1E2946E5008E0408 /* ChiptuneImporterTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -281,6 +312,24 @@
 			productReference = 01D483C71E294406008E0408 /* libChiptuneImporterImpl.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		01D483DC1E2946E5008E0408 /* ChiptuneImporterTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01D483E51E2946E5008E0408 /* Build configuration list for PBXNativeTarget "ChiptuneImporterTest" */;
+			buildPhases = (
+				01D483D91E2946E5008E0408 /* Sources */,
+				01D483DA1E2946E5008E0408 /* Frameworks */,
+				01D483DB1E2946E5008E0408 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01D483E41E2946E5008E0408 /* PBXTargetDependency */,
+			);
+			name = ChiptuneImporterTest;
+			productName = ChiptuneImporterTest;
+			productReference = 01D483DD1E2946E5008E0408 /* ChiptuneImporterTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		01FB7F2F193D0E5C003707D7 /* ChiptuneImporter */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 01FB7F4C193D0E5C003707D7 /* Build configuration list for PBXNativeTarget "ChiptuneImporter" */;
@@ -319,6 +368,10 @@
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 					};
+					01D483DC1E2946E5008E0408 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 01FB7F2B193D0E5C003707D7 /* Build configuration list for PBXProject "ChiptuneImporter" */;
@@ -338,12 +391,20 @@
 				017FE50F1BD2E9A100D8C41E /* ChiptuneImporterUTIHelper */,
 				017FE5041BD2DCD100D8C41E /* TestInstall */,
 				01D483C61E294406008E0408 /* ChiptuneImporterImpl */,
+				01D483DC1E2946E5008E0408 /* ChiptuneImporterTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		017FE50E1BD2E9A100D8C41E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01D483DB1E2946E5008E0408 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -401,6 +462,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		01D483D91E2946E5008E0408 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01D483E91E29476F008E0408 /* CMIPSFTagParserTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		01FB7F2C193D0E5C003707D7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -422,6 +491,11 @@
 			isa = PBXTargetDependency;
 			target = 017FE50F1BD2E9A100D8C41E /* ChiptuneImporterUTIHelper */;
 			targetProxy = 017FE5231BD2EA3D00D8C41E /* PBXContainerItemProxy */;
+		};
+		01D483E41E2946E5008E0408 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01D483C61E294406008E0408 /* ChiptuneImporterImpl */;
+			targetProxy = 01D483E31E2946E5008E0408 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -525,6 +599,40 @@
 			};
 			name = Release;
 		};
+		01D483E61E2946E5008E0408 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = ChiptuneImporterTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.danielecattaneo.ChiptuneImporterTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		01D483E71E2946E5008E0408 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				INFOPLIST_FILE = ChiptuneImporterTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.danielecattaneo.ChiptuneImporterTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		01FB7F4A193D0E5C003707D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -565,6 +673,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -602,6 +711,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -662,6 +772,14 @@
 			buildConfigurations = (
 				01D483CE1E294407008E0408 /* Debug */,
 				01D483CF1E294407008E0408 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		01D483E51E2946E5008E0408 /* Build configuration list for PBXNativeTarget "ChiptuneImporterTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01D483E61E2946E5008E0408 /* Debug */,
+				01D483E71E2946E5008E0408 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

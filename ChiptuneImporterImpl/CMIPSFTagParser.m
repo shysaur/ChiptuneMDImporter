@@ -11,7 +11,7 @@
 #include <limits.h>
 
 
-NSNumber *PSFDurationStringToSeconds(NSString *str) {
+NSNumber *CMIPSFDurationStringToSeconds(NSString *str) {
   long h=0, m=0;
   double secs=0;
   char *cs;
@@ -82,7 +82,7 @@ fail2:
 }
 
 
-NSDictionary *PSFTagsDictionaryFromTagData(NSData *raw)
+NSDictionary *CMIPSFTagsDictionaryFromTagData(NSData *raw)
 {
   unsigned char *tag_namestart = NULL, *tag_nameend = NULL;
   unsigned char *tag_datastart = NULL, *tag_dataend = NULL;
@@ -194,9 +194,9 @@ NSDictionary *PSFTagsDictionaryFromTagData(NSData *raw)
 }
 
 
-NSDictionary *PSFTagsDictionaryFromFile(FILE *fp)
+NSDictionary *CMIPSFTagsDictionaryFromFile(FILE *fp)
 {
   NSData *d = PSFExtractTagDataFromFile(fp);
-  return PSFTagsDictionaryFromTagData(d);
+  return CMIPSFTagsDictionaryFromTagData(d);
 }
 

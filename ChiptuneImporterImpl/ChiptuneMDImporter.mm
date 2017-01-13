@@ -163,7 +163,7 @@ BOOL CMIImportPSF(FILE *fp, NSMutableDictionary *sd)
   NSString *key;
   NSDictionary *tp;
   
-  tp = PSFTagsDictionaryFromFile(fp);
+  tp = CMIPSFTagsDictionaryFromFile(fp);
   if (!tp) return NO;
   
   for (key in tp) {
@@ -191,7 +191,7 @@ BOOL CMIImportPSF(FILE *fp, NSMutableDictionary *sd)
       if (outk == kMDItemAuthors)
         val = [NSArray arrayWithObject:[tp objectForKey:key]];
       else if (outk == kMDItemDurationSeconds)
-        val = PSFDurationStringToSeconds([tp objectForKey:key]);
+        val = CMIPSFDurationStringToSeconds([tp objectForKey:key]);
       else
         val = [tp objectForKey:key];
       

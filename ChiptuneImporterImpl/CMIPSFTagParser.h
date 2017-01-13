@@ -13,10 +13,10 @@
 extern "C" {
 #endif
 
-NSDictionary *PSFTagsDictionaryFromFile(FILE *fp);
-NSDictionary *PSFTagsDictionaryFromTagData(NSData *raw);
-NSNumber *PSFDurationStringToSeconds(NSString *str);
-  
+NSDictionary *CMIPSFTagsDictionaryFromFile(FILE *fp);
+NSDictionary *CMIPSFTagsDictionaryFromTagData(NSData *raw);
+NSNumber *CMIPSFDurationStringToSeconds(NSString *str);
+
 #ifdef __cplusplus
 }
 #endif

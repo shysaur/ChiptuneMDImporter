@@ -23,7 +23,7 @@
   [cases enumerateKeysAndObjectsUsingBlock:
   ^(NSString * _Nonnull tags, NSDictionary * _Nonnull exp, BOOL * _Nonnull stop) {
     NSData *d = [tags dataUsingEncoding:NSUTF8StringEncoding];
-    NSDictionary *res = PSFTagsDictionaryFromTagData(d);
+    NSDictionary *res = CMIPSFTagsDictionaryFromTagData(d);
     res = [NSDictionary dictionaryWithDictionary:res];
     XCTAssert([res isEqual:exp], "%@ =/=> %@ !", tags, exp);
   }];

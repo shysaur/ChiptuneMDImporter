@@ -147,9 +147,9 @@ fail2:
 
 - (NSDictionary *)tagDictionaryFromRawTagData:(NSData *)raw
 {
-  char *tag_namestart = NULL, *tag_nameend = NULL;
-  char *tag_datastart = NULL, *tag_dataend = NULL;
-  char *tp, *tagend;
+  unsigned char *tag_namestart = NULL, *tag_nameend = NULL;
+  unsigned char *tag_datastart = NULL, *tag_dataend = NULL;
+  unsigned char *tp, *tagend;
   NSMutableDictionary *intermdict;
   NSStringEncoding enc;
   NSMutableData *td;
@@ -160,7 +160,7 @@ fail2:
     kValueLeadSpaceSkip, kValueSkip, kGetNewline
   } state;
   
-  tp = (char*)[raw bytes];
+  tp = (unsigned char*)[raw bytes];
   tagend = tp + [raw length];
   state = kKeyLeadSpaceSkip;
   intermdict = [[NSMutableDictionary alloc] init];
@@ -221,7 +221,7 @@ fail2:
           if (*tp == 0x0A) {
             *tag_nameend = '\0';
             *tag_dataend = '\0';
-            key = [NSString stringWithUTF8String:tag_namestart];
+            key = [NSString stringWithUTF8String:(char*)tag_namestart];
             if ((td = [intermdict objectForKey:key])) {
               [td appendBytes:"\n" length:1];
             } else {

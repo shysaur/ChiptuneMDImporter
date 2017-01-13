@@ -8,19 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CMIPSFTagDictionary : NSDictionary
-{
-  NSDictionary *storage;
-}
-
-- (instancetype)initWithPSFFilePointer:(FILE *)fp;
-
-@end
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-  NSNumber *DurationStringToSeconds(NSString *str);
+
+NSDictionary *PSFTagsDictionaryFromFile(FILE *fp);
+NSDictionary *PSFTagsDictionaryFromTagData(NSData *raw);
+NSNumber *PSFDurationStringToSeconds(NSString *str);
+  
 #ifdef __cplusplus
 }
 #endif

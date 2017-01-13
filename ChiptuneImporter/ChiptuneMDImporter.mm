@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #import "ChiptuneMDImporter.h"
-#import "CMIPSFTagDictionary.h"
+#import "CMIPSFTagParser.h"
 #import "NSMutableDictionary+CMI.h"
 #import "ID666.h"
 
@@ -161,9 +161,9 @@ BOOL CMIAttemptToImportSPC(const char *fn, NSMutableDictionary *sd)
 BOOL CMIImportPSF(FILE *fp, NSMutableDictionary *sd)
 {
   NSString *key;
-  CMIPSFTagDictionary *tp;
+  NSDictionary *tp;
   
-  tp = [[CMIPSFTagDictionary alloc] initWithPSFFilePointer:fp];
+  tp = PSFTagsDictionaryFromFile(fp);
   if (!tp) return NO;
   
   for (key in tp) {
@@ -191,7 +191,7 @@ BOOL CMIImportPSF(FILE *fp, NSMutableDictionary *sd)
       if (outk == kMDItemAuthors)
         val = [NSArray arrayWithObject:[tp objectForKey:key]];
       else if (outk == kMDItemDurationSeconds)
-        val = DurationStringToSeconds([tp objectForKey:key]);
+        val = PSFDurationStringToSeconds([tp objectForKey:key]);
       else
         val = [tp objectForKey:key];
       

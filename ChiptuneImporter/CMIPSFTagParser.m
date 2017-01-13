@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 Daniele Cattaneo. All rights reserved.
 //
 
-#import "CMIPSFTagDictionary.h"
+#import "CMIPSFTagParser.h"
 #include <stdio.h>
 #include <limits.h>
 
 
-NSNumber *DurationStringToSeconds(NSString *str) {
+NSNumber *PSFDurationStringToSeconds(NSString *str) {
   long h=0, m=0;
   double secs=0;
   char *cs;
@@ -41,6 +41,17 @@ NSNumber *DurationStringToSeconds(NSString *str) {
 }
 
 
+@interface CMIPSFTagDictionary : NSDictionary
+{
+  NSDictionary *storage;
+}
+
+- (instancetype)initWithPSFFilePointer:(FILE *)fp;
+- (instancetype)initWithTagData:(NSData *)raw;
+
+@end
+
+
 @implementation CMIPSFTagDictionary
 
 
@@ -62,10 +73,15 @@ NSNumber *DurationStringToSeconds(NSString *str) {
   if (!raw)
     return nil;
   
+  return [self initWithTagData:raw];
+}
+
+
+- (instancetype)initWithTagData:(NSData *)raw
+{
   storage = [self tagDictionaryFromRawTagData:raw];
   if (!storage)
     return nil;
-  
   return self;
 }
 
@@ -242,3 +258,16 @@ fail2:
 
 
 @end
+
+
+NSDictionary *PSFTagsDictionaryFromFile(FILE *fp)
+{
+  return [[CMIPSFTagDictionary alloc] initWithPSFFilePointer:fp];
+}
+
+
+NSDictionary *PSFTagsDictionaryFromTagData(NSData *raw)
+{
+  return [[CMIPSFTagDictionary alloc] initWithTagData:raw];
+}
+

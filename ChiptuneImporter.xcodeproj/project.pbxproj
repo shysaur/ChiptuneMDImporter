@@ -253,10 +253,10 @@
 		01FD720F19436BB8003EFF02 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
-				01FD721319437468003EFF02 /* CMIPSFTagParser.h */,
-				01FD721419437468003EFF02 /* CMIPSFTagParser.m */,
 				017FE5251BD300B400D8C41E /* NSMutableDictionary+CMI.h */,
 				017FE5261BD300B400D8C41E /* NSMutableDictionary+CMI.m */,
+				01FD721319437468003EFF02 /* CMIPSFTagParser.h */,
+				01FD721419437468003EFF02 /* CMIPSFTagParser.m */,
 				01FB7F45193D0E5C003707D7 /* ChiptuneMDImporter.h */,
 				01FB7F46193D0E5C003707D7 /* ChiptuneMDImporter.mm */,
 				017D97C21940EE6A00E84613 /* AlphaIISPCID666 */,
@@ -336,8 +336,8 @@
 			buildPhases = (
 				01FB7F2C193D0E5C003707D7 /* Sources */,
 				01FB7F2D193D0E5C003707D7 /* Frameworks */,
-				01FD720E19433253003EFF02 /* ShellScript */,
 				01FB7F2E193D0E5C003707D7 /* Resources */,
+				01FD720E19433253003EFF02 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -436,7 +436,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "VERNO=$(/usr/libexec/PlistBuddy -c \"Print :CFBundleVersion\" \"$INFOPLIST_FILE\")\necho $VERNO\nVERNO=$((VERNO+1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $VERNO\" \"$INFOPLIST_FILE\"\n";
+			shellScript = "VERNO=$(git rev-list HEAD --count)\nif [ $? -ne 0 ]; then\n  VERNO='1';\nelse\n  VERNO=$(($VERNO + 166 - 47));\nfi\necho $VERNO\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $VERNO\" \"$TARGET_BUILD_DIR/$INFOPLIST_PATH\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 

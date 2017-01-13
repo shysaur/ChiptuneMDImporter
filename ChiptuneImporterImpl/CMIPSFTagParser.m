@@ -41,70 +41,7 @@ NSNumber *PSFDurationStringToSeconds(NSString *str) {
 }
 
 
-@interface CMIPSFTagDictionary : NSDictionary
-{
-  NSDictionary *storage;
-}
-
-- (instancetype)initWithPSFFilePointer:(FILE *)fp;
-- (instancetype)initWithTagData:(NSData *)raw;
-
-@end
-
-
-@implementation CMIPSFTagDictionary
-
-
-- (instancetype)initWithObjects:(const id _Nonnull __unsafe_unretained *)objects forKeys:(const id<NSCopying> _Nonnull __unsafe_unretained *)keys count:(NSUInteger)cnt
-{
-  self = [super init];
-  storage = [[NSDictionary alloc] initWithObjects:objects forKeys:keys count:cnt];
-  return storage ? self : nil;
-}
-
-
-- (instancetype)initWithPSFFilePointer:(FILE *)fp
-{
-  NSData *raw;
-  
-  self = [super init];
-  
-  raw = [self rawTagDataFromFile:fp];
-  if (!raw)
-    return nil;
-  
-  return [self initWithTagData:raw];
-}
-
-
-- (instancetype)initWithTagData:(NSData *)raw
-{
-  storage = [self tagDictionaryFromRawTagData:raw];
-  if (!storage)
-    return nil;
-  return self;
-}
-
-
-- (NSUInteger)count
-{
-  return [storage count];
-}
-
-
-- (id)objectForKey:(id)aKey
-{
-  return [storage objectForKey:aKey];
-}
-
-
-- (NSEnumerator *)keyEnumerator
-{
-  return [storage keyEnumerator];
-}
-
-
-- (NSData *)rawTagDataFromFile:(FILE *)fp
+NSData *PSFExtractTagDataFromFile(FILE *fp)
 {
   NSData *res;
   off_t tag_size;
@@ -145,7 +82,7 @@ fail2:
 }
 
 
-- (NSDictionary *)tagDictionaryFromRawTagData:(NSData *)raw
+NSDictionary *PSFTagsDictionaryFromTagData(NSData *raw)
 {
   unsigned char *tag_namestart = NULL, *tag_nameend = NULL;
   unsigned char *tag_datastart = NULL, *tag_dataend = NULL;
@@ -257,17 +194,9 @@ fail2:
 }
 
 
-@end
-
-
 NSDictionary *PSFTagsDictionaryFromFile(FILE *fp)
 {
-  return [[CMIPSFTagDictionary alloc] initWithPSFFilePointer:fp];
-}
-
-
-NSDictionary *PSFTagsDictionaryFromTagData(NSData *raw)
-{
-  return [[CMIPSFTagDictionary alloc] initWithTagData:raw];
+  NSData *d = PSFExtractTagDataFromFile(fp);
+  return PSFTagsDictionaryFromTagData(d);
 }
 

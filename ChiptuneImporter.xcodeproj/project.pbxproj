@@ -22,23 +22,25 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		017D97C81940EEA400E84613 /* A2Date.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 017D97C31940EEA400E84613 /* A2Date.cpp */; };
-		017D97C91940EEA400E84613 /* A2Str.c in Sources */ = {isa = PBXBuildFile; fileRef = 017D97C51940EEA400E84613 /* A2Str.c */; };
-		017D97CC1940EEAE00E84613 /* ID666.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 017D97CA1940EEAE00E84613 /* ID666.cpp */; };
 		017EDAE2193D326300FE2B2B /* schema.xml in Resources */ = {isa = PBXBuildFile; fileRef = 017EDAE1193D326300FE2B2B /* schema.xml */; };
 		017EDAE5193D337C00FE2B2B /* schema.strings in Resources */ = {isa = PBXBuildFile; fileRef = 017EDAE3193D337C00FE2B2B /* schema.strings */; };
-		017FE5031BD2D95600D8C41E /* ChiptuneMDImporter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 01FB7F46193D0E5C003707D7 /* ChiptuneMDImporter.mm */; };
 		017FE50B1BD2DD0E00D8C41E /* ChiptuneImporter.mdimporter in CopyFiles */ = {isa = PBXBuildFile; fileRef = 01FB7F30193D0E5C003707D7 /* ChiptuneImporter.mdimporter */; };
 		017FE5171BD2E9A200D8C41E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 017FE5161BD2E9A200D8C41E /* main.c */; };
 		017FE5221BD2EA2300D8C41E /* ChiptuneImporterUTIHelper.app in Resources */ = {isa = PBXBuildFile; fileRef = 017FE5101BD2E9A200D8C41E /* ChiptuneImporterUTIHelper.app */; };
-		017FE5271BD300B400D8C41E /* NSMutableDictionary+CMI.m in Sources */ = {isa = PBXBuildFile; fileRef = 017FE5261BD300B400D8C41E /* NSMutableDictionary+CMI.m */; };
+		01D483D01E294442008E0408 /* CMIPSFTagParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FD721419437468003EFF02 /* CMIPSFTagParser.m */; };
+		01D483D11E294442008E0408 /* NSMutableDictionary+CMI.m in Sources */ = {isa = PBXBuildFile; fileRef = 017FE5261BD300B400D8C41E /* NSMutableDictionary+CMI.m */; };
+		01D483D21E294442008E0408 /* ChiptuneMDImporter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 01FB7F46193D0E5C003707D7 /* ChiptuneMDImporter.mm */; };
+		01D483D31E294442008E0408 /* ID666.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 017D97CA1940EEAE00E84613 /* ID666.cpp */; };
+		01D483D41E294442008E0408 /* A2Date.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 017D97C31940EEA400E84613 /* A2Date.cpp */; };
+		01D483D51E294442008E0408 /* A2Str.c in Sources */ = {isa = PBXBuildFile; fileRef = 017D97C51940EEA400E84613 /* A2Str.c */; };
+		01D483D61E294465008E0408 /* libChiptuneImporterImpl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D483C71E294406008E0408 /* libChiptuneImporterImpl.a */; };
+		01D483D81E294546008E0408 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D483D71E294546008E0408 /* libc++.tbd */; };
 		01D5640F1BD3E3C9002ABA1D /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D5640E1BD3E3C9002ABA1D /* CoreServices.framework */; };
 		01FB7F36193D0E5C003707D7 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FB7F35193D0E5C003707D7 /* CoreFoundation.framework */; };
 		01FB7F3A193D0E5C003707D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FB7F39193D0E5C003707D7 /* Foundation.framework */; };
 		01FB7F40193D0E5C003707D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01FB7F3E193D0E5C003707D7 /* InfoPlist.strings */; };
 		01FB7F42193D0E5C003707D7 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 01FB7F41193D0E5C003707D7 /* main.c */; };
 		01FB7F44193D0E5C003707D7 /* GetMetadataForFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FB7F43193D0E5C003707D7 /* GetMetadataForFile.m */; };
-		01FD721519437468003EFF02 /* CMIPSFTagParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FD721419437468003EFF02 /* CMIPSFTagParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,13 +74,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		017D97C31940EEA400E84613 /* A2Date.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.cpp.cpp; name = A2Date.cpp; path = SAmp310s/A2Date.cpp; sourceTree = SOURCE_ROOT; tabWidth = 4; usesTabs = 1; };
-		017D97C41940EEA400E84613 /* A2Date.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.h; name = A2Date.h; path = SAmp310s/A2Date.h; sourceTree = SOURCE_ROOT; tabWidth = 4; usesTabs = 1; };
-		017D97C51940EEA400E84613 /* A2Str.c */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.c; name = A2Str.c; path = SAmp310s/A2Str.c; sourceTree = SOURCE_ROOT; tabWidth = 4; usesTabs = 1; };
-		017D97C61940EEA400E84613 /* A2Str.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.h; name = A2Str.h; path = SAmp310s/A2Str.h; sourceTree = SOURCE_ROOT; tabWidth = 4; usesTabs = 1; };
-		017D97C71940EEA400E84613 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.h; name = Types.h; path = SAmp310s/Types.h; sourceTree = SOURCE_ROOT; tabWidth = 4; usesTabs = 1; };
-		017D97CA1940EEAE00E84613 /* ID666.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ID666.cpp; path = SAmp310s/SNES/ID666.cpp; sourceTree = SOURCE_ROOT; tabWidth = 4; usesTabs = 1; wrapsLines = 1; };
-		017D97CB1940EEAE00E84613 /* ID666.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.h; name = ID666.h; path = SAmp310s/SNES/ID666.h; sourceTree = SOURCE_ROOT; tabWidth = 4; usesTabs = 1; };
+		017D97C31940EEA400E84613 /* A2Date.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.cpp.cpp; path = A2Date.cpp; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; };
+		017D97C41940EEA400E84613 /* A2Date.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.h; path = A2Date.h; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; };
+		017D97C51940EEA400E84613 /* A2Str.c */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.c; path = A2Str.c; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; };
+		017D97C61940EEA400E84613 /* A2Str.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.h; path = A2Str.h; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; };
+		017D97C71940EEA400E84613 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; };
+		017D97CA1940EEAE00E84613 /* ID666.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ID666.cpp; path = SNES/ID666.cpp; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; wrapsLines = 1; };
+		017D97CB1940EEAE00E84613 /* ID666.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.h; name = ID666.h; path = SNES/ID666.h; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; };
 		017EDAE1193D326300FE2B2B /* schema.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = schema.xml; sourceTree = "<group>"; };
 		017EDAE4193D337C00FE2B2B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/schema.strings; sourceTree = "<group>"; };
 		017FE5101BD2E9A200D8C41E /* ChiptuneImporterUTIHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChiptuneImporterUTIHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +88,8 @@
 		017FE51D1BD2E9A200D8C41E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		017FE5251BD300B400D8C41E /* NSMutableDictionary+CMI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+CMI.h"; sourceTree = "<group>"; };
 		017FE5261BD300B400D8C41E /* NSMutableDictionary+CMI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+CMI.m"; sourceTree = "<group>"; };
+		01D483C71E294406008E0408 /* libChiptuneImporterImpl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libChiptuneImporterImpl.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		01D483D71E294546008E0408 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		01D5640E1BD3E3C9002ABA1D /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		01FB7F30193D0E5C003707D7 /* ChiptuneImporter.mdimporter */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChiptuneImporter.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
 		01FB7F35193D0E5C003707D7 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -96,8 +100,8 @@
 		01FB7F43193D0E5C003707D7 /* GetMetadataForFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetMetadataForFile.m; sourceTree = "<group>"; };
 		01FB7F45193D0E5C003707D7 /* ChiptuneMDImporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChiptuneMDImporter.h; sourceTree = "<group>"; };
 		01FB7F46193D0E5C003707D7 /* ChiptuneMDImporter.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ChiptuneMDImporter.mm; sourceTree = "<group>"; };
-		01FD721319437468003EFF02 /* CMIPSFTagParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMIPSFTagParser.h; path = ChiptuneImporter/CMIPSFTagParser.h; sourceTree = "<group>"; };
-		01FD721419437468003EFF02 /* CMIPSFTagParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMIPSFTagParser.m; path = ChiptuneImporter/CMIPSFTagParser.m; sourceTree = "<group>"; };
+		01FD721319437468003EFF02 /* CMIPSFTagParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMIPSFTagParser.h; sourceTree = "<group>"; };
+		01FD721419437468003EFF02 /* CMIPSFTagParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMIPSFTagParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,10 +112,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		01D483C41E294406008E0408 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		01FB7F2D193D0E5C003707D7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01D483D81E294546008E0408 /* libc++.tbd in Frameworks */,
+				01D483D61E294465008E0408 /* libChiptuneImporterImpl.a in Frameworks */,
 				01D5640F1BD3E3C9002ABA1D /* CoreServices.framework in Frameworks */,
 				01FB7F36193D0E5C003707D7 /* CoreFoundation.framework in Frameworks */,
 				01FB7F3A193D0E5C003707D7 /* Foundation.framework in Frameworks */,
@@ -133,7 +146,7 @@
 				017D97C71940EEA400E84613 /* Types.h */,
 			);
 			name = AlphaIISPCID666;
-			path = ChiptuneImporter;
+			path = SAmp310s;
 			sourceTree = "<group>";
 		};
 		017FE5111BD2E9A200D8C41E /* ChiptuneImporterUTIHelper */ = {
@@ -156,8 +169,7 @@
 		01FB7F27193D0E5C003707D7 = {
 			isa = PBXGroup;
 			children = (
-				01FD720F19436BB8003EFF02 /* PSFTags */,
-				017D97C21940EE6A00E84613 /* AlphaIISPCID666 */,
+				01FD720F19436BB8003EFF02 /* Implementation */,
 				01FB7F3B193D0E5C003707D7 /* ChiptuneImporter */,
 				017FE5111BD2E9A200D8C41E /* ChiptuneImporterUTIHelper */,
 				01FB7F32193D0E5C003707D7 /* Frameworks */,
@@ -170,6 +182,7 @@
 			children = (
 				01FB7F30193D0E5C003707D7 /* ChiptuneImporter.mdimporter */,
 				017FE5101BD2E9A200D8C41E /* ChiptuneImporterUTIHelper.app */,
+				01D483C71E294406008E0408 /* libChiptuneImporterImpl.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,6 +190,7 @@
 		01FB7F32193D0E5C003707D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				01D483D71E294546008E0408 /* libc++.tbd */,
 				01D5640E1BD3E3C9002ABA1D /* CoreServices.framework */,
 				01FB7F35193D0E5C003707D7 /* CoreFoundation.framework */,
 				01FB7F39193D0E5C003707D7 /* Foundation.framework */,
@@ -188,10 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				01FB7F43193D0E5C003707D7 /* GetMetadataForFile.m */,
-				017FE5251BD300B400D8C41E /* NSMutableDictionary+CMI.h */,
-				017FE5261BD300B400D8C41E /* NSMutableDictionary+CMI.m */,
-				01FB7F45193D0E5C003707D7 /* ChiptuneMDImporter.h */,
-				01FB7F46193D0E5C003707D7 /* ChiptuneMDImporter.mm */,
 				01FB7F3C193D0E5C003707D7 /* Supporting Files */,
 			);
 			path = ChiptuneImporter;
@@ -209,16 +219,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		01FD720F19436BB8003EFF02 /* PSFTags */ = {
+		01FD720F19436BB8003EFF02 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
 				01FD721319437468003EFF02 /* CMIPSFTagParser.h */,
 				01FD721419437468003EFF02 /* CMIPSFTagParser.m */,
+				017FE5251BD300B400D8C41E /* NSMutableDictionary+CMI.h */,
+				017FE5261BD300B400D8C41E /* NSMutableDictionary+CMI.m */,
+				01FB7F45193D0E5C003707D7 /* ChiptuneMDImporter.h */,
+				01FB7F46193D0E5C003707D7 /* ChiptuneMDImporter.mm */,
+				017D97C21940EE6A00E84613 /* AlphaIISPCID666 */,
 			);
-			name = PSFTags;
+			name = Implementation;
+			path = ChiptuneImporterImpl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		01D483C51E294406008E0408 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		017FE50F1BD2E9A100D8C41E /* ChiptuneImporterUTIHelper */ = {
@@ -237,6 +263,23 @@
 			productName = ChiptuneImporterUTIHelper;
 			productReference = 017FE5101BD2E9A200D8C41E /* ChiptuneImporterUTIHelper.app */;
 			productType = "com.apple.product-type.application";
+		};
+		01D483C61E294406008E0408 /* ChiptuneImporterImpl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01D483CD1E294407008E0408 /* Build configuration list for PBXNativeTarget "ChiptuneImporterImpl" */;
+			buildPhases = (
+				01D483C31E294406008E0408 /* Sources */,
+				01D483C41E294406008E0408 /* Frameworks */,
+				01D483C51E294406008E0408 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChiptuneImporterImpl;
+			productName = ChiptuneImporterImpl;
+			productReference = 01D483C71E294406008E0408 /* libChiptuneImporterImpl.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 		01FB7F2F193D0E5C003707D7 /* ChiptuneImporter */ = {
 			isa = PBXNativeTarget;
@@ -272,6 +315,10 @@
 					017FE50F1BD2E9A100D8C41E = {
 						CreatedOnToolsVersion = 7.0.1;
 					};
+					01D483C61E294406008E0408 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 01FB7F2B193D0E5C003707D7 /* Build configuration list for PBXProject "ChiptuneImporter" */;
@@ -290,6 +337,7 @@
 				01FB7F2F193D0E5C003707D7 /* ChiptuneImporter */,
 				017FE50F1BD2E9A100D8C41E /* ChiptuneImporterUTIHelper */,
 				017FE5041BD2DCD100D8C41E /* TestInstall */,
+				01D483C61E294406008E0408 /* ChiptuneImporterImpl */,
 			);
 		};
 /* End PBXProject section */
@@ -340,17 +388,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		01D483C31E294406008E0408 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01D483D51E294442008E0408 /* A2Str.c in Sources */,
+				01D483D21E294442008E0408 /* ChiptuneMDImporter.mm in Sources */,
+				01D483D11E294442008E0408 /* NSMutableDictionary+CMI.m in Sources */,
+				01D483D01E294442008E0408 /* CMIPSFTagParser.m in Sources */,
+				01D483D41E294442008E0408 /* A2Date.cpp in Sources */,
+				01D483D31E294442008E0408 /* ID666.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		01FB7F2C193D0E5C003707D7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				017D97C81940EEA400E84613 /* A2Date.cpp in Sources */,
-				017D97CC1940EEAE00E84613 /* ID666.cpp in Sources */,
-				017D97C91940EEA400E84613 /* A2Str.c in Sources */,
 				01FB7F42193D0E5C003707D7 /* main.c in Sources */,
-				01FD721519437468003EFF02 /* CMIPSFTagParser.m in Sources */,
-				017FE5031BD2D95600D8C41E /* ChiptuneMDImporter.mm in Sources */,
-				017FE5271BD300B400D8C41E /* NSMutableDictionary+CMI.m in Sources */,
 				01FB7F44193D0E5C003707D7 /* GetMetadataForFile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,6 +492,34 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.danielecattaneo.ChiptuneImporterUTIHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		01D483CE1E294407008E0408 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				EXECUTABLE_PREFIX = lib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		01D483CF1E294407008E0408 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_PREFIX = lib;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -573,6 +656,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		01D483CD1E294407008E0408 /* Build configuration list for PBXNativeTarget "ChiptuneImporterImpl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01D483CE1E294407008E0408 /* Debug */,
+				01D483CF1E294407008E0408 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		01FB7F2B193D0E5C003707D7 /* Build configuration list for PBXProject "ChiptuneImporter" */ = {
 			isa = XCConfigurationList;

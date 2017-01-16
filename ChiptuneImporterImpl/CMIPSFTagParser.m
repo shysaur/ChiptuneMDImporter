@@ -23,21 +23,31 @@ NSNumber *CMIPSFDurationStringToSeconds(NSString *str) {
     char *ce;
     
     ce = strpbrk(cp, ":.,");
-    if (ce == NULL)
+    if (ce == NULL) {
       secs = strtod(cp, &cp);
-    else if (*ce == ':') {
+      if (*cp != '\0')
+        goto fail;
+    } else if (*ce == ':') {
       h = m;
-      m = strtol(cp, NULL, 10);
+      m = strtol(cp, &cp, 10);
+      if (cp != ce)
+        goto fail;
       cp = ce+1;
     } else {
       *ce = '.';
       secs = strtod(cp, &cp);
+      if (*cp != '\0')
+        goto fail;
     }
   }
   secs += (double)(h * 3600 + m * 60);
   free(cs);
   
   return @(secs);
+
+fail:
+  free(cs);
+  return nil;
 }
 
 

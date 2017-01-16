@@ -25,7 +25,7 @@
     NSData *d = [tags dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary *res = CMIPSFTagsDictionaryFromTagData(d);
     res = [NSDictionary dictionaryWithDictionary:res];
-    XCTAssert([res isEqual:exp], "%@ =/=> %@ !", tags, exp);
+    XCTAssert([res isEqual:exp], "%@ =/=> %@ but %@", tags, exp, res);
   }];
 }
 
@@ -41,7 +41,8 @@
 - (void)testOneTag
 {
   [self executeTestCaseData:@{
-    @"tagname=hello\n": @{@"tagname": @"hello"}
+    @"tagname=hello\n": @{@"tagname": @"hello"},
+    @"tag with spaces=hello world\n": @{@"tag with spaces": @"hello world"}
   }];
 }
 
@@ -64,6 +65,7 @@
     @"\nbar": @{},
     @"\nbar\n": @{},
     @"\n\nbar\n\n": @{},
+    @"\n\nbar    \n\n": @{},
     @"tag=1\nfoo\nother=2\n": @{@"tag": @"1", @"other": @"2"}
   }];
 }
@@ -156,6 +158,60 @@
       @"replaygain_album_gain": @"+0.54 dB",
       @"replaygain_album_peak": @"1.0534"
     },
+  }];
+}
+
+
+- (void)executePSFTimeTestCaseData:(NSDictionary<NSString*, id> *)cases
+{
+  [cases enumerateKeysAndObjectsUsingBlock:
+  ^(NSString * _Nonnull time, id _Nonnull exp, BOOL * _Nonnull stop) {
+    NSNumber *res = CMIPSFDurationStringToSeconds(time);
+    if ([exp isKindOfClass:[NSNull class]]) {
+      XCTAssert(res == nil, "result not null!");
+    } else {
+      NSNumber *expnum = (NSNumber *)exp;
+      double a = [res doubleValue];
+      double b = [expnum doubleValue];
+      XCTAssert(fabs(a - b) < (1.0/65536.0), "%lf =/=> %lf !", a, b);
+    }
+  }];
+}
+
+
+- (void)testTimeFormat
+{
+  [self executePSFTimeTestCaseData:@{
+    @"123.45": @123.45,
+    @"123,45": @123.45,
+    @"123:45.67": @7425.67,
+    @"123:45,67": @7425.67,
+    @"12:34:56.78": @45296.78,
+    @"12:34:56,78": @45296.78,
+    @"123": @123,
+    @"123:45": @7425,
+    @"12:34:56": @45296,
+  }];
+}
+
+
+- (void)testInvalidTimeFormat
+{
+  [self executePSFTimeTestCaseData:@{
+    @"hello world": [NSNull null],
+    @"A123.45": [NSNull null],
+    @"123A.45": [NSNull null],
+    @"A123,45": [NSNull null],
+    @"123A,45": [NSNull null],
+    @"123:A45.67": [NSNull null],
+    @"123:45A,67": [NSNull null],
+    @"12:34:A56.78": [NSNull null],
+    @"12:34:56A,78": [NSNull null],
+    @"12:34:56.A78": [NSNull null],
+    @"12:34:56,78A": [NSNull null],
+    @"123A": [NSNull null],
+    @"123:45A": [NSNull null],
+    @"12:34:56A": [NSNull null],
   }];
 }
 

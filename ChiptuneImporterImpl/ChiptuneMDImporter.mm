@@ -190,9 +190,13 @@ BOOL CMIImportPSF(FILE *fp, NSMutableDictionary *sd)
     if (outk) {
       if (outk == kMDItemAuthors)
         val = [NSArray arrayWithObject:[tp objectForKey:key]];
-      else if (outk == kMDItemDurationSeconds)
+      else if (outk == kMDItemDurationSeconds) {
         val = CMIPSFDurationStringToSeconds([tp objectForKey:key]);
-      else
+        if (!val) {
+          NSLog(@"improperly formatted duration %@", [tp objectForKey:key]);
+          continue;
+        }
+      } else
         val = [tp objectForKey:key];
       
       [sd CMI_setAttribute:val forKey:outk];

@@ -21,7 +21,10 @@ xcodebuild -project "$PWD/ChiptuneImporter.xcodeproj" \
            DSTROOT="$PWD/build/Package/Root"
 
 # Extract the version number from the project...
-ver=$(/usr/libexec/PlistBuddy -c "Print:CFBundleShortVersionString" "ChiptuneImporter/ChiptuneImporter-Info.plist")
+ver=$(git describe | sed 's/release_//')
+if [[ ! ( $? -eq 0 ) ]]; then
+  ver=$(/usr/libexec/PlistBuddy -c "Print:CFBundleShortVersionString" "ChiptuneImporter/ChiptuneImporter-Info.plist");
+fi
 
 # Make the package with pkgbuild and the product distribution with productbuild...
 echo pkgbuild...

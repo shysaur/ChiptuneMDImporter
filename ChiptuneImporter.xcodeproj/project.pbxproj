@@ -46,6 +46,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		015B71F61F7ED2FC0055790D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01FB7F28193D0E5C003707D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01D483C61E294406008E0408;
+			remoteInfo = ChiptuneImporterImpl;
+		};
 		017FE5081BD2DCD800D8C41E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 01FB7F28193D0E5C003707D7 /* Project object */;
@@ -343,6 +350,7 @@
 			);
 			dependencies = (
 				017FE5241BD2EA3D00D8C41E /* PBXTargetDependency */,
+				015B71F71F7ED2FC0055790D /* PBXTargetDependency */,
 			);
 			name = ChiptuneImporter;
 			productName = ChiptuneImporter;
@@ -482,6 +490,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		015B71F71F7ED2FC0055790D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01D483C61E294406008E0408 /* ChiptuneImporterImpl */;
+			targetProxy = 015B71F61F7ED2FC0055790D /* PBXContainerItemProxy */;
+		};
 		017FE5091BD2DCD800D8C41E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 01FB7F2F193D0E5C003707D7 /* ChiptuneImporter */;

@@ -1,4 +1,11 @@
-#!/bin/sh
+#!/bin/bash -x
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -v "$2/Library/Spotlight/ChiptuneImporter.mdimporter/Contents/Resources/ChiptuneImporterUTIHelper.app"
-su $USER -c "/usr/bin/mdimport -d3 -r ""$2/Library/Spotlight/ChiptuneImporter.mdimporter"
+macosv=($(sw_vers -productVersion | sed 's/\./ /g'))
+echo macos version ${macosv[*]}
+if [[ ${macosv[1]} -gt 12 ]]; then
+  com='/usr/bin/mdutil -r '
+else
+  com='/usr/bin/mdimport -d3 -r '
+fi;
+su $USER -c "${com}$2/Library/Spotlight/ChiptuneImporter.mdimporter; echo returned \$?";
 exit 0

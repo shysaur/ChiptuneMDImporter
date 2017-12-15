@@ -120,7 +120,7 @@
 	<key>CFBundleName</key>
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.0</string>
+	<string>1.0.1</string>
 	<key>CFBundleVersion</key>
 	<string>165</string>
 	<key>CFPlugInDynamicRegisterFunction</key>
@@ -144,7 +144,7 @@
 	<key>LSMinimumSystemVersion</key>
 	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2014-15 Daniele Cattaneo. All rights reserved.</string>
+	<string>Copyright © 2014-17 Daniele Cattaneo. All rights reserved.</string>
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>
